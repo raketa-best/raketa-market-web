@@ -1,0 +1,94 @@
+.background {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    min-height: 568px;
+    min-width: 320px;
+    grid-template-areas:
+    'logo' 
+    'context'
+    'form'
+    'button'
+    'futer';
+    grid-template-rows: 40vh 25vh 15vh 10vh auto;
+    background-image: url('../../images/banner-bg.png');
+    background-size: 100% 100%;
+    /* background: #58dcfe;
+    background: -moz-linear-gradient(0deg, rgba(88,220,254,1) 0%, rgba(62,98,166,1) 22%, rgba(48,30,116,1) 38%);
+    background: -webkit-linear-gradient(0deg, rgba(88,220,254,1) 0%, rgba(62,98,166,1) 22%, rgba(48,30,116,1) 38%);
+    background: linear-gradient(0deg, rgba(88,220,254,1) 0%, rgba(62,98,166,1) 22%, rgba(48,30,116,1) 38%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#58dcfe",endColorstr="#301e74",GradientType=1); */
+}
+
+.imageLogo_block {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5vh;
+}
+
+.imageLogo {
+    height: 100%;
+}
+
+.context_block {
+    grid-area: context;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    justify-content: space-between;
+    margin: 0vh 5vh 0vh 5vh;  
+}
+
+.context {
+    width: 100%;
+    min-width: 225px;
+    height: 100%;
+    text-align: center;
+    font-size: 2.5vh;  
+    color: #F7BF2C;
+}
+
+.locationFormClasses {
+    grid-area: form;
+    display: flex; 
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.locationButtonClasses {
+    grid-area: button;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-height: 567px) {
+    .background {
+        height: 567px;
+        grid-template-rows: 40% 25% 15% 10% auto;        
+    }
+
+    .imageLogo_block {
+        margin: 30px;
+    }    
+     
+    .context_block {
+        margin: 0px 20px 0px 20px;  
+    }
+    
+    .context {
+        font-size: 16px;        
+    } 
+}
+
+
+
+
+
+
+
+
+
+

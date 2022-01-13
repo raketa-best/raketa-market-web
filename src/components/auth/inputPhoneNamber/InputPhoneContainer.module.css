@@ -1,0 +1,44 @@
+.lable { 
+    font-size: 1.8vh;
+    margin-top: 3vh;   
+    color: #F7BF2C;
+}
+
+.fieldPhone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    height: 5vh;
+    max-width: 340px;    
+    max-height: 54px;
+    min-width: 225px;
+    min-height: 36px;        
+    margin-top: 1vh;
+    border-radius: 6px;        
+    font-size: 2.5vh;  
+    padding: 0px;
+    background: #311e7400;
+    border: 1.2px solid #F7BF2C;
+    color: #F7BF2C;
+    text-align: center;
+}
+
+
+@media (max-height: 567px) {
+    .lable {
+        font-size: 11px;
+        margin-top: 10px;
+    }
+    
+    .fieldPhone {
+        height: 36px;        
+        margin-top: 5px;       
+        font-size: 16px;        
+    }
+}
+
+
+  
+  
+  

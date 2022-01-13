@@ -1,0 +1,34 @@
+.confirmCode_block {
+    width: 100vw;
+    height: 100vh;
+    min-height: 568px;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    background: -moz-radial-gradient(circle, rgba(73,19,107,1) 0%, rgba(48,30,116,1) 93%);
+    background: -webkit-radial-gradient(circle, #49136b 0%, rgba(48,30,116,1) 93%);
+    background: radial-gradient(circle, rgba(73,19,107,1) 0%, rgba(48,30,116,1) 93%);
+}
+
+.text {
+    width: 70vw;
+    max-width: 290px;
+    min-width: 256px;
+    margin-bottom: 3vw;
+    text-align: center;
+    font-size: 2.5vh;
+    color: #F7BF2C; 
+}
+
+@media (max-height: 567px) {
+    .confirmCode_block {
+        height: 567px;
+
+    }.text {
+        width: 256px;
+        font-size: 16px;        
+    } 
+}
+

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import classes from './ButtonsAll.module.css'
+import classes from './Button.module.css'
 
-interface IButtonsAllProps {
+interface IButtonProps {
     value?: string 
     onClick?: (event: React.MouseEvent) => void 
     className?: string
@@ -11,7 +11,7 @@ interface IButtonsAllProps {
     isActiveLinkButton?: boolean
 }
 
-const ButtonsAll: React.FC<IButtonsAllProps> = (props: IButtonsAllProps) => {
+const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
 
     return <> 
         { props.isActiveLinkButton
@@ -27,28 +27,28 @@ const ButtonsAll: React.FC<IButtonsAllProps> = (props: IButtonsAllProps) => {
     </>
 }
 
-export default ButtonsAll
+export default Button
 
 
-export const ButtonAqua = (props: IButtonsAllProps) => {
-    return <ButtonsAll 
+export const ButtonEntry = (props: IButtonProps) => {
+    return <Button 
         onClick={props.onClick} 
         type={props.type} 
         to={props.to}
         value={props.value} 
         disabled={props.disabled} 
-        className={classes.buttonAqua} 
+        className={props.className || classes.buttonEntry} 
         isActiveLinkButton={props.isActiveLinkButton}/>
 }
 
-export const ButtonPink = (props: IButtonsAllProps) => {
-    return <ButtonsAll 
+export const ButtonGetCode = (props: IButtonProps) => {
+    return <Button 
         onClick={props.onClick} 
         type={props.type} 
         to={props.to} 
         value={props.value} 
         disabled={props.disabled}
-        className={classes.buttonPink} 
+        className={props.className || classes.buttonGetCode} 
         isActiveLinkButton={props.isActiveLinkButton}/>
 }
 

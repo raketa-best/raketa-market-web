@@ -27,14 +27,14 @@
 
 @media (max-height: 567px) {
     .lable {
-        font-size: 12px;
+        font-size: 11px;
         margin-top: 10px;
     }
     
     .fieldPhone {
         height: 36px;        
-        margin-top: 10px;       
-        font-size: 18px;        
+        margin-top: 5px;       
+        font-size: 16px;        
     }
 }
 

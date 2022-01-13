@@ -1,4 +1,4 @@
-.buttonAqua, .buttonPink  {
+.buttonEntry, .buttonGetCode  {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,11 +21,11 @@
     font-weight: bold;
 }
 
-.buttonPink:hover {
+.buttonGetCode:hover {
     border: 1px solid #301E74;
 }
 
-.buttonAqua {
+.buttonEntry {
     background-image: linear-gradient(
     90deg,#d433f5,#0dadf2 40%,#6a3fd1 60%,#1ac0be);
     background-size: 200% 100%;
@@ -35,7 +35,7 @@
     margin-top: 2vh;
 }
 
-.buttonAqua:hover {
+.buttonEntry:hover {
     border: 1px solid #301E74;
 }
 
@@ -44,13 +44,9 @@
 }
 
 @media (max-height: 567px) {
-    .buttonAqua, .buttonPink  {
+    .buttonEntry, .buttonGetCode  {
         height: 38px;
-        margin-top: 30px;
-        font-size: 18px;
-    }
-
-    .buttonAqua {
         margin-top: 20px;
-    }
+        font-size: 14px;
+    }    
 }

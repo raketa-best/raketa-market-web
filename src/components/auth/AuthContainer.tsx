@@ -2,17 +2,17 @@ import { useEffect, useState } from "react"
 import { InputPhoneNumberContainer } from "./inputPhoneNamber/InputPhoneNumberContainer"
 import Auth from "./Auth"
 import classes from './Auth.module.css'
-import { ButtonPink } from "../commons/buttonsAll/ButtonsAll"
+import { ButtonGetCode } from "../commons/button/Button"
 
 
 const AuthContainer: React.FC = () => {
 
-    const [valueButtonPink, setValueButtonPink] = useState<string>('')
+    const [lableButtonGetCode, setLableButtonGetCode] = useState<string>('')
     const [isActiveLinkButton, setIsActiveLinkButton] = useState<boolean>(false)
     
 
     useEffect(() => {
-        setValueButtonPink('Получить код  ****')
+        setLableButtonGetCode('Получить код  ****')
     }, [])
 
     const handleSubmitPhone = (phoneNumber?: string) => {
@@ -34,7 +34,7 @@ const AuthContainer: React.FC = () => {
                 <InputPhoneNumberContainer isDisableButtonOnClick={isDisableButtonOnClick} handleSubmitPhone={handleSubmitPhone} />
             </div>
             <div className={classes.locationButtonClasses}>
-                <ButtonPink value={valueButtonPink}
+                <ButtonGetCode value={lableButtonGetCode}
                     to={'/confirmCode'} 
                     isActiveLinkButton={isActiveLinkButton} />
             </div>

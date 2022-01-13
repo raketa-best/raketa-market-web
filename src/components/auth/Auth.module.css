@@ -1,5 +1,7 @@
 .background {
     display: grid;
+    position:relative;
+    z-index: 10;
     height: 100vh;
     width: 100vw;
     min-height: 568px;
@@ -9,15 +11,26 @@
     'context'
     'form'
     'button'
-    'futer';
+    'footer';
     grid-template-rows: 40vh 25vh 15vh 10vh auto;
-    background-image: url('../../images/banner-bg.png');
-    background-size: 100% 100%;
-    /* background: #58dcfe;
-    background: -moz-linear-gradient(0deg, rgba(88,220,254,1) 0%, rgba(62,98,166,1) 22%, rgba(48,30,116,1) 38%);
-    background: -webkit-linear-gradient(0deg, rgba(88,220,254,1) 0%, rgba(62,98,166,1) 22%, rgba(48,30,116,1) 38%);
-    background: linear-gradient(0deg, rgba(88,220,254,1) 0%, rgba(62,98,166,1) 22%, rgba(48,30,116,1) 38%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#58dcfe",endColorstr="#301e74",GradientType=1); */
+    /* background-image: url('../../images/banner-bg.png'); */
+    /* background-size: 100% 100%; */
+    background: -moz-linear-gradient(180deg, rgba(54,21,97,1) 0%, rgba(48,30,116,1) 73%, rgba(62,98,166,1) 89%, rgba(88,220,254,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(54,21,97,1) 0%, rgba(48,30,116,1) 73%, rgba(62,98,166,1) 89%, rgba(88,220,254,1) 100%);
+    background: linear-gradient(180deg, rgba(54,21,97,1) 0%, rgba(48,30,116,1) 73%, rgba(62,98,166,1) 89%, rgba(88,220,254,1) 100%);
+}
+
+.logo_M {
+    position: absolute;
+    z-index: 1;
+    top: 20vh;
+    height: 70vh;
+    width: 86vw;
+}
+
+.children_Auth {
+    position: relative;
+    z-index: 100;
 }
 
 .imageLogo_block {
@@ -38,7 +51,7 @@
     flex-direction: column;    
     align-items: center;
     justify-content: space-between;
-    margin: 0vh 5vh 0vh 5vh;  
+    margin: 0vh 5vh 5vh 5vh;  
 }
 
 .context {
@@ -70,17 +83,35 @@
         grid-template-rows: 40% 25% 15% 10% auto;        
     }
 
+    .logo_M {
+        height: 420px;
+        top: 120px;
+    }
+
     .imageLogo_block {
-        margin: 30px;
+        margin: 25px;
     }    
      
     .context_block {
-        margin: 0px 20px 0px 20px;  
+        margin: 0px 20px 20px 20px;  
     }
     
     .context {
-        font-size: 16px;        
+        font-size: 14px;        
     } 
+}
+
+@media (min-width: 400px) {
+    .logo_M {
+        left: calc(50vw - 233px);
+        width: 400px;
+    }
+}
+
+@media (max-width: 319px) {
+    .logo_M {
+        width: 275px;
+    }
 }
 
 

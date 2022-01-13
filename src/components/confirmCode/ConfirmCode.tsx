@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react"
-import { ButtonAqua } from "../commons/buttonsAll/ButtonsAll"
 import { InputConfirmCode } from "./InputConfirmCode/InputConfirmCode"
-import classes from '../confirmCode/ConfirmCode.module.css'
+import classes from './ConfirmCode.module.css'
+import { ButtonEntry } from "../commons/button/Button"
 
 export const ConfirmCode: React.FC = () => {
 
-    const [valueButtonAqua, setValueButtonAqua] = useState<string>('')
+    const [lableButtonEntry, setLableButtonEntry] = useState<string>('')
     const [isActiveLinkButton, setIsActiveLinkButton] = useState<boolean>(false)
 
     useEffect(() => {
-        setValueButtonAqua('Войти')
+        setLableButtonEntry('Войти')
     }, [])
 
     const handleSubmitConfirmCode = (confirmCode: string) => {
@@ -38,7 +38,7 @@ export const ConfirmCode: React.FC = () => {
                     handleSubmitConfirmCode={handleSubmitConfirmCode} />
             </div>
             <div>
-                <ButtonAqua value={valueButtonAqua} 
+                <ButtonEntry value={lableButtonEntry} 
                    to={'/auth'} 
                    isActiveLinkButton={isActiveLinkButton} />
             </div>

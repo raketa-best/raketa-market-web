@@ -1,11 +1,11 @@
-export interface IModalAllProps {
+export interface IModalProps {
     classNameModal?: string
     onClickModal?: (event: React.MouseEvent<HTMLElement>) => void
     argumentOnClickModal?: any
     children?: any
 }
 
-const ModalAll: React.FC<IModalAllProps> = (props: IModalAllProps) => {
+const Modal: React.FC<IModalProps> = (props: IModalProps) => {
 
     return <>
         <div className={props.classNameModal}
@@ -18,4 +18,4 @@ const ModalAll: React.FC<IModalAllProps> = (props: IModalAllProps) => {
     </>
 }
 
-export default ModalAll
+export default Modal

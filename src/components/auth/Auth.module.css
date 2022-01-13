@@ -13,8 +13,6 @@
     'button'
     'footer';
     grid-template-rows: 40vh 25vh 15vh 10vh auto;
-    /* background-image: url('../../images/banner-bg.png'); */
-    /* background-size: 100% 100%; */
     background: -moz-linear-gradient(180deg, rgba(54,21,97,1) 0%, rgba(48,30,116,1) 73%, rgba(62,98,166,1) 89%, rgba(88,220,254,1) 100%);
     background: -webkit-linear-gradient(180deg, rgba(54,21,97,1) 0%, rgba(48,30,116,1) 73%, rgba(62,98,166,1) 89%, rgba(88,220,254,1) 100%);
     background: linear-gradient(180deg, rgba(54,21,97,1) 0%, rgba(48,30,116,1) 73%, rgba(62,98,166,1) 89%, rgba(88,220,254,1) 100%);

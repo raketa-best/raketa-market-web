@@ -30,25 +30,25 @@ const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
 export default Button
 
 
-export const ButtonEntry = (props: IButtonProps) => {
+export const ButtonAqua = (props: IButtonProps) => {
     return <Button 
         onClick={props.onClick} 
         type={props.type} 
         to={props.to}
         value={props.value} 
         disabled={props.disabled} 
-        className={props.className || classes.buttonEntry} 
+        className={props.className || classes.buttonAqua} 
         isActiveLinkButton={props.isActiveLinkButton}/>
 }
 
-export const ButtonGetCode = (props: IButtonProps) => {
+export const ButtonPink = (props: IButtonProps) => {
     return <Button 
         onClick={props.onClick} 
         type={props.type} 
         to={props.to} 
         value={props.value} 
         disabled={props.disabled}
-        className={props.className || classes.buttonGetCode} 
+        className={props.className || classes.buttonPink} 
         isActiveLinkButton={props.isActiveLinkButton}/>
 }
 

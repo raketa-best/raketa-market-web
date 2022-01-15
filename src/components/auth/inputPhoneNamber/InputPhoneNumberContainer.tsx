@@ -98,11 +98,10 @@ export const InputPhoneNumberContainer: React.FC<IInputPhoneNumberContainerProps
     }
   }, [touch, formatPhoneNumber])
 
-  return <>
-      <label className={classes.lable}> {warning!=='' && warning} 
-        <InputPhoneNumber value={phoneNumber} 
-          onFocus={onFocusInput} onChange={onChangeInputPhone} onBlur={onBlurInputPhone} 
-          className={classes.fieldPhone} />
-      </label>
-  </>
+  return <div className={classes.inputPhoneNumber_block}>
+      <label className={classes.lable}> {warning!=='' && warning} </label>
+      <InputPhoneNumber value={phoneNumber} 
+        onFocus={onFocusInput} onChange={onChangeInputPhone} onBlur={onBlurInputPhone} 
+        className={classes.fieldPhone} />
+  </div>
 }

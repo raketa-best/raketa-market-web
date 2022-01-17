@@ -5,7 +5,7 @@ import { ConfirmCode } from './components/confirmCode/ConfirmCode'
 import Home from './components/home/Home'
 import Layout from './components/Layout'
 import News from './components/news/News'
-import Chat from './components/profile/chat/Chat'
+import Chat from './components/commons/chat/Chat'
 import Profile from './components/profile/Profile'
 
 
@@ -18,9 +18,7 @@ const App: React.FC = () => {
         <Route  path='/home' element={ <Layout component={ <Home/> }/> }/>        
         <Route  path='/news' element={ <Layout component={ <News/> }/> }/>
         <Route  path='/chat' element={ <Layout component={ <Chat/> }/> }/>
-        <Route  path='/profile' element={ <Layout component={ <Profile/> }/> }/>
-
-        
+        <Route  path='/profile' element={ <Layout component={ <Profile/> }/> }/>        
       </Routes>
   </BrowserRouter>  
 }

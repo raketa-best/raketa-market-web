@@ -1,5 +1,5 @@
 import { ReactComponent as ProfileIcon } from '../../images/icon_profile_active.svg'
-import icon_ellipse from '../../images/icon_ellipse.png'
+import icon_ellipse from '../../images/icon_ellipse.svg'
 import classes from './NavBar.module.css'
 import { Link, useLocation } from 'react-router-dom'
 

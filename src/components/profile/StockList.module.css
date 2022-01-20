@@ -1,0 +1,23 @@
+.stockLict_block {
+    position: absolute;
+    top: 334px;
+    width: 100%;
+    height: calc(100% + 240px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: -moz-radial-gradient(circle, rgba(73,19,107,1) 0%, rgba(48,30,116,1) 93%);
+    background: -webkit-radial-gradient(circle, #49136b 0%, rgba(48,30,116,1) 93%);
+    background: radial-gradient(circle, rgba(73,19,107,1) 0%, rgba(48,30,116,1) 93%);
+    padding-top: 11px;
+    padding-bottom: 240px;
+}
+
+@media (max-width: 339px) {
+    .stockLict_block {
+        top: 222px;
+    }
+}
+
+
+

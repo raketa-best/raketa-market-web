@@ -2,12 +2,15 @@
     position: fixed;
     bottom: 0;
     display: flex;
+    z-index: 10;
     flex-direction: row;
     justify-content: space-between;
-    width: calc(100vw - 40px);
+    width: calc(100vw - 80px);
     height: 30px;
-    padding: 0px 20px 10px 20px;
-    font-size: 16px;    
+    padding: 10px 40px 5px 40px;
+    font-size: 16px;  
+    background: #301E74;
+    box-shadow: 0 0 8px 4px #23154e;  
 }
 
 .link_block {
@@ -19,12 +22,12 @@
 
 .link {
     text-decoration: none;
-    color: #301E74;
+    color: #9a4df3;
 }
 
 .linkActive {
     text-decoration: none;
-    color: #5CD9FF;
+    color: aqua;
 }
 
 .icon_ellipse {
@@ -35,12 +38,12 @@
 .svg_active {    
     width: 17px;
     height: 19px;
-    fill: #5CD9FF;
+    fill: aqua;
 }
 
 .svg {
     width: 17px;
     height: 19px;    
-    fill: #301E74;
+    fill: #9a4df3;
 }
 

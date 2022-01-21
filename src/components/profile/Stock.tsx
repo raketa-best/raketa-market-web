@@ -1,3 +1,4 @@
+import { shorterAmount } from '../../utils/utils'
 import ProgressPercent from './ProgressPercent'
 import classes from './Stock.module.css'
 
@@ -11,7 +12,7 @@ export interface IStockProps {
     portfolioPercent: number
     amountRub: number
     avgPrice: number
-    comment: string
+    comment: string    
 }
 
 export const Stock: React.FC<IStockProps> = (props: IStockProps) => {
@@ -27,7 +28,7 @@ export const Stock: React.FC<IStockProps> = (props: IStockProps) => {
         </div>
         <div className={classes.progress_block}>
             <div className={classes.count}>{ `${props.count} шт` }</div>
-            <ProgressPercent progressPercent={props.portfolioPercent} amount={props.amountRub} unit={'₽'}/>
+            <ProgressPercent progressPercent={props.portfolioPercent} label={`₽ ${shorterAmount(props.amountRub)}`}/>
         </div>
         <div className={classes.avgPrice_block}>
             <div className={classes.avgPrice}>средняя цена</div>

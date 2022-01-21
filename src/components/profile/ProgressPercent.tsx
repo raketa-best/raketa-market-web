@@ -3,24 +3,9 @@ import classes from './ProgressPercent.module.css'
 
 export interface IProgressPercentProps {
     progressPercent: number
-    amount: number
-    unit: string
+    label: string
 }
-
-const shorterAmount = (amount: number, unit: string) => {
-
-    if (unit === 'LEVEL') {
-        return `${ (amount) }`
-    } else {
-        if (amount > 1000 && amount < 1000000) {
-            return `${ (Math.floor(amount / 10) / 100).toFixed(2) }k`        
-        } else if (amount > 1000000) {
-            return `${ (Math.floor(amount / 10000) / 100).toFixed(2) }🍋`
-        } else {
-            return `${ (amount).toFixed(2) }`
-        }
-    }
-}    
+ 
 
 const ProgressPercent: React.FC<IProgressPercentProps> = (props: IProgressPercentProps) => {
 
@@ -32,7 +17,7 @@ const ProgressPercent: React.FC<IProgressPercentProps> = (props: IProgressPercen
             <div style={ {width: `${props.progressPercent}%`} } className={classes.expProgressPercent_progress}>                
             </div> 
             <div className={classes.unit}>
-                {`${props.unit} ${shorterAmount(props.amount, props.unit)}`}
+                {props.label}
             </div>                           
         </div>                   
     </div>

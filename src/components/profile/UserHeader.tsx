@@ -18,7 +18,7 @@ const UserHeader: React.FC<IUserHeaderProps> = (props: IUserHeaderProps) => {
         </div>
         <img alt='' src={props.avatarUrl} className={classes.avatarUrl}/>
         <div className={classes.progress_block}>
-            <ProgressPercent progressPercent={props.expProgressPercent} amount={props.level} unit={'LEVEL'}/>          
+            <ProgressPercent progressPercent={props.expProgressPercent} label={`LEVEL ${props.level}`}/>          
             <div className={classes.amountRub_block}>
                 <div className={classes.text_portfolio}>Портфель</div>
                 <div className={classes.amountRub}>

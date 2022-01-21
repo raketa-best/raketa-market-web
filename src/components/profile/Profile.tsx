@@ -26,7 +26,7 @@ const Profile:React.FC = () => {
             profitAmountRub: 2500000,
             portfolioPercent: 70,
             amountRub: 123899100,
-            avgPrice: 5000,
+            avgPrice: 7500.00,
             comment: 'великолепная покупка 😁'
         },
         {  
@@ -38,7 +38,7 @@ const Profile:React.FC = () => {
             profitAmountRub: 8800000,
             portfolioPercent: 80,
             amountRub: 105555555,
-            avgPrice: 8888,
+            avgPrice: 8008.22,
             comment: 'отличная покупка 😃'
         },
         {  
@@ -50,7 +50,7 @@ const Profile:React.FC = () => {
             profitAmountRub: 10000000,
             portfolioPercent: 100,
             amountRub: 93000000,
-            avgPrice: 111111,
+            avgPrice: 1111.11,
             comment: 'супер сделка 👍'
         },
         {  
@@ -62,7 +62,7 @@ const Profile:React.FC = () => {
             profitAmountRub: 5000000,
             portfolioPercent: 50,
             amountRub: 432000,
-            avgPrice: 51111,
+            avgPrice: 511.11,
             comment: 'хорошая сделка 😉'
         },
     ]    
@@ -76,6 +76,7 @@ const Profile:React.FC = () => {
         setStockList(fakeStateStocks)
     }, [])
 
+    
     return <div className={classes.profile_block}>
         <UserHeader {...userHeader} />
         <StockList stockList={stockList} />

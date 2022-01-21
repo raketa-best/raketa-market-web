@@ -12,7 +12,7 @@ const Profile:React.FC = () => {
         nick: 'НЕВЕРОЯТНЫЙ',
         statusMessage: 'Я есть тот, кто я есть, и это моя судьба',
         expProgressPercent: 70,
-        amountRub: 123432100,
+        amountRub: 823470000,
         level: 77
     }
 
@@ -25,7 +25,7 @@ const Profile:React.FC = () => {
             profitPercent: 70,
             profitAmountRub: 2500000,
             portfolioPercent: 70,
-            amountRub: 123432100,
+            amountRub: 123899100,
             avgPrice: 5000,
             comment: 'великолепная покупка 😁'
         },
@@ -37,7 +37,7 @@ const Profile:React.FC = () => {
             profitPercent: 88,
             profitAmountRub: 8800000,
             portfolioPercent: 80,
-            amountRub: 883432155,
+            amountRub: 105555555,
             avgPrice: 8888,
             comment: 'отличная покупка 😃'
         },
@@ -49,7 +49,7 @@ const Profile:React.FC = () => {
             profitPercent: 1111,
             profitAmountRub: 10000000,
             portfolioPercent: 100,
-            amountRub: 1003432155,
+            amountRub: 93000000,
             avgPrice: 111111,
             comment: 'супер сделка 👍'
         },
@@ -61,7 +61,7 @@ const Profile:React.FC = () => {
             profitPercent: 551,
             profitAmountRub: 5000000,
             portfolioPercent: 50,
-            amountRub: 503432155,
+            amountRub: 432000,
             avgPrice: 51111,
             comment: 'хорошая сделка 😉'
         },

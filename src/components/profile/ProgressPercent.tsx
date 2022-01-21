@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import classes from './ProgressPercent.module.css'
 
 
@@ -8,19 +7,22 @@ export interface IProgressPercentProps {
     unit: string
 }
 
-const ProgressPercent: React.FC<IProgressPercentProps> = (props: IProgressPercentProps) => {
+const shorterAmount = (amount: number, unit: string) => {
 
-    const [amountAdapted, setAamountAdapted] = useState<string>('')
-
-    useEffect(() => {
-        if (props.amount > 1000 && props.amount < 1000000) {
-            setAamountAdapted(`${Math.floor(props.amount / 1000)}k`)
-        } else if (props.amount > 1000000) {
-            setAamountAdapted(`${Math.floor(props.amount / 1000000)}🍋`)
+    if (unit === 'LEVEL') {
+        return `${ (amount) }`
+    } else {
+        if (amount > 1000 && amount < 1000000) {
+            return `${ (Math.floor(amount / 10) / 100).toFixed(2) }k`        
+        } else if (amount > 1000000) {
+            return `${ (Math.floor(amount / 10000) / 100).toFixed(2) }🍋`
         } else {
-            setAamountAdapted(`${props.amount}`)
+            return `${ (amount).toFixed(2) }`
         }
-    }, [])
+    }
+}    
+
+const ProgressPercent: React.FC<IProgressPercentProps> = (props: IProgressPercentProps) => {
 
     return <div className={classes.progress_container}>
         <div className={classes.expProgressPercent}>
@@ -30,7 +32,7 @@ const ProgressPercent: React.FC<IProgressPercentProps> = (props: IProgressPercen
             <div style={ {width: `${props.progressPercent}%`} } className={classes.expProgressPercent_progress}>                
             </div> 
             <div className={classes.unit}>
-                {`${props.unit} ${amountAdapted}`}
+                {`${props.unit} ${shorterAmount(props.amount, props.unit)}`}
             </div>                           
         </div>                   
     </div>

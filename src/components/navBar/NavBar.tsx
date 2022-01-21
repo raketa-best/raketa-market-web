@@ -12,7 +12,6 @@ export interface INavBarElementProps {
 export const NavBarElement: React.FC<INavBarElementProps> = (props: INavBarElementProps) => {
     
     let location = useLocation()
-    console.log(location)
     
     return <div className={classes.link_block}>
         <Link to={props.to} className={location.pathname===props.to ? classes.linkActive : classes.link}> 

@@ -44,7 +44,7 @@
 }
 
 .context_block {
-    grid-area: context;
+    grid-area: context; 
     display: flex;
     flex-direction: column;    
     align-items: center;

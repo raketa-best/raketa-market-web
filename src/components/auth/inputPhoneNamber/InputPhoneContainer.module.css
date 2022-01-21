@@ -1,4 +1,10 @@
-.lable { 
+.inputPhoneNumber_block {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.lable {    
     font-size: 1.8vh;
     margin-top: 3vh;   
     color: #F7BF2C;

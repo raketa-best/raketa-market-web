@@ -1,0 +1,130 @@
+.userHeader_block {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 335px;
+    background: -moz-radial-gradient(circle, rgba(73,19,107,1) 0%, rgba(48,30,116,1) 93%);
+    background: -webkit-radial-gradient(circle, #49136b 0%, rgba(48,30,116,1) 93%);
+    background: radial-gradient(circle, rgba(73,19,107,1) 0%, rgba(48,30,116,1) 93%);
+    box-shadow: 0 0 10px 5px #23154e;
+}
+
+.bgImageUrl {
+    width: 100%;
+    height: 205px; 
+    background-color: #301E74;
+    background-size: cover;  
+    margin-bottom: 75px;
+    border-radius: 0 0 35px 35px;
+}
+
+.avatarUrl {
+    position: absolute;
+    top: 145px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    border: 7px solid #301E74;
+    border-radius: 57px;
+    background: linear-gradient(90deg,#d433f5,#0dadf2 40%,#6a3fd1 60%,#1ac0be);
+}
+
+.progress_block {
+    position: absolute;
+    z-index: 10;
+    top: 218px;
+    right: 20px;
+    width: 200px;
+}
+
+.amountRub_block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    height: 15px;
+    margin-top: 5px;
+}
+
+.amountRub, .text_portfolio {
+    color: #9a4df3;
+    font-size: 14px;
+}
+
+.nick {
+    color: aqua;
+    font-size: 20px;
+    margin: 0 20px 0 20px;
+}
+
+.statusMessage {
+    color: #bb2bd8;    
+    font-size: 15px;
+    margin: 0 20px 0 20px;
+}
+
+@media (max-width: 339px) {
+
+    .userHeader_block {
+        height: 225px;        
+        box-shadow: 0 0 8px 4px #23154e;
+    }
+    
+    .bgImageUrl {
+        height: 105px;
+        margin-bottom: 65px;
+        border-radius: 0 0 30px 30px;
+    }
+    
+    .avatarUrl {
+        top: 70px;
+        width: 70px;
+        height: 70px;
+        border: 6px solid #301E74;
+        border-radius: 41px;
+    }
+    
+    .progress_block {
+        top: 115px;
+        width: 170px;
+    }
+    
+    .amountRub_block {
+        width: 170px;
+    }
+    
+    .amountRub, .text_portfolio {
+        color: #9a4df3;
+        font-size: 12px;
+    }
+    
+    .nick {
+        font-size: 18px;
+    }
+    
+    .statusMessage {    
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 511px) { 
+
+    .progress_block {
+        right: 30px;
+        width: 240px;
+    }
+    
+    .amountRub_block {
+        width: 240px;
+    }
+
+    .nick {
+        font-size: 20px;
+        margin: 0 30px 0 30px;
+    }
+    
+    .statusMessage {    
+        font-size: 15px;
+        margin: 0 30px 0 30px;
+    }
+}

@@ -12,7 +12,7 @@
     background: radial-gradient(circle, rgba(73,19,107,1) 0%, rgba(48,30,116,1) 93%);
 }
 
-.text {
+.text { 
     width: 70vw;
     max-width: 290px;
     min-width: 256px;

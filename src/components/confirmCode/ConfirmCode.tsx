@@ -39,7 +39,7 @@ export const ConfirmCode: React.FC = () => {
             </div>
             <div>
                 <ButtonAqua value={labelButton} 
-                   to={'/auth'} 
+                   to={'/profile'} 
                    isActiveLinkButton={isActiveLinkButton} />
             </div>
         </div>

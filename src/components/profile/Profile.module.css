@@ -1,0 +1,8 @@
+.profile_block {
+    width: 100%;
+    height: calc(100% + 240px);
+    background: #301E74;
+    padding-bottom: 240px;
+}
+
+

@@ -1,5 +1,6 @@
 .profile_block {
     width: 100%;
+    min-width: 310px;
     height: calc(100% + 240px);
     background: #301E74;
     padding-bottom: 240px;

@@ -1,4 +1,6 @@
 .confirmCode_block {
+    position: relative;
+    z-index: 1;
     width: 100vw;
     height: 100vh;
     min-height: 568px;
@@ -12,19 +14,47 @@
     background: radial-gradient(circle, rgba(73,19,107,1) 0%, rgba(48,30,116,1) 93%);
 }
 
+.confirmCode_block::before {
+    content: '';
+    position: fixed;
+    z-index: 10;
+    left: -10px;
+    top: 5px;
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(210deg, #025db3 10%, #9e049e 80%);
+    border-radius: 50%;
+    filter: blur(100px);
+}
+
+.confirmCode_block::after {
+    content: '';
+    position: fixed;
+    z-index: 10;
+    right: 0px;
+    bottom: 10px;
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(144deg, #960496 30%, #0391a3 80%);
+    border-radius: 50%;
+    filter: blur(70px);
+}
+
 .text { 
+    position: relative;
+    z-index: 100;
     width: 70vw;
     max-width: 290px;
     min-width: 256px;
     margin-bottom: 3vw;
     text-align: center;
-    font-size: 2.5vh;
-    color: #F7BF2C; 
+    font-size: 2.2vh;
+    color: #ffffff; 
 }
 
-@media (max-height: 567px) {
+@media (max-height: 568px) {
     .confirmCode_block {
-        height: 567px;
+        height: 568px;
 
     }.text {
         width: 256px;
@@ -32,3 +62,9 @@
     } 
 }
 
+@media (min-width: 511px) { 
+    .text { 
+        width: 300px;
+        font-size: 16px;
+    }
+}

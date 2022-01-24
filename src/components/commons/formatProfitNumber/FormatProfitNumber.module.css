@@ -1,0 +1,31 @@
+.profitNumber_block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profitNumber {    
+    overflow-x: scroll;
+    white-space: nowrap;       
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.profitNumber::-webkit-scrollbar {
+    height: 0;
+}
+
+@media (max-width: 339px) {
+      
+    .profitNumber {
+        font-size: 13px;
+    }
+}
+
+

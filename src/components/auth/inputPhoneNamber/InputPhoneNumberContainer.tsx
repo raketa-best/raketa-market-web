@@ -40,11 +40,11 @@ export const InputPhoneNumberContainer: React.FC<IInputPhoneNumberContainerProps
   }, [phoneNumber])
 
   const onChangeInputPhone = (event?: any) => {
-    setPhoneNumber(event.target.value.replace(/[^\d\(\)\-\+]/g, "")) 
+    setPhoneNumber(event.target.value.replace(/[^\d\(\)\-\ \+]/g, "")) 
   }
 
   const onFocusInput = () => {
-    setWarning('* Введите номер телефона +7(...)...-..-..')
+    setWarning('* Введите номер телефона +7 (...) ...-..-..')
     setTouch(true)
   }
   
@@ -54,11 +54,11 @@ export const InputPhoneNumberContainer: React.FC<IInputPhoneNumberContainerProps
       setIsErrors(true)      
     } else if ((phoneNumber!=='' && formatPhoneNumber === undefined) 
       || (formatPhoneNumber!==undefined && formatPhoneNumber.length!==11) ) {
-        setWarning('! ОШИБКА. Введите номер +7(...)...-..-..') 
+        setWarning('! ОШИБКА. Введите номер +7 (...) ...-..-..') 
         setIsErrors(true)       
     } else if ((phoneNumber!=='' && formatPhoneNumber === undefined) 
     || (formatPhoneNumber!==undefined && formatPhoneNumber.length!==11) ) {
-      setWarning('! ОШИБКА. Введите номер +7(...)...-..-..') 
+      setWarning('! ОШИБКА. Введите номер +7 (...) ...-..-..') 
       setIsErrors(true)       
   } 
     setTouch(false)
@@ -68,30 +68,30 @@ export const InputPhoneNumberContainer: React.FC<IInputPhoneNumberContainerProps
     if (touch && formatPhoneNumber!==undefined) {
       if (formatPhoneNumber.slice(0, 1) === ('7') || formatPhoneNumber.slice(0, 1) === ('8')  ) {
         if (formatPhoneNumber.length===1) {
-          setPhoneNumber('+7(' + formatPhoneNumber.slice(1, 4))
+          setPhoneNumber('+7 (' + formatPhoneNumber.slice(1, 4))
         } else if (formatPhoneNumber.length===4) {
-          setPhoneNumber('+7(' + formatPhoneNumber.slice(1, 4) + ')')
+          setPhoneNumber('+7 (' + formatPhoneNumber.slice(1, 4) + ') ')
         } else if (formatPhoneNumber.length===7) {
-          setPhoneNumber('+7(' + formatPhoneNumber.slice(1, 4) + ')' + formatPhoneNumber.slice(4, 7) + '-')
+          setPhoneNumber('+7 (' + formatPhoneNumber.slice(1, 4) + ') ' + formatPhoneNumber.slice(4, 7) + '-')
         } else if (formatPhoneNumber.length===9) {
-          setPhoneNumber('+7(' + formatPhoneNumber.slice(1, 4) + ')' + formatPhoneNumber.slice(4, 7) + '-'
+          setPhoneNumber('+7 (' + formatPhoneNumber.slice(1, 4) + ') ' + formatPhoneNumber.slice(4, 7) + '-'
            + formatPhoneNumber.slice(7, 9) + '-')
         } else if (formatPhoneNumber.length>=11) {
-          setPhoneNumber('+7(' + formatPhoneNumber.slice(1, 4) + ')'
+          setPhoneNumber('+7 (' + formatPhoneNumber.slice(1, 4) + ') '
           + formatPhoneNumber.slice(4, 7) + '-' + formatPhoneNumber.slice(7, 9) + '-' + formatPhoneNumber.slice(9, 11) )
         } 
       } else {
         if (formatPhoneNumber.length===1) {
-          setPhoneNumber('+7(' + formatPhoneNumber.slice(0, 3))
+          setPhoneNumber('+7 (' + formatPhoneNumber.slice(0, 3))
         } else if (formatPhoneNumber.length===4) {
-          setPhoneNumber('+7(' + formatPhoneNumber.slice(0, 3) + ')')
+          setPhoneNumber('+7 (' + formatPhoneNumber.slice(0, 3) + ') ')
         } else if (formatPhoneNumber.length===7) {
-          setPhoneNumber('+7(' + formatPhoneNumber.slice(0, 3) + ')' + formatPhoneNumber.slice(3, 6) + '-')
+          setPhoneNumber('+7 (' + formatPhoneNumber.slice(0, 3) + ') ' + formatPhoneNumber.slice(3, 6) + '-')
         } else if (formatPhoneNumber.length===9) {
-          setPhoneNumber('+7(' + formatPhoneNumber.slice(0, 3) + ')' + formatPhoneNumber.slice(3, 6) + '-'
+          setPhoneNumber('+7 (' + formatPhoneNumber.slice(0, 3) + ') ' + formatPhoneNumber.slice(3, 6) + '-'
            + formatPhoneNumber.slice(6, 8) + '-')
         } else if (formatPhoneNumber.length>=11) {
-          setPhoneNumber('+7(' + formatPhoneNumber.slice(0, 3) + ')'
+          setPhoneNumber('+7 (' + formatPhoneNumber.slice(0, 3) + ') '
           + formatPhoneNumber.slice(3, 6) + '-' + formatPhoneNumber.slice(6, 8) + '-' + formatPhoneNumber.slice(8, 10) )
         }         
       }

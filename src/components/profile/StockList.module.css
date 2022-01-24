@@ -1,21 +1,67 @@
 .stockLict_block {
     position: absolute;
     top: 334px;
-    width: 100%;
+    width: 100%;    
+    min-width: 310px;
     height: calc(100% + 240px);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background: -moz-radial-gradient(circle, rgba(73,19,107,1) 0%, rgba(48,30,116,1) 93%);
-    background: -webkit-radial-gradient(circle, #49136b 0%, rgba(48,30,116,1) 93%);
-    background: radial-gradient(circle, rgba(73,19,107,1) 0%, rgba(48,30,116,1) 93%);
+    align-items: center; 
+    background: #3b2b74ec; 
     padding-top: 11px;
     padding-bottom: 240px;
 }
 
-@media (max-width: 339px) {
+.stockLict_block::before {
+    content: '';
+    position: fixed;
+    left: 10px;
+    top: 5px;
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(210deg, #086dcc 10%, #ad0fad 80%);
+    border-radius: 50%;
+    filter: blur(75px);
+}
+
+.stockLict_block::after {
+    content: '';
+    position: fixed;
+    right: 0px;
+    bottom: 10px;
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(144deg, #ad0fad 30%, #08b5cc 80%);
+    border-radius: 50%;
+    filter: blur(60px);
+}
+
+@media (max-width: 358px) {
     .stockLict_block {
-        top: 222px;
+        top: 216px;
+    }
+}
+
+@media (min-width: 511px) { 
+
+    .stockLict_block::before {
+        left: 10px;
+        top: 150px;
+        width: 550px;
+        height: 550px;
+        background: linear-gradient(210deg, #086dcc 10%, #921192 80%);
+        border-radius: 50%;
+        filter: blur(110px);
+    }
+    
+    .stockLict_block::after {
+        right: 10px;
+        bottom: 10px;
+        width: 500px;
+        height: 400px;
+        background: linear-gradient(144deg, #ad0fad 30%, #08b5cc 80%);
+        border-radius: 50%;
+        filter: blur(110px);
     }
 }
 

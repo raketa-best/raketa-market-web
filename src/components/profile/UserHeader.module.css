@@ -2,17 +2,28 @@
     position: absolute;
     z-index: 100;
     width: 100%;
+    min-width: 310px;
     height: 335px;
-    background: -moz-radial-gradient(circle, rgba(73,19,107,1) 0%, rgba(48,30,116,1) 93%);
-    background: -webkit-radial-gradient(circle, #49136b 0%, rgba(48,30,116,1) 93%);
-    background: radial-gradient(circle, rgba(73,19,107,1) 0%, rgba(48,30,116,1) 93%);
-    box-shadow: 0 0 10px 5px #23154e;
+    background: #2d2736;
+    box-shadow: 0 0 7px 2px #15131b;
+}
+
+.userHeader_block::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 230px;
+    width: 100px;
+    height: 80px;
+    background: linear-gradient(210deg, #0164c0 10%, #a50ba5 80%);
+    border-radius: 50%;
+    filter: blur(35px);
 }
 
 .bgImageUrl {
     width: 100%;
     height: 205px; 
-    background-color: #301E74;
+    background-color: #2d2736;
     background-size: cover;  
     margin-bottom: 75px;
     border-radius: 0 0 35px 35px;
@@ -24,8 +35,8 @@
     left: 20px;
     width: 100px;
     height: 100px;
-    border: 7px solid #301E74;
-    border-radius: 57px;
+    border: 7px solid #2d2736;
+    border-radius: 50%;
     background: linear-gradient(90deg,#d433f5,#0dadf2 40%,#6a3fd1 60%,#1ac0be);
 }
 
@@ -39,6 +50,7 @@
 
 .amountRub_block {
     display: flex;
+    z-index: 10;
     align-items: center;
     justify-content: space-between;
     width: 200px;
@@ -46,33 +58,75 @@
     margin-top: 5px;
 }
 
-.amountRub, .text_portfolio {
+.amountRub { 
+    position: relative;
+    z-index: 10;   
     color: #9a4df3;
+    overflow-x: scroll;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.text_amountRub {
+    color: #9a4df3;
+    padding-left: 5px;
+    font-size: 14px;
+
+}
+
+.text_portfolio {
+    position: relative;
+    z-index: 10;   
+    color: #9a4df3;
+    margin-right: 10px;
     font-size: 14px;
 }
 
 .nick {
+    position: relative;
+    z-index: 10;
     color: aqua;
+    overflow-x: scroll;
+    white-space: nowrap;
     font-size: 20px;
     margin: 0 20px 0 20px;
+    font-weight: 700;
 }
 
-.statusMessage {
-    color: #bb2bd8;    
+.statusMessage {  
+    position: relative;
+    z-index: 10;  
+    overflow: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
     font-size: 15px;
+    color: rgb(0, 119, 255);    
     margin: 0 20px 0 20px;
 }
 
-@media (max-width: 339px) {
+.nick::-webkit-scrollbar, .statusMessage::-webkit-scrollbar,
+.amountRub::-webkit-scrollbar, .text_portfolio::-webkit-scrollbar {
+    height: 0;
+}
+
+@media (max-width: 358px) {
 
     .userHeader_block {
-        height: 225px;        
-        box-shadow: 0 0 8px 4px #23154e;
+        height: 220px;        
+        box-shadow: 0 0 5px 1px #23154e;
+    }
+
+    .userHeader_block::before {
+        left: 10px;
+        top: 140px;
+        width: 80px;
+        height: 60px;
+        filter: blur(30px);
     }
     
     .bgImageUrl {
         height: 105px;
-        margin-bottom: 65px;
+        margin-bottom: 60px;
         border-radius: 0 0 30px 30px;
     }
     
@@ -80,8 +134,7 @@
         top: 70px;
         width: 70px;
         height: 70px;
-        border: 6px solid #301E74;
-        border-radius: 41px;
+        border: 6px solid #2d2736;
     }
     
     .progress_block {
@@ -93,8 +146,7 @@
         width: 170px;
     }
     
-    .amountRub, .text_portfolio {
-        color: #9a4df3;
+    .amountRub, .text_portfolio, .text_amountRub {        
         font-size: 12px;
     }
     
@@ -102,7 +154,7 @@
         font-size: 18px;
     }
     
-    .statusMessage {    
+    .statusMessage {   
         font-size: 14px;
     }
 }
@@ -112,6 +164,11 @@
     .progress_block {
         right: 30px;
         width: 240px;
+    }
+
+    .userHeader_block::before {
+        left: 20px;
+        top: 235px;
     }
     
     .amountRub_block {
@@ -123,7 +180,7 @@
         margin: 0 30px 0 30px;
     }
     
-    .statusMessage {    
+    .statusMessage { 
         font-size: 15px;
         margin: 0 30px 0 30px;
     }

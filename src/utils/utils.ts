@@ -1,10 +1,12 @@
-export const shorterAmount = (amount: number): string => {
+export const numberShorter = (number: number): string => {
     
-    if (amount > 1000 && amount < 1000000) {
-        return `${ (Math.floor(amount / 10) / 100).toFixed(2) }k`        
-    } else if (amount > 1000000) {
-        return `${ (Math.floor(amount / 10000) / 100).toFixed(2) }🍋`
+    if (number > 1000 && number < 1000000) {
+        return `${ (Math.floor(number / 10) / 100).toFixed(2) }k`        
+    } else if (number > 1000000) {
+        return `${ (Math.floor(number / 10000) / 100).toFixed(2) }🍋`
     } else {
-        return `${ (amount).toFixed(2) }`
+        return `${ (Math.floor(number * 100) / 100).toFixed(2) }`
     }
 } 
+
+

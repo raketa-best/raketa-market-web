@@ -1,4 +1,6 @@
-.buttonAqua, .buttonPink  {
+.buttonAqua, .buttonPink  {    
+    position: relative;
+    z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,9 +13,10 @@
     margin-top: 3vh;
     border-radius: 6px;
     box-shadow: 0px 0px 8px 2px #301E74; 
-    background: -moz-linear-gradient(210deg, rgba(247,191,44,1) 0%, rgba(228,4,148,1) 33%, rgba(228,4,179,1) 88%);
-    background: -webkit-linear-gradient(210deg, rgba(247,191,44,1) 0%, rgba(228,4,148,1) 33%, #e404b3 88%);
-    background: linear-gradient(210deg, rgba(247,191,44,1) 0%, rgba(228,4,148,1) 33%, rgba(228,4,179,1) 88%);
+    background: #ee049c;
+    background: -moz-linear-gradient(90deg, #df04fc 0%, #ee049c 33%, #d802f5 100%);
+    background: -webkit-linear-gradient(90deg, #df04fc 0%, #ee049c 33%, #d802f5 100%);
+    background: linear-gradient(90deg, #df04fc 0%, #ee049c 25%, #d802f5 100%);
     border: none;
     color: #301E74;
     cursor: pointer;
@@ -26,13 +29,11 @@
 }
 
 .buttonAqua {
-    background-image: linear-gradient(
-    90deg,#d433f5,#0dadf2 40%,#6a3fd1 60%,#1ac0be);
+    background-image: linear-gradient(90deg,#d433f5,#0dadf2 40%,#6a3fd1 60%,#1ac0be);
     background-size: 200% 100%;
     background-position: 100% 0;
-    border: 0.5px solid aqua;
-    color: aqua;
     margin-top: 2vh;
+    color: #ffffff;
 }
 
 .buttonAqua:hover {
@@ -43,10 +44,10 @@
     text-decoration: none;
 }
 
-@media (max-height: 567px) {
+@media (max-height: 568px) {
     .buttonAqua, .buttonPink  {
         height: 38px;
         margin-top: 20px;
-        font-size: 14px;
+        font-size: 16px;
     }    
 }

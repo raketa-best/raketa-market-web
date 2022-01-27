@@ -1,7 +1,7 @@
 .background {
     display: grid;
-    position:relative;
-    z-index: 10;
+    position: relative;
+    z-index: 1;
     height: 100vh;
     width: 100vw;
     min-height: 568px;
@@ -15,35 +15,60 @@
     grid-template-rows: 40vh 25vh 15vh 10vh auto;
     background: -moz-linear-gradient(180deg, rgba(54,21,97,1) 0%, rgba(48,30,116,1) 73%, rgba(62,98,166,1) 89%, rgba(88,220,254,1) 100%);
     background: -webkit-linear-gradient(180deg, rgba(54,21,97,1) 0%, rgba(48,30,116,1) 73%, rgba(62,98,166,1) 89%, rgba(88,220,254,1) 100%);
-    background: linear-gradient(180deg, rgba(54,21,97,1) 0%, rgba(48,30,116,1) 73%, rgba(62,98,166,1) 89%, rgba(88,220,254,1) 100%);
+    background: linear-gradient(180deg, rgba(54,21,97,1) 0%, rgba(48,30,116,1) 73%, rgba(62,98,166,1) 89%, rgba(88,220,254,1) 100%);     
 }
 
-.logo_M {
+.background::before {
+    content: '';
     position: absolute;
-    z-index: 1;
-    top: 20vh;
-    height: 70vh;
-    width: 86vw;
+    z-index: 10;
+    left: 10px;
+    top: 5px;
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(210deg, #025db3 10%, #9e049e 80%);
+    border-radius: 50%;
+    filter: blur(100px);
+}
+
+.background::after {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    right: 0px;
+    bottom: 10px;
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(144deg, #960496 30%, #0391a3 80%);
+    border-radius: 50%;
+    filter: blur(60px);
 }
 
 .children_Auth {
     position: relative;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .imageLogo_block {
+    position: relative;
+    z-index: 1000;
     grid-area: logo;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 5vh;
+    margin-left: 6vh;
 }
 
 .imageLogo {
-    height: 100%;
+    position: relative;
+    z-index: 1000;
+    height: 70%;
 }
 
 .context_block {
+    position: relative;
+    z-index: 1000;
     grid-area: context; 
     display: flex;
     flex-direction: column;    
@@ -58,7 +83,7 @@
     height: 100%;
     text-align: center;
     font-size: 2.5vh;  
-    color: #F7BF2C;
+    color: #fffffe;
 }
 
 .locationFormClasses {
@@ -69,27 +94,42 @@
 }
 
 .locationButtonClasses {
+    position: relative;
+    z-index: 1000;
     grid-area: button;
     display: flex;  
     align-items: center;
     justify-content: center;
 }
 
-@media (max-height: 567px) {
+@media (max-height: 568px) {
+
     .background {
-        height: 567px;
+        height: 568px;
         grid-template-rows: 40% 25% 15% 10% auto;        
     }
 
-    .logo_M {
-        height: 420px;
-        top: 120px;
+    .background::before {
+        left: 1px;
+        top: 4px;
+        width: 100px;
+        height: 100px;
+        filter: blur(40px);
     }
+    
+    .background::after {
+        right: 0px;
+        bottom: 5px;
+        width: 150px;
+        height: 130px;
+        filter: blur(35px);
+    }     
 
     .imageLogo_block {
         margin: 25px;
-    }    
-     
+        margin-left: 40px;
+    }  
+    
     .context_block {
         margin: 0px 20px 20px 20px;  
     }
@@ -99,18 +139,9 @@
     } 
 }
 
-@media (min-width: 400px) {
-    .logo_M {
-        left: calc(50vw - 233px);
-        width: 400px;
-    }
-}
 
-@media (max-width: 319px) {
-    .logo_M {
-        width: 275px;
-    }
-}
+
+
 
 
 

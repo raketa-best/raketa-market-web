@@ -1,0 +1,38 @@
+.storiesBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    background: #2d2736;
+}
+
+.storiesBox::before {
+    content: '';
+    position: fixed;
+    right: 5px;
+    top: 60vh;
+    width: 200px;
+    height: 150px;
+    background: linear-gradient(210deg, #034eda 10%, #b403b4 80%);
+    border-radius: 50%;
+    filter: blur(105px);
+}
+
+.storiesBox_iconExit {
+    position: fixed;
+    z-index: 10000000;
+    top: 0px;
+    right: 0px;
+    padding: 20px 10px 20px 0px;
+}
+
+.tinkoffTokenStories_block {
+    padding: 40px;
+}
+
+.tinkoffTokenStories_text {
+    font-size: 16px;
+}

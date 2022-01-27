@@ -1,4 +1,4 @@
-import logo from '../../images/logo_.png'
+import logo from '../../images/icon_raketa.png'
 import logo_M from '../../images/logo_M.png'
 import classes from './Auth.module.css'
 
@@ -18,11 +18,8 @@ const Auth: React.FC = (props) => {
         </div>
         <div className={classes.children_Auth}>
             {props.children}
-        </div>
-        <img alt='logo M' src={logo_M} className={classes.logo_M} />
-        
+        </div>        
     </div>
-    
 }
 
 export default Auth

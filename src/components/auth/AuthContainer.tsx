@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { InputPhoneNumberContainer } from "./inputPhoneNamber/InputPhoneNumberContainer"
 import Auth from "./Auth"
 import classes from './Auth.module.css'
-import { ButtonPink } from "../commons/button/Button"
+import { ButtonAqua, ButtonPink } from "../commons/button/Button"
 
 
 const AuthContainer: React.FC = () => {
@@ -34,9 +34,9 @@ const AuthContainer: React.FC = () => {
                 <InputPhoneNumberContainer isDisableButtonOnClick={isDisableButtonOnClick} handleSubmitPhone={handleSubmitPhone} />
             </div>
             <div className={classes.locationButtonClasses}>
-                <ButtonPink value={labelButton}
-                    to={'/confirmCode'} 
-                    isActiveLinkButton={isActiveLinkButton} />
+                <ButtonPink to={'/confirmCode'} isActiveLinkButton={isActiveLinkButton} >
+                    {labelButton}
+                </ButtonPink>
             </div>
         </Auth>
     </>

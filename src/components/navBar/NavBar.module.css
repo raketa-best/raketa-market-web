@@ -4,13 +4,15 @@
     display: flex;
     z-index: 1000;
     flex-direction: row;
-    justify-content: space-between;
-    width: calc(100vw - 80px);
+    justify-content: space-around;
+    width: 100vw;
+    min-width: 310px;
     height: 30px;
-    padding: 10px 40px 5px 40px;
+    padding: 10px 0px 7px 0px;
     font-size: 16px;  
-    background: #301E74;
-    box-shadow: 0 0 8px 4px #23154e;  
+    background: #2d2736;
+    border-top: 1px solid #9a4df3;
+    box-shadow: 0 0 10px 4px #2d2736; 
 }
 
 .link_block {
@@ -45,5 +47,12 @@
     width: 17px;
     height: 19px;    
     fill: #9a4df3;
+}
+
+@media (max-width: 339px) {
+
+    .navBar_block  {       
+        box-shadow: 0 0 7px 2px #23154e;
+    }
 }
 

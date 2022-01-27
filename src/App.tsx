@@ -5,22 +5,27 @@ import { ConfirmCode } from './components/confirmCode/ConfirmCode'
 import Home from './components/home/Home'
 import Layout from './components/Layout'
 import News from './components/news/News'
-import Chat from './components/commons/chat/Chat'
 import Profile from './components/profile/Profile'
+import StoriesProvider from './storiesLayout/StoriesProvider'
+import Portfolio from './components/commons/portfolio/Portfolio'
+
 
 
 const App: React.FC = () => {
-  return <BrowserRouter>
-      <Routes>
-        <Route path='/' element={ <AuthContainer/> }/> 
-        <Route path='/auth' element={ <AuthContainer/> }/>  
-        <Route  path='/confirmCode' element={ <ConfirmCode/> }/>
-        <Route  path='/home' element={ <Layout component={ <Home/> }/> }/>        
-        <Route  path='/news' element={ <Layout component={ <News/> }/> }/>
-        <Route  path='/chat' element={ <Layout component={ <Chat/> }/> }/>
-        <Route  path='/profile' element={ <Layout component={ <Profile/> }/> }/>        
-      </Routes>
-  </BrowserRouter>  
+  return <StoriesProvider>
+  <BrowserRouter>
+        <Routes>
+          <Route path='/' element={ <AuthContainer/> }/> 
+          <Route path='/auth' element={ <AuthContainer/> }/>  
+          <Route  path='/confirmCode' element={ <ConfirmCode/> }/>
+          <Route  path='/home' element={ <Layout component={ <Home/> }/> }/>        
+          <Route  path='/news' element={ <Layout component={ <News/> }/> }/>
+          <Route  path='/portfolio' element={ <Layout component={ <Portfolio/> }/> }/>
+          <Route  path='/profile' element={ <Layout component={ <Profile/> }/> }/>        
+        </Routes>
+    </BrowserRouter>  
+  </StoriesProvider>
+  
 }
 
 export default App

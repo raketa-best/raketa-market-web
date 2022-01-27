@@ -38,9 +38,9 @@ export const ConfirmCode: React.FC = () => {
                     handleSubmitConfirmCode={handleSubmitConfirmCode} />
             </div>
             <div>
-                <ButtonAqua value={labelButton} 
-                   to={'/profile'} 
-                   isActiveLinkButton={isActiveLinkButton} />
+                <ButtonAqua to={'/profile'} isActiveLinkButton={isActiveLinkButton} >
+                    {labelButton} 
+                </ButtonAqua>
             </div>
         </div>
     </>

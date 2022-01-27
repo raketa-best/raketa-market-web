@@ -11,7 +11,7 @@ const ProgressPercent: React.FC<IProgressPercentProps> = (props: IProgressPercen
 
     return <div className={classes.progress_container}>
         <div className={classes.expProgressPercent}>
-            {`${props.progressPercent}%`}
+            {`${props.progressPercent} %`}
         </div> 
         <div className={classes.expProgressPercent_container}>
             <div style={ {width: `${props.progressPercent}%`} } className={classes.expProgressPercent_progress}>                

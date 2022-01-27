@@ -1,4 +1,6 @@
 .warning {
+    position: relative;
+    z-index: 100;
     width: 70vw;
     margin: 3vh 0px 3px 0px;
     height: 4vh;
@@ -8,6 +10,8 @@
 }
 
 .inputsConfirmCode_block {
+    position: relative;
+    z-index: 100;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -28,13 +32,13 @@
     padding: 0px;
     border-radius: 6px;
     background: #311e7400;
-    border: 1px solid #F7BF2C;
-    color: #F7BF2C;
+    border: 1px solid aqua;
+    color: aqua;
     font-size: 2.5vh;
     text-align: center;
 }
 
-@media (max-height: 567px) {
+@media (max-height: 568px) {
     .warning {
         width: 256px;
         margin: 20px 0px 20px 0px;

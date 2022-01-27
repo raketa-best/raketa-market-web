@@ -1,21 +1,63 @@
 .stockLict_block {
     position: absolute;
-    top: 334px;
-    width: 100%;
+    top: 300px;
+    width: 100%;    
+    min-width: 310px;
     height: calc(100% + 240px);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background: -moz-radial-gradient(circle, rgba(73,19,107,1) 0%, rgba(48,30,116,1) 93%);
-    background: -webkit-radial-gradient(circle, #49136b 0%, rgba(48,30,116,1) 93%);
-    background: radial-gradient(circle, rgba(73,19,107,1) 0%, rgba(48,30,116,1) 93%);
+    align-items: center; 
+    background: #2d2736; 
     padding-top: 11px;
     padding-bottom: 240px;
 }
 
-@media (max-width: 339px) {
+.stockLict_block::before {
+    content: '';
+    position: fixed;
+    left: 10px;
+    top: 5px;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(210deg, #086dcc 10%, #ad0fad 80%);
+    border-radius: 50%;
+    filter: blur(115px);
+}
+
+.stockLict_block::after {
+    content: '';
+    position: fixed;
+    right: 0px;
+    bottom: 10px;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(144deg, #ad0fad 30%, #08b5cc 80%);
+    border-radius: 50%;
+    filter: blur(110px);
+}
+
+@media (max-width: 358px) {
     .stockLict_block {
-        top: 222px;
+        top: 216px;
+    }
+}
+
+@media (min-width: 511px) { 
+
+    .stockLict_block::before {
+        left: 10px;
+        top: 150px;
+        width: 250px;
+        height: 250px;
+        filter: blur(210px);
+    }
+    
+    .stockLict_block::after {
+        right: 10px;
+        bottom: 10px;
+        width: 230px;
+        height: 230px;
+        filter: blur(200px);
     }
 }
 

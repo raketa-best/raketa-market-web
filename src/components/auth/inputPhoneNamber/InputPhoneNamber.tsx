@@ -10,7 +10,7 @@ export interface IInputPhoneNumberProps {
 
 export const InputPhoneNumber: React.FC<IInputPhoneNumberProps> = (props: IInputPhoneNumberProps) => {
     return <>
-      <input type='tel' value={props.value} placeholder='+7(...)...-..-..' 
+      <input type='tel' value={props.value} placeholder='+7 (...) ...-..-..' 
         onFocus={props.onFocus} onChange={props.onChange} onBlur={props.onBlur} 
         className={props.className} autoComplete='phonenumber'/>    
   </>

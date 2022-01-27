@@ -21,9 +21,10 @@ const UserHeader: React.FC<IUserHeaderProps> = (props: IUserHeaderProps) => {
             <ProgressPercent progressPercent={props.expProgressPercent} label={`LEVEL ${props.level}`}/>          
             <div className={classes.amountRub_block}>
                 <div className={classes.text_portfolio}>Портфель</div>
-                <div className={classes.amountRub}>
-                    {`${props.amountRub.toLocaleString()} ₽`}
-                </div>                
+                <div className={classes.amountRub}>                    
+                    {`${props.amountRub.toLocaleString()}`}
+                </div> 
+                <div className={classes.text_amountRub}>₽</div>               
             </div>
         </div>        
         <div className={classes.nick}>{props.nick}</div>

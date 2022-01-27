@@ -34,9 +34,9 @@ const AuthContainer: React.FC = () => {
                 <InputPhoneNumberContainer isDisableButtonOnClick={isDisableButtonOnClick} handleSubmitPhone={handleSubmitPhone} />
             </div>
             <div className={classes.locationButtonClasses}>
-                <ButtonPink value={labelButton}
-                    to={'/confirmCode'} 
-                    isActiveLinkButton={isActiveLinkButton} />
+                <ButtonPink to={'/confirmCode'} isActiveLinkButton={isActiveLinkButton} >
+                    {labelButton}
+                </ButtonPink>
             </div>
         </Auth>
     </>

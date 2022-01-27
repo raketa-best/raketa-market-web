@@ -32,7 +32,7 @@ const NavBar: React.FC = () => {
     return <div className={classes.navBar_block}>
         <NavBarElement to={'/home'} label={'Домой'}/>
         <NavBarElement to={'/news'} label={'Новости'}/>
-        <NavBarElement to={'/chat'} label={'Чат'}/>
+        <NavBarElement to={'/portfolio'} label={'Портфель'}/>
         <NavBarElement to={'/profile'} icon={ProfileIcon} />
     </div>
 }

@@ -3,6 +3,7 @@ import { IStockProps } from "./Stock"
 import StockList from "./StockList"
 import UserHeader, { IUserHeaderProps } from "./UserHeader"
 import classes from './Profile.module.css'
+import ConnectTinkoffTokenAlert from "../connectTinkoffTokenAlert/ConnectTinkoffTokenAlert"
 
 const Profile:React.FC = () => {
 
@@ -68,19 +69,23 @@ const Profile:React.FC = () => {
     ]    
 
     const [userHeader, setUserHeader] = useState<IUserHeaderProps>(fakeStateUserHeader)
-
+    const [tinkoffToken, setTinkoffToken] = useState<string>('')
     const [stockList, setStockList] = useState<IStockProps[]>(fakeStateStocks)
 
     useEffect(() =>{
         setUserHeader(fakeStateUserHeader)
         setStockList(fakeStateStocks)
+        setTinkoffToken('')
     }, [])
 
-    
+      
     return <div className={classes.profile_block}>
         <UserHeader {...userHeader} />
-        <StockList stockList={stockList} />
-    </div>
+        { tinkoffToken === ''
+            ? <ConnectTinkoffTokenAlert />
+            : <StockList stockList={stockList} />
+        }        
+    </div> 
 }
 
 export default Profile

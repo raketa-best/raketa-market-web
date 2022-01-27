@@ -1,5 +1,5 @@
 import classes from './StoriesLayout.module.css'
-import iconExit from '../images/icon_exit.svg'
+import {ReactComponent as IconExit} from '../images/icon_exit.svg'
 import { useContext } from 'react'
 import { StoriesContext } from './StoriesProvider'
 
@@ -10,7 +10,7 @@ const StoriesLayout = ({children}: any) => {
     const storiesExit = useContext(StoriesContext)
     
     return <div className={classes.storiesBox}>
-        <img onClick={() => storiesExit(null)} className={classes.storiesBox_iconExit} src={iconExit} />
+        <IconExit onClick={() => storiesExit(null)} className={classes.storiesBox_iconExit} />
         {children}
     </div>
 }

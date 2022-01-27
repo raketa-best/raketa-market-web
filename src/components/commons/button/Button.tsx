@@ -14,26 +14,24 @@ interface IButtonProps {
 
 const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
 
+    const button = <button onClick={props.onClick} 
+                        className={props.className} 
+                        type={props.type || 'button'} 
+                        disabled={props.disabled}
+                        style={props.style}
+                    > 
+                        { props.children }  
+                                             
+                    </button>
+
     return <> 
         { props.isActiveLinkButton
+
             ? <Link to={props.to} className={classes.activeLink} >
-                <button onClick={props.onClick} 
-                    className={props.className} 
-                    type={props.type || 'button'} 
-                    disabled={props.disabled}
-                    style={props.style}
-                > 
-                    { props.children }                       
-                </button>
-            </Link>
-            : <button onClick={props.onClick} 
-                className={props.className} 
-                type={props.type || 'button'} 
-                disabled={props.disabled}
-                style={props.style}
-            >  
-                { props.children }   
-            </button>
+                { button } 
+              </Link>
+
+            : button 
         }
     </>
 }
@@ -42,28 +40,20 @@ export default Button
 
 
 export const ButtonAqua = (props: IButtonProps) => {
-    return <Button 
-        onClick={props.onClick} 
-        type={props.type} 
-        to={props.to}
-        disabled={props.disabled} 
-        className={props.className || classes.buttonAqua} 
-        isActiveLinkButton={props.isActiveLinkButton}
-        style={props.style}
-        children={props.children}
+    return <Button  {...props}
+        className={`${classes.button} ${classes.buttonAqua} ${props.className}`} 
     />
 }
 
 export const ButtonPink = (props: IButtonProps) => {
-    return <Button 
-        onClick={props.onClick} 
-        type={props.type} 
-        to={props.to} 
-        disabled={props.disabled}
-        className={props.className || classes.buttonPink} 
-        isActiveLinkButton={props.isActiveLinkButton}
-        style={props.style}
-        children={props.children}
+    return <Button {...props}        
+        className={`${classes.button} ${classes.buttonPink} ${props.className}`}
+    />
+}
+
+export const ButtonPinkLarge = (props: IButtonProps) => {
+    return <Button {...props}        
+        className={`${classes.button} ${classes.buttonPink} ${classes.buttonPinkLarge} ${props.className}`}
     />
 }
 

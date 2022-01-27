@@ -16,22 +16,22 @@ export const formatProfitNumber = (profitNumber: number): string => {
     }    
 }
 
-export const colorProfitNumber = (profitNumber: number): string => {
+export const profitNumberClassName = (profitNumber: number): string => {
     if (profitNumber > 0) {
-        return `#04f398`
+        return classes.positive
     } else if (profitNumber < 0) {
-        return `#ff2020`
+        return classes.negative
     } else {
-        return `#ffffff`
+        return classes.zero
     }    
 }
 
 const FormatProfitNumber: React.FC<IFormatProfitNumberProps> = (props: IFormatProfitNumberProps) => {
     return <div className={classes.profitNumber_block}>
-            <div className={classes.profitNumber} style={ {color: `${colorProfitNumber(props.profitNumber)}`} }>
+            <div className={`${classes.profitNumber} ${profitNumberClassName(props.profitNumber)}` }>
                 { `${formatProfitNumber(props.profitNumber)}` }
             </div>
-            <div className={classes.label} style={ {color: `${colorProfitNumber(props.profitNumber)}`} }>
+            <div className={`${classes.label} ${profitNumberClassName(props.profitNumber)}` }>
                 { props.label }
             </div>
         </div> 

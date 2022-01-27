@@ -9,12 +9,10 @@
     white-space: nowrap;       
     margin-right: 5px;
     font-size: 14px;
-    font-weight: 700;
 }
 
 .label {
     font-size: 14px;
-    font-weight: 700;
 }
 
 .profitNumber::-webkit-scrollbar {
@@ -26,6 +24,20 @@
     .profitNumber {
         font-size: 13px;
     }
+}
+
+.positive {
+    color: #04f398;
+}
+    
+.negative {
+    color: #ff1616;
+    font-weight: 700;
+
+}
+    
+.zero {
+    color: #ffffff;
 }
 
 

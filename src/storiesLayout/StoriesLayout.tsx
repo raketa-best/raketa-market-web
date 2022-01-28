@@ -18,6 +18,7 @@ const StoriesLayout = ({children}: any) => {
 export default StoriesLayout
 
 
+// test children:
 
 export const TinkoffTokenStories = () => {
     return <div className={classes.tinkoffTokenStories_block}>

@@ -1,0 +1,105 @@
+.tinkoffTokenStories_Presentation_block {
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 400px;
+    height: 100vh;
+    min-height: 740px;
+}
+
+.tinkoffTokenStories_Presentation_text {
+    font-size: 16px;
+    text-align: center;
+}
+
+.tinkoffInvest_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 130px;
+    padding: 10px;
+    margin: 20px 10px 10px 10px;
+    box-shadow: 0 0 8px 3px #15131b;
+    border-radius: 5px;
+}
+
+.icon_TinkoffInvest {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px; 
+    box-shadow: 0 0 8px 3px #15131b; 
+    border-radius: 20px;  
+}
+
+.icon_key {
+    width: 22px;
+    height: 22px;
+    margin-left: 5px;    
+}
+
+.ai_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 3px #15131b;
+    border-radius: 5px;
+}
+
+.icon_ai {
+    width: 65vw; 
+    max-width: 260px;     
+    height: 120px;
+    border-radius: 5px; 
+    margin-bottom: 10px;
+    box-shadow: 0 0 8px 3px #15131b; 
+}
+
+.lock_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 8px 3px #15131b;
+    border-radius: 5px;
+}
+
+.icon_lock {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px; 
+    border-radius: 5px;
+    box-shadow: 0 0 8px 3px #15131b;    
+}
+
+.button_block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around; 
+}
+
+.icon_button {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px; 
+}
+
+
+

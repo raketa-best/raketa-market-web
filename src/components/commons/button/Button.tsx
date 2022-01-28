@@ -57,3 +57,8 @@ export const ButtonPinkLarge = (props: IButtonProps) => {
     />
 }
 
+export const ButtonGryMedium = (props: IButtonProps) => {
+    return <Button {...props}        
+        className={`${classes.button} ${classes.buttonGryMedium} ${props.className}`}
+    />
+}

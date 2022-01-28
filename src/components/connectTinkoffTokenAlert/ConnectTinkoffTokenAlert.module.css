@@ -56,7 +56,7 @@
 
     .tokenAlert_block {
         top: 220px;
-        height: 300px;
+        height: calc(100% - 220px - 48px);
     }
 
     .tokenAlert_block::before {
@@ -80,13 +80,13 @@
 @media (max-height: 648px) {
 
     .tokenAlert_block {
-        height: 400px;
+        height: 290px;
         padding-bottom: 48px;
     }  
     
     .tokenAlert {
-        width: 300px;
-        height: 260px;
+        width: 260px;
+        height: 200px;
         padding: 15px;
         padding-top: 10px;    
         box-shadow: 0 0 6px 1px rgb(247, 42, 213);

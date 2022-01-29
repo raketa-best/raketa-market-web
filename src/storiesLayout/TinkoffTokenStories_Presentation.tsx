@@ -11,7 +11,12 @@ import { TinkoffTokenStories } from './StoriesLayout'
 
 export const TinkoffTokenStories_Presentation = () => {
 
-    const tinkoffTokenStories = useContext(StoriesContext)
+    const {setShowStories, setArrayStories, arrayStories} = useContext(StoriesContext)
+
+    const onClickButton = () => {
+        setArrayStories([...arrayStories, <TinkoffTokenStories />])
+        setShowStories(<TinkoffTokenStories />)
+    }
 
     return <div className={classes.tinkoffTokenStories_Presentation_block}>
         <div className={classes.tinkoffInvest_block}>
@@ -21,18 +26,18 @@ export const TinkoffTokenStories_Presentation = () => {
             </div>
         </div>
         <div className={classes.ai_block}>
-            <img src={iconAI} className={classes.icon_ai} />
+            <img src={iconAI} className={classes.icon_ai} alt={''} />
             <div className={classes.tinkoffTokenStories_Presentation_text}>
                 Токен позволяет<br />искусственному интеллекту<br />сканировать ваши сделки 💡
             </div>
         </div>
         <div className={classes.lock_block}>
-            <img src={iconLock} className={classes.icon_lock} />
+            <img src={iconLock} className={classes.icon_lock} alt={''} />
             <div className={classes.tinkoffTokenStories_Presentation_text}>
                 Безопасно!<br /><br />Есть два вида токена:<br />'для чтения' и 'полный доступ'<br />Вам нужен токен:<br />только 'для чтения' ✅
             </div>
         </div>
-        <ButtonGryMedium to={''} onClick={() => tinkoffTokenStories(<TinkoffTokenStories />)} >
+        <ButtonGryMedium to={''} onClick={onClickButton} >
             <div className={classes.button_block}>
                 <IconTinkoffInvest className={classes.icon_button} />            
                 <div>Получить токен<br />Тинькофф.Инвестиции</div>

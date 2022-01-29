@@ -6,18 +6,20 @@ interface IStoriesProviderProps {
     children: any
 }
 
-export const StoriesContext: React.Context<any>  = createContext(null)
 
+export const StoriesContext: React.Context<any>  = createContext(null)
 
 
 const StoriesProvider: React.FC<IStoriesProviderProps> = (props: IStoriesProviderProps) => {
 
+    const [ arrayStories, setArrayStories] = useState([])
     const [showStories, setShowStories] = useState(null)
 
-    return <StoriesContext.Provider value={setShowStories}>
+          
+    return <StoriesContext.Provider value={ {setShowStories, setArrayStories, arrayStories} }>
         { showStories === null
             ? props.children
-            : <StoriesLayout>{showStories}</StoriesLayout>
+            : <StoriesLayout>{ {showStories} }</StoriesLayout>
         }
     </StoriesContext.Provider>
 }

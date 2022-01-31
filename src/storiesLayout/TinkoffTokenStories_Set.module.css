@@ -1,0 +1,127 @@
+.tinkoffTokenStories_Set_block {
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 400px;
+    height: 100vh;
+    min-height: 740px;
+}
+
+.text {
+    font-size: 16px;
+    text-align: center;
+}
+
+.help_block_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    margin: 20px 10px 10px 10px;
+    box-shadow: 0 0 8px 3px #15131b;
+    border-radius: 5px;
+}
+
+.link {
+    font-size: 16px;
+    text-align: center;
+    color: aqua;
+    margin-top: 10px;
+}
+
+.help_block_2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 3px #15131b;
+    border-radius: 5px;
+}
+
+.help_block_3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 325px;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 8px 3px #15131b;
+    border-radius: 5px;
+}
+
+.gif {
+    width: 63vw; 
+    max-width: 225px;
+    max-height: 251px;
+    border-radius: 5px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 8px 3px #15131b; 
+}
+
+.input_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 8px 3px #15131b;
+    border-radius: 5px;
+}
+
+.inputToken_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lable_inputToken {    
+    font-size: 16px; 
+    color: white;    
+}
+
+.inputToken {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 38px;
+    max-width: 340px;
+    min-width: 225px;      
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;        
+    font-size: 16px;  
+    padding: 0px;
+    background: #311e7400;
+    border: 0.5px solid white;
+    color: white;
+    text-align: center;
+}
+
+.button_block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around; 
+}
+

@@ -43,6 +43,14 @@
     width: 20px;
     height: 20px;
     margin: 30px;
+    fill: white;
+    stroke: white;
+    cursor: pointer;
+}
+
+.iconExit:hover {
+    fill: aqua;
+    stroke: aqua;
 }
 
 .iconBack {
@@ -53,7 +61,14 @@
     width: 20px;
     height: 20px;
     margin: 30px;
+    fill: white;
+    stroke: white;
+    cursor: pointer;
 }
 
-
+v
+.iconBack:hover {
+    fill: aqua;
+    stroke: aqua;
+}
 

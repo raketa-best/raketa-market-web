@@ -6,7 +6,7 @@ import iconAI from '../images/icon_ai.png'
 import { ButtonGryMedium } from '../components/commons/button/Button'
 import { useContext } from 'react'
 import { StoriesContext } from './StoriesProvider'
-import { TinkoffTokenStories } from './StoriesLayout'
+import TinkoffTokenStories_Set from './TinkoffTokenStories_Set'
 
 
 export const TinkoffTokenStories_Presentation = () => {
@@ -14,8 +14,8 @@ export const TinkoffTokenStories_Presentation = () => {
     const {setShowStories, setArrayStories, arrayStories} = useContext(StoriesContext)
 
     const onClickButton = () => {
-        setArrayStories([...arrayStories, <TinkoffTokenStories />])
-        setShowStories(<TinkoffTokenStories />)
+        setArrayStories([...arrayStories, <TinkoffTokenStories_Set />])
+        setShowStories(<TinkoffTokenStories_Set />)
     }
 
     return <div className={classes.tinkoffTokenStories_Presentation_block}>

@@ -7,8 +7,9 @@ import { StoriesContext } from './StoriesProvider'
 
 const StoriesLayout = ({children}: any) => {
 
-    const {setShowStories, setArrayStories, arrayStories} = useContext(StoriesContext)
+    window.scrollTo( 0, 0 )
 
+    const {setShowStories, setArrayStories, arrayStories} = useContext(StoriesContext)
         
     const onClickExit = () => {
         setShowStories(null)
@@ -31,13 +32,3 @@ const StoriesLayout = ({children}: any) => {
 }
 
 export default StoriesLayout
-
-
-// test children:
-
-export const TinkoffTokenStories = () => {
-    return <div className={classes.tinkoffTokenStories_block}>
-        <div className={classes.tinkoffTokenStories_text}>Я ВОТ ТАКОЙ КРУТОЙ,<br />ТЕСТОВЫЙ СТОРИС 😎</div>
-    </div>
-}
-

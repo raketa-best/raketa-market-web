@@ -2,8 +2,9 @@ import classes from './TinkoffTokenStories_Set.module.css'
 import { ButtonGryMedium } from '../components/commons/button/Button'
 import { useContext, useState } from 'react'
 import { StoriesContext } from './StoriesProvider'
-import { TinkoffTokenStories } from './StoriesLayout'
 import guideGetApiToken from '../images/guide_get_api_token.gif'
+import { TinkoffTokenStories_Success } from './TinkoffTokenStories_Success'
+import { TinkoffTokenStories_Fail } from './TinkoffTokenStories_Fail'
 
 
 const TinkoffTokenStories_Set: React.FC = () => {
@@ -20,21 +21,28 @@ const TinkoffTokenStories_Set: React.FC = () => {
     }
     
     const onFocusInputTokenSet = () => {
-        setWarning('Вставьте, скопированный токен')
+        setWarning('')
     } 
 
     const onClickButton = () => {        
-        if (token!==undefined && token.length > 0 && token.length < 255) {
-            setArrayStories([...arrayStories, <TinkoffTokenStories />])
-            setShowStories(<TinkoffTokenStories />)
+        if (token!==undefined && token.length > 0 && token.length < 255) {            
             handleSubmitTokenSet(token)
+            setWarning('')
           } else {
-            setWarning('! ОШИБКА. Вставьте токен')
+            setWarning('⚠️ ОШИБКА. Вставьте токен')
           }  
     } 
     
     const handleSubmitTokenSet  = (token?: string) => {
-        console.log('handleSubmitTokenSet', token)
+        if (token === 't.qkIEioFlpXq7UO9gI3PRe2ndweKjmywarQgcnEIOPuuxRFehyjNoyQ_6Wot4zatu6kAw0EX9Y8WZfToCZ0qGsA') {
+            setArrayStories([...arrayStories, <TinkoffTokenStories_Success />])
+            setShowStories(<TinkoffTokenStories_Success />)
+            console.log('handleSubmitTokenSet', token)
+        } else {
+            setArrayStories([...arrayStories, <TinkoffTokenStories_Fail />])
+            setShowStories(<TinkoffTokenStories_Fail />)
+            console.log('handleSubmitTokenSet', token)
+        }
     } 
 
     return <div className={classes.tinkoffTokenStories_Set_block}>
@@ -59,14 +67,13 @@ const TinkoffTokenStories_Set: React.FC = () => {
         </div>
         <div className={classes.input_block}>
             <div className={classes.inputToken_block}>
-                <label className={classes.lable_inputToken}> 
-                    {warning==='' ? 'Вставьте, скопированный токен' : warning} 
+                <label className={ warning==='' ? classes.lable_inputToken : classes.lable_inputToken_warning }> 
+                    { warning==='' ? 'Вставьте, скопированный токен' : warning } 
                 </label>
-                <input type='text' value={token} placeholder='Вставьте токен'
-                    onChange={onChangeInputTokenSet} 
-                    autoFocus={true} 
-                    onFocus={onFocusInputTokenSet}
-                    className={classes.inputToken} />
+                <textarea value={token} placeholder='Вставить токен'
+                    onChange={onChangeInputTokenSet} autoFocus={false} 
+                    onFocus={onFocusInputTokenSet} className={classes.inputToken} 
+                />
             </div>
         </div>        
         <ButtonGryMedium to={''} onClick={onClickButton} >

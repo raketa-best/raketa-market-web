@@ -44,7 +44,7 @@ export const InputPhoneNumberContainer: React.FC<IInputPhoneNumberContainerProps
   }
 
   const onFocusInput = () => {
-    setWarning('* Введите номер телефона +7 (...) ...-..-..')
+    setWarning('* Введите номер телефона')
     setTouch(true)
   }
   

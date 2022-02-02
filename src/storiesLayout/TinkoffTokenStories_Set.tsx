@@ -9,12 +9,10 @@ import { TinkoffTokenStories_Fail } from './TinkoffTokenStories_Fail'
 
 const TinkoffTokenStories_Set: React.FC = () => {
 
-    const {setShowStories, setArrayStories, arrayStories} = useContext(StoriesContext)
+    const {setShowStories} = useContext(StoriesContext)
 
     const [token, setToken] = useState<string | undefined>('') 
     const [warning, setWarning] = useState<string>('')
-    
-    console.log('token', token)
     
     const onChangeInputTokenSet = (event?: any) => {
         setToken(event.target.value)
@@ -35,13 +33,9 @@ const TinkoffTokenStories_Set: React.FC = () => {
     
     const handleSubmitTokenSet  = (token?: string) => {
         if (token === 't.qkIEioFlpXq7UO9gI3PRe2ndweKjmywarQgcnEIOPuuxRFehyjNoyQ_6Wot4zatu6kAw0EX9Y8WZfToCZ0qGsA') {
-            setArrayStories([...arrayStories, <TinkoffTokenStories_Success />])
             setShowStories(<TinkoffTokenStories_Success />)
-            console.log('handleSubmitTokenSet', token)
         } else {
-            setArrayStories([...arrayStories, <TinkoffTokenStories_Fail />])
             setShowStories(<TinkoffTokenStories_Fail />)
-            console.log('handleSubmitTokenSet', token)
         }
     } 
 

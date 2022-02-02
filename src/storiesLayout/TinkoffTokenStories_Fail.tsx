@@ -7,10 +7,9 @@ import TinkoffTokenStories_Set from './TinkoffTokenStories_Set'
 
 export const TinkoffTokenStories_Fail = () => {
 
-    const {setShowStories, setArrayStories, arrayStories} = useContext(StoriesContext)
+    const {setShowStories} = useContext(StoriesContext)
 
-    const onClickButton = () => {
-        setArrayStories([...arrayStories, <TinkoffTokenStories_Set />])
+    const onClickButton = () => {        
         setShowStories(<TinkoffTokenStories_Set />)
     }
 

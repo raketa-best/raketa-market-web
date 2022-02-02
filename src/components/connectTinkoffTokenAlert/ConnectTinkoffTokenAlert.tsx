@@ -8,11 +8,10 @@ import { TinkoffTokenStories_Presentation } from '../../storiesLayout/TinkoffTok
 
 const ConnectTinkoffTokenAlert: React.FC = () => {
 
-    const {setShowStories, setArrayStories, arrayStories} = useContext(StoriesContext)
+    const {setShowStories} = useContext(StoriesContext)
 
     const onClickButton = () => {
-        setShowStories(<TinkoffTokenStories_Presentation />) 
-        setArrayStories([...arrayStories, <TinkoffTokenStories_Presentation />])      
+        setShowStories(<TinkoffTokenStories_Presentation />)     
     }
 
     return <div className={classes.tokenAlert_block}>

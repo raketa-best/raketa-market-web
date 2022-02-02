@@ -26,7 +26,7 @@ const StoriesLayout = ({children}: any) => {
             <IconBack onClick={onClickBack} className={classes.iconBack} />
         }
         <IconExit onClick={onClickExit} className={classes.iconExit} />
-        {children.showStories}
+        {children}
     </div>
          
 }

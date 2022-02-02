@@ -1,5 +1,4 @@
 import logo from '../../images/icon_raketa.png'
-import logo_M from '../../images/logo_M.png'
 import classes from './Auth.module.css'
 
 

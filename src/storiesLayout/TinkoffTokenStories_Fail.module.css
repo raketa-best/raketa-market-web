@@ -39,3 +39,14 @@
     justify-content: center;
     text-align: center;    
 }
+
+@media (max-width: 376px) {
+
+    .tinkoffTokenStories_Fail_text_1 {
+        font-size: 20px;
+    }
+    
+    .tinkoffTokenStories_Fail_text_2 {
+        font-size: 16px;
+    }
+}

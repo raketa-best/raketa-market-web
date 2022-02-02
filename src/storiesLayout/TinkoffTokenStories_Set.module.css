@@ -112,7 +112,7 @@
     width: 278px;
     height: 46px;
     max-width: 340px;
-    min-width: 225px;      
+    min-width: 230px;      
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 5px; 
@@ -133,3 +133,47 @@
     justify-content: space-around; 
 }
 
+
+@media (max-width: 376px) {
+
+    .text {
+        font-size: 14px;
+    }
+    
+    .help_block_1 {
+        width: 87%;
+    }
+
+    .link {
+        font-size: 12px;
+    }
+        
+    .help_block_2 {
+        width: 87%;
+    }
+    
+    .help_block_3 {
+        width: 87%;
+    }
+    
+    .gif {
+        width: 65vw;
+    }
+    
+    .input_block {
+        width: 87%;
+    }
+
+    .lable_inputToken {    
+        font-size: 14px;  
+    }
+    
+    .lable_inputToken_warning {
+        font-size: 14px; 
+    }
+
+    .inputToken {
+        width: 230px;
+        font-size: 12px;  
+    }
+}

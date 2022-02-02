@@ -101,5 +101,28 @@
     margin-right: 10px; 
 }
 
+@media (max-width: 376px) {
+
+    .tinkoffTokenStories_Presentation_text {
+        font-size: 14px;
+    }
+       
+    .tinkoffInvest_block {        
+        width: 87%;
+    }
+        
+    .ai_block {        
+        width: 87%;
+    }
+    
+    .icon_ai {
+        width: 60vw; 
+    }
+    
+    .lock_block {
+        width: 87%;
+    }    
+}
+
 
 

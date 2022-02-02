@@ -6,10 +6,9 @@ import { StoriesContext } from './StoriesProvider'
 
 export const TinkoffTokenStories_Success = () => {
 
-    const {setShowStories, setArrayStories} = useContext(StoriesContext)
+    const {setShowStories} = useContext(StoriesContext)
 
     const onClickButton = () => {
-        setArrayStories([])
         setShowStories(null)
     }
 

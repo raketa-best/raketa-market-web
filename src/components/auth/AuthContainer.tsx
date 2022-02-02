@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { InputPhoneNumberContainer } from "./inputPhoneNamber/InputPhoneNumberContainer"
 import Auth from "./Auth"
 import classes from './Auth.module.css'
-import { ButtonAqua, ButtonPink } from "../commons/button/Button"
+import { ButtonPink } from "../commons/button/Button"
 
 
 const AuthContainer: React.FC = () => {

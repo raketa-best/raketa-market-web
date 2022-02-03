@@ -11,10 +11,10 @@ import TinkoffTokenStories_Set from './TinkoffTokenStories_Set'
 
 export const TinkoffTokenStories_Presentation = () => {
 
-    const {setShowStories} = useContext(StoriesContext)
+    const {show} = useContext(StoriesContext)
 
     const onClickButton = () => {
-        setShowStories(<TinkoffTokenStories_Set />)
+        show(<TinkoffTokenStories_Set />)
     }
 
     return <div className={classes.tinkoffTokenStories_Presentation_block}>
@@ -36,7 +36,7 @@ export const TinkoffTokenStories_Presentation = () => {
                 Безопасно!<br /><br />Есть два вида токена:<br />'для чтения' и 'полный доступ'<br />Вам нужен токен:<br />только 'для чтения' ✅
             </div>
         </div>
-        <ButtonGryMedium to={''} onClick={onClickButton} >
+        <ButtonGryMedium onClick={onClickButton} >
             <div className={classes.button_block}>
                 <IconTinkoffInvest className={classes.icon_button} />            
                 <div>Получить токен<br />Тинькофф.Инвестиции</div>

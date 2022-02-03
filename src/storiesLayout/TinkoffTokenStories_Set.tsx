@@ -9,7 +9,7 @@ import { TinkoffTokenStories_Fail } from './TinkoffTokenStories_Fail'
 
 const TinkoffTokenStories_Set: React.FC = () => {
 
-    const {setShowStories} = useContext(StoriesContext)
+    const {show} = useContext(StoriesContext)
 
     const [token, setToken] = useState<string | undefined>('') 
     const [warning, setWarning] = useState<string>('')
@@ -33,9 +33,9 @@ const TinkoffTokenStories_Set: React.FC = () => {
     
     const handleSubmitTokenSet  = (token?: string) => {
         if (token === 't.qkIEioFlpXq7UO9gI3PRe2ndweKjmywarQgcnEIOPuuxRFehyjNoyQ_6Wot4zatu6kAw0EX9Y8WZfToCZ0qGsA') {
-            setShowStories(<TinkoffTokenStories_Success />)
+            show(<TinkoffTokenStories_Success />)
         } else {
-            setShowStories(<TinkoffTokenStories_Fail />)
+            show(<TinkoffTokenStories_Fail />)
         }
     } 
 
@@ -70,7 +70,7 @@ const TinkoffTokenStories_Set: React.FC = () => {
                 />
             </div>
         </div>        
-        <ButtonGryMedium to={''} onClick={onClickButton} >
+        <ButtonGryMedium onClick={onClickButton} >
             <div className={classes.button_block}>          
                 <div>Сохранить токен ✅</div>
             </div>

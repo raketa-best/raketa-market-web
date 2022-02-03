@@ -8,10 +8,10 @@ import { TinkoffTokenStories_Presentation } from '../../storiesLayout/TinkoffTok
 
 const ConnectTinkoffTokenAlert: React.FC = () => {
 
-    const {setShowStories} = useContext(StoriesContext)
+    const {show} = useContext(StoriesContext)
 
     const onClickButton = () => {
-        setShowStories(<TinkoffTokenStories_Presentation />)     
+        show(<TinkoffTokenStories_Presentation />)     
     }
 
     return <div className={classes.tokenAlert_block}>
@@ -19,7 +19,7 @@ const ConnectTinkoffTokenAlert: React.FC = () => {
             <div className={classes.message}>Сейчас здесь пусто!</div>
             <div className={classes.message}>Подключите Тинькофф.Инвестиции</div>
             <div className={classes.message}>Искусственный интеллект<br />составит уникальный анализ<br />вашего портфеля 😎</div>
-            <ButtonPinkLarge to={''} onClick={onClickButton}            >
+            <ButtonPinkLarge onClick={onClickButton}            >
                 <div>
                     <IconTinkoffInvest className={classes.icon} />
                     <div>Подключить<br />Тинькофф.Инвестиции</div>

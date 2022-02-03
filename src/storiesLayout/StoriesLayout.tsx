@@ -9,23 +9,13 @@ const StoriesLayout = ({children}: any) => {
 
     window.scrollTo( 0, 0 )
 
-    const {setShowStories, setArrayStories, arrayStories} = useContext(StoriesContext)
-        
-    const onClickExit = () => {
-        setShowStories(null)
-        setArrayStories([])
-    }
-
-    const onClickBack = () => {
-        setShowStories(arrayStories[arrayStories.length - 2])
-        setArrayStories(arrayStories.slice(0, -1))
-    }
-
+    const {exit, back, arrayStories} = useContext(StoriesContext)       
+    
     return <div className={classes.storiesBox}>
         { arrayStories.length > 1 &&
-            <IconBack onClick={onClickBack} className={classes.iconBack} />
+            <IconBack onClick={back} className={classes.iconBack} />
         }
-        <IconExit onClick={onClickExit} className={classes.iconExit} />
+        <IconExit onClick={exit} className={classes.iconExit} />
         {children}
     </div>
          

@@ -7,17 +7,17 @@ import TinkoffTokenStories_Set from './TinkoffTokenStories_Set'
 
 export const TinkoffTokenStories_Fail = () => {
 
-    const {setShowStories} = useContext(StoriesContext)
+    const {back} = useContext(StoriesContext)
 
-    const onClickButton = () => {        
-        setShowStories(<TinkoffTokenStories_Set />)
+    const onClickButton = () => { 
+        back()
     }
 
     return <div className={classes.tinkoffTokenStories_Fail_block}>
         <IconFail className={classes.icon_fail} />
         <div className={classes.tinkoffTokenStories_Fail_text_1}>Не удалось вставить<br />этот токен !</div>
         <div className={classes.tinkoffTokenStories_Fail_text_2}>Создайте токен еще раз</div>        
-        <ButtonGryMedium to={''} onClick={onClickButton} >
+        <ButtonGryMedium onClick={onClickButton} >
             <div className={classes.button_block}>          
                 <div>👌 Создать токен</div>
             </div>

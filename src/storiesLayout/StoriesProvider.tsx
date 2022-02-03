@@ -1,4 +1,4 @@
-import React, { createContext, useMemo, useState } from 'react'
+import React, { createContext, useState } from 'react'
 import StoriesLayout from './StoriesLayout'
 
 
@@ -9,21 +9,28 @@ interface IStoriesProviderProps {
 
 export const StoriesContext: React.Context<any>  = createContext(null)
 
+
 const StoriesProvider: React.FC<IStoriesProviderProps> = (props: IStoriesProviderProps) => {
 
-    const [arrayStories, setArrayStories] = useState([])
+    const [arrayStories, setArrayStories] = useState<any>([])
     const [showStories, setShowStories] = useState(null)
 
-    useMemo(() => {
-        if (showStories === null) {
-            setArrayStories([])
-        } else {
-            setArrayStories([...arrayStories, showStories])
-        }        
-    }, [showStories])
+    const show = (stories: any) => {
+        setShowStories(stories)
+        setArrayStories([...arrayStories, stories])
+    } 
 
+    const exit = () => {
+        show(null)
+        setArrayStories([])
+    }
+
+    const back = () => {
+        show(arrayStories[arrayStories.length - 2])
+        setArrayStories(arrayStories.slice(0, -1))
+    }
               
-    return <StoriesContext.Provider value={ {setShowStories, setArrayStories, arrayStories} }>
+    return <StoriesContext.Provider value={ {show, exit, back, arrayStories} }>
         { showStories === null
             ? props.children
             : <StoriesLayout>{ showStories }</StoriesLayout>

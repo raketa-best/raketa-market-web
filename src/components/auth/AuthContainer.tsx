@@ -25,7 +25,7 @@ const AuthContainer: React.FC = () => {
         } else {
             setIsActiveLinkButton(true)
         }
-        console.log('setIsActiveLinkButton', isActiveLinkButton)   
+        console.log('setIsActiveLinkButton', )   
     }
 
     return <>        

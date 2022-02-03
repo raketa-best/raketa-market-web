@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { InputPhoneNumberContainer } from "./inputPhoneNamber/InputPhoneNumberContainer"
 import Auth from "./Auth"
 import classes from './Auth.module.css'
-import { ButtonAqua, ButtonPink } from "../commons/button/Button"
+import { ButtonPink } from "../commons/button/Button"
 
 
 const AuthContainer: React.FC = () => {
@@ -24,8 +24,7 @@ const AuthContainer: React.FC = () => {
             setIsActiveLinkButton(false)
         } else {
             setIsActiveLinkButton(true)
-        }
-        console.log('setIsActiveLinkButton', isActiveLinkButton)   
+        } 
     }
 
     return <>        

@@ -44,7 +44,7 @@ export const InputConfirmCode: React.FC<IInputConfirmCodeProps> = (props: IInput
         console.log('confirmCodeNew[index]', confirmCodeNew[index])
         console.log('confirmCodeNew', confirmCodeNew)
         setConfirmCode(confirmCodeNew)
-        if (index<3 ) {
+        if ( index < 3 ) {
             if (event.target.value.replace(/[^\d]/g, '')!==''
                 && event.target.value.replace(/[^\d]/g, '')!==undefined ) {
                     inputElRefs[index+1].current!.focus()

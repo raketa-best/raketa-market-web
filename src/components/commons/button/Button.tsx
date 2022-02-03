@@ -6,7 +6,7 @@ interface IButtonProps {
     className?: string
     type?: 'submit' | 'reset' | 'button' 
     disabled?: boolean
-    to: string
+    to?: string
     isActiveLinkButton?: boolean
     style?: {}
     children?: any
@@ -15,25 +15,22 @@ interface IButtonProps {
 const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
 
     const button = <button onClick={props.onClick} 
-                        className={props.className} 
-                        type={props.type || 'button'} 
-                        disabled={props.disabled}
-                        style={props.style}
-                    > 
-                        { props.children }  
-                                             
-                    </button>
+        className={props.className} 
+        type={props.type || 'button'} 
+        disabled={props.disabled}
+        style={props.style}
+    > 
+        { props.children }  
+                                
+    </button>
 
-    return <> 
-        { props.isActiveLinkButton
-
-            ? <Link to={props.to} className={classes.activeLink} >
-                { button } 
-              </Link>
-
-            : button 
-        }
-    </>
+    if (props.to && props.isActiveLinkButton) {
+        return <Link to={props.to} className={classes.activeLink} >
+            { button } 
+        </Link>
+    } else {
+        return button
+    }
 }
 
 export default Button
@@ -57,3 +54,8 @@ export const ButtonPinkLarge = (props: IButtonProps) => {
     />
 }
 
+export const ButtonGryMedium = (props: IButtonProps) => {
+    return <Button {...props}        
+        className={`${classes.button} ${classes.buttonGryMedium} ${props.className}`}
+    />
+}

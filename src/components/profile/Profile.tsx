@@ -81,7 +81,7 @@ const Profile:React.FC = () => {
       
     return <div className={classes.profile_block}>
         <UserHeader {...userHeader} />
-        { tinkoffToken !== ''
+        { tinkoffToken === ''
             ? <ConnectTinkoffTokenAlert />
             : <StockList stockList={stockList} />
         }        

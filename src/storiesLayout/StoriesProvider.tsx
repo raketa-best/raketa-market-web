@@ -21,12 +21,12 @@ const StoriesProvider: React.FC<IStoriesProviderProps> = (props: IStoriesProvide
     } 
 
     const exit = () => {
-        show(null)
+        setShowStories(null)
         setArrayStories([])
     }
 
     const back = () => {
-        show(arrayStories[arrayStories.length - 2])
+        setShowStories(arrayStories[arrayStories.length - 2])
         setArrayStories(arrayStories.slice(0, -1))
     }
               

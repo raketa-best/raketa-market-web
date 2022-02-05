@@ -10,13 +10,10 @@ const AuthContainer: React.FC = () => {
     const [phoneNumber, setPhoneNumber] = useState<string | undefined>('')
     const [warning, setWarning] = useState<string>('')
     
-    console.log('phoneNumber', phoneNumber) 
-    console.log('phoneNumber.length', phoneNumber?.length) 
-    
     const navigate = useNavigate()    
 
     const handleSubmitPhone = (phoneNumber?: string) => {
-        phoneNumber && navigate('/confirmCode')
+        navigate('/confirmCode')
     } 
     
     const onFocusInput = () => {
@@ -34,9 +31,7 @@ const AuthContainer: React.FC = () => {
     }
 
     const onChangeInputPhone = (event?: any) => {
-
         let formatPhoneNumber: string[] = []
-
         if (event.target.value.length === 1) {
             formatPhoneNumber = event.target.value.match(/[\d+]/g)
         } else {
@@ -44,7 +39,6 @@ const AuthContainer: React.FC = () => {
         }
 
         if (formatPhoneNumber) {
-            console.log('formatPhoneNumber', formatPhoneNumber)
             let formatPhone: string[] = []
             formatPhoneNumber.map((item:string, index:number) => {
                 switch (index) {
@@ -86,8 +80,7 @@ const AuthContainer: React.FC = () => {
                         placeholder='номер телефона' 
                         onFocus={onFocusInput} 
                         onChange={onChangeInputPhone}
-                        onKeyDown={handleKeyDown}  
-                        // autoFocus={true} 
+                        onKeyDown={handleKeyDown}
                         className={classes.fieldPhone} 
                     />
                 </div>

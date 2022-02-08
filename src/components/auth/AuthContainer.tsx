@@ -76,8 +76,8 @@ const AuthContainer: React.FC = () => {
                     <label className={classes.lable}> {warning!=='' && warning} </label>
                     <input  
                         type='text' 
-                        value={phoneNumber} 
-                        placeholder='номер телефона' 
+                        value={phoneNumber}  
+                        autoFocus={true}
                         onFocus={onFocusInput} 
                         onChange={onChangeInputPhone}
                         onKeyDown={handleKeyDown}
@@ -87,7 +87,7 @@ const AuthContainer: React.FC = () => {
             </div>
             <div className={classes.locationButtonClasses}>
                 <ButtonPink onClick={onClickButton} >
-                    {'Получить код  ****'}
+                    {'Получить код доступа'}
                 </ButtonPink>
             </div>
         </Auth>

@@ -102,6 +102,63 @@
     justify-content: center;
 }
 
+.inputPhoneNumber_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label {    
+    font-size: 1.8vh;
+    margin-top: 3vh;   
+    color: aqua;
+}
+
+.label_warning {
+    font-size: 1.8vh;
+    margin-top: 3vh;   
+    color: #ffd207;
+}
+
+.fieldPhone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    height: 5vh;
+    max-width: 340px;    
+    max-height: 54px;
+    min-width: 225px;
+    min-height: 36px;        
+    margin-top: 1vh;
+    border-radius: 6px;        
+    font-size: 2.5vh;  
+    padding: 0px;
+    background: #311e7400;
+    border: 1px solid aqua;
+    color: aqua;
+    text-align: center;
+}
+
+
+@media (max-height: 567px) {
+    .label {
+        font-size: 11px;
+        margin-top: 10px;
+    }
+
+    .label_warning {
+        font-size: 11px;
+        margin-top: 10px;
+    }
+    
+    .fieldPhone {
+        height: 36px;        
+        margin-top: 5px;       
+        font-size: 16px;        
+    }
+}
+
 @media (max-height: 568px) {
 
     .background {

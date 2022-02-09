@@ -27,7 +27,7 @@ const TinkoffTokenStories_Set: React.FC = () => {
             handleSubmitTokenSet(token)
             setWarning('')
           } else {
-            setWarning('⚠️ ОШИБКА. Вставьте токен')
+            setWarning('⚠️ Вставьте токен')
           }  
     } 
     
@@ -61,11 +61,11 @@ const TinkoffTokenStories_Set: React.FC = () => {
         </div>
         <div className={classes.input_block}>
             <div className={classes.inputToken_block}>
-                <label className={ warning==='' ? classes.lable_inputToken : classes.lable_inputToken_warning }> 
-                    { warning==='' ? 'Вставьте, скопированный токен' : warning } 
+                <label className={ !warning ? classes.label_inputToken : classes.label_inputToken_warning }> 
+                    { !warning ? 'Вставьте, скопированный токен' : warning } 
                 </label>
-                <textarea value={token} placeholder='Вставить токен'
-                    onChange={onChangeInputTokenSet} autoFocus={false} 
+                <textarea value={token} 
+                    onChange={onChangeInputTokenSet} autoFocus={true} 
                     onFocus={onFocusInputTokenSet} className={classes.inputToken} 
                 />
             </div>

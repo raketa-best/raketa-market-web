@@ -1,4 +1,4 @@
-import classes from './TinkoffTokenStories_Presentation.module.css'
+import classes from './TinkoffTokenStoriesPresentation.module.css'
 import { ReactComponent as IconTinkoffInvest } from '../images/icon_tinkoff_invest.svg'
 import { ReactComponent as IconKey } from '../images/icon_key.svg'
 import iconLock from '../images/icon_lock.png'
@@ -6,15 +6,15 @@ import iconAI from '../images/icon_ai.png'
 import { ButtonGryMedium } from '../components/commons/button/Button'
 import { useContext } from 'react'
 import { StoriesContext } from './StoriesProvider'
-import TinkoffTokenStories_Set from './TinkoffTokenStories_Set'
+import TinkoffTokenStoriesSet from './TinkoffTokenStoriesSet'
 
 
-export const TinkoffTokenStories_Presentation = () => {
+export const TinkoffTokenStoriesPresentation = () => {
 
     const {show} = useContext(StoriesContext)
 
     const onClickButton = () => {
-        show(<TinkoffTokenStories_Set />)
+        show(<TinkoffTokenStoriesSet />)
     }
 
     return <div className={classes.tinkoffTokenStories_Presentation_block}>

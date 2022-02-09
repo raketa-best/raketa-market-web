@@ -1,11 +1,11 @@
-import classes from './TinkoffTokenStories_Fail.module.css'
+import classes from './TinkoffTokenStoriesFail.module.css'
 import { ReactComponent as IconFail } from '../images/icon_fail.svg'
 import { ButtonGryMedium } from '../components/commons/button/Button'
 import { useContext } from 'react'
 import { StoriesContext } from './StoriesProvider'
-import TinkoffTokenStories_Set from './TinkoffTokenStories_Set'
 
-export const TinkoffTokenStories_Fail = () => {
+
+export const TinkoffTokenStoriesFail = () => {
 
     const {back} = useContext(StoriesContext)
 

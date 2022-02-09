@@ -40,7 +40,7 @@ const AuthContainer: React.FC = () => {
 
         if (formatPhoneNumber) {
             let formatPhone: string[] = []
-            formatPhoneNumber.map((item:string, index:number) => {
+            formatPhoneNumber.forEach((item:string, index:number) => {
                 switch (index) {
                     case 0 : if (formatPhoneNumber[0] === ('7') || formatPhoneNumber[0] === ('8')
                         || formatPhoneNumber[0] === ('+')  ) {

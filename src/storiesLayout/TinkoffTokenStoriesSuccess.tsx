@@ -1,10 +1,10 @@
-import classes from './TinkoffTokenStories_Success.module.css'
+import classes from './TinkoffTokenStoriesSuccess.module.css'
 import { ReactComponent as IconSuccess } from '../images/icon_success.svg'
 import { ButtonGryMedium } from '../components/commons/button/Button'
 import { useContext } from 'react'
 import { StoriesContext } from './StoriesProvider'
 
-export const TinkoffTokenStories_Success = () => {
+export const TinkoffTokenStoriesSuccess = () => {
 
     const {exit} = useContext(StoriesContext)
 

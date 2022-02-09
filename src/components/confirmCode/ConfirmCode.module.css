@@ -92,6 +92,12 @@
     text-align: center;
 }
 
+.button_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 @media (max-height: 568px) {
 

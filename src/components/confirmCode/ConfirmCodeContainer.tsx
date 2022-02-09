@@ -1,5 +1,5 @@
 import classes from './ConfirmCode.module.css'
-import {useEffect, useRef, useState } from "react"
+import {useRef, useState } from "react"
 import { ButtonAqua } from '../commons/button/Button'
 import { ConfirmCode } from './ConfirmCode'
 import { useNavigate } from 'react-router-dom'
@@ -19,11 +19,6 @@ const ConfirmCodeContainer: React.FC = () => {
 
     const inputElRefs = [inputElRef_1, inputElRef_2, inputElRef_3, inputElRef_4]
     
-
-    useEffect(() => {
-        inputElRefs[0].current!.focus()
-    }, [])
-
     const navigate = useNavigate() 
 
     const handleSubmitConfirmCode = (confirmCode: string) => {
@@ -75,6 +70,7 @@ const ConfirmCodeContainer: React.FC = () => {
                     onChange={ event => onChangeInput(index, event)}
                     onKeyDown={ event => handleKeyDown(index, event)}
                     onFocus={onFocusInput} 
+                    autoFocus={index===0}
                     className={classes.fieldConfirmCode} 
                     inputMode='numeric' 
                     minLength={1}
@@ -83,7 +79,7 @@ const ConfirmCodeContainer: React.FC = () => {
             )}
         </div> 
         <div className={classes.warning}> {warning!=='' && warning} </div>
-        <div>
+        <div className={classes.button_block}>
             <ButtonAqua onClick={onClickButton}> {'Войти'} </ButtonAqua>
         </div>
     </ConfirmCode>

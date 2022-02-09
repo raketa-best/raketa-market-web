@@ -1,13 +1,13 @@
-import classes from './TinkoffTokenStories_Set.module.css'
+import classes from './TinkoffTokenStoriesSet.module.css'
 import { ButtonGryMedium } from '../components/commons/button/Button'
 import { useContext, useState } from 'react'
 import { StoriesContext } from './StoriesProvider'
 import guideGetApiToken from '../images/guide_get_api_token.gif'
-import { TinkoffTokenStories_Success } from './TinkoffTokenStories_Success'
-import { TinkoffTokenStories_Fail } from './TinkoffTokenStories_Fail'
+import { TinkoffTokenStoriesSuccess } from './TinkoffTokenStoriesSuccess'
+import { TinkoffTokenStoriesFail } from './TinkoffTokenStoriesFail'
 
 
-const TinkoffTokenStories_Set: React.FC = () => {
+const TinkoffTokenStoriesSet: React.FC = () => {
 
     const {show} = useContext(StoriesContext)
 
@@ -33,9 +33,9 @@ const TinkoffTokenStories_Set: React.FC = () => {
     
     const handleSubmitTokenSet  = (token?: string) => {
         if (token === 't.qkIEioFlpXq7UO9gI3PRe2ndweKjmywarQgcnEIOPuuxRFehyjNoyQ_6Wot4zatu6kAw0EX9Y8WZfToCZ0qGsA') {
-            show(<TinkoffTokenStories_Success />)
+            show(<TinkoffTokenStoriesSuccess />)
         } else {
-            show(<TinkoffTokenStories_Fail />)
+            show(<TinkoffTokenStoriesFail />)
         }
     } 
 
@@ -78,4 +78,4 @@ const TinkoffTokenStories_Set: React.FC = () => {
     </div>
 }
 
-export default TinkoffTokenStories_Set
+export default TinkoffTokenStoriesSet

@@ -114,6 +114,12 @@
     color: aqua;
 }
 
+.lable_warning {
+    font-size: 1.8vh;
+    margin-top: 3vh;   
+    color: #ffd207;
+}
+
 .fieldPhone {
     display: flex;
     justify-content: center;
@@ -137,6 +143,11 @@
 
 @media (max-height: 567px) {
     .lable {
+        font-size: 11px;
+        margin-top: 10px;
+    }
+
+    .lable_warning {
         font-size: 11px;
         margin-top: 10px;
     }

@@ -17,7 +17,7 @@ const AuthContainer: React.FC = () => {
     } 
     
     const onFocusInput = () => {
-        setWarning('* Введите номер телефона')
+        setWarning('')
     }
 
     const handleKeyDown = (event: any) => {
@@ -61,9 +61,9 @@ const AuthContainer: React.FC = () => {
 
     const onClickButton = () => {    
         if (phoneNumber==='') {
-            setWarning('! ОШИБКА. Обязательное поле')
+            setWarning('⚠️ Обязательное поле')
         } else if (phoneNumber && phoneNumber.length!==18) {
-                setWarning('! ОШИБКА. Введите номер телефона') 
+            setWarning('⚠️ Введите номер телефона') 
         } else if (phoneNumber && phoneNumber.length===18) {
             handleSubmitPhone(phoneNumber)
         } 
@@ -73,9 +73,12 @@ const AuthContainer: React.FC = () => {
         <Auth>
             <div className={classes.locationFormClasses}>
                 <div className={classes.inputPhoneNumber_block}>
-                    <label className={classes.lable}> {warning!=='' && warning} </label>
+                    <label className={!warning ? classes.lable : classes.lable_warning}>
+                        {!warning ? '* Введите номер телефона' : warning} 
+                    </label>
                     <input  
                         type='text' 
+                        inputMode='numeric'
                         value={phoneNumber}  
                         autoFocus={true}
                         onFocus={onFocusInput} 

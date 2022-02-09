@@ -24,7 +24,7 @@ const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
                                 
     </button>
 
-    if (props.to && props.to!=='') {
+    if (props.to) {
         return <Link to={props.to} className={classes.activeLink} >
             { button } 
         </Link>

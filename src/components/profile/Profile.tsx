@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { IStockProps } from "./Stock"
 import StockList from "./StockList"
 import UserHeader, { IUserHeaderProps } from "./UserHeader"
@@ -68,17 +68,11 @@ const Profile:React.FC = () => {
         },
     ]    
 
-    const [userHeader, setUserHeader] = useState<IUserHeaderProps>(fakeStateUserHeader)
-    const [tinkoffToken, setTinkoffToken] = useState<string>('')
-    const [stockList, setStockList] = useState<IStockProps[]>(fakeStateStocks)
+    const [userHeader] = useState<IUserHeaderProps>(fakeStateUserHeader)
+    const [tinkoffToken] = useState<string>('')
+    const [stockList] = useState<IStockProps[]>(fakeStateStocks)
 
-    useEffect(() =>{
-        setUserHeader(fakeStateUserHeader)
-        setStockList(fakeStateStocks)
-        setTinkoffToken('')
-    }, [])
-
-      
+          
     return <div className={classes.profile_block}>
         <UserHeader {...userHeader} />
         { tinkoffToken === ''

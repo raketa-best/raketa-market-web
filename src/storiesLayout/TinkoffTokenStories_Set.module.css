@@ -95,12 +95,12 @@
     align-items: center;
 }
 
-.lable_inputToken {    
+.label_inputToken {    
     font-size: 16px; 
     color: white;    
 }
 
-.lable_inputToken_warning {
+.label_inputToken_warning {
     font-size: 16px; 
     color: #ffd207;  
 }
@@ -164,11 +164,11 @@
         width: 87%;
     }
 
-    .lable_inputToken {    
+    .label_inputToken {    
         font-size: 14px;  
     }
     
-    .lable_inputToken_warning {
+    .label_inputToken_warning {
         font-size: 14px; 
     }
 

@@ -108,13 +108,13 @@
     align-items: center;
 }
 
-.lable {    
+.label {    
     font-size: 1.8vh;
     margin-top: 3vh;   
     color: aqua;
 }
 
-.lable_warning {
+.label_warning {
     font-size: 1.8vh;
     margin-top: 3vh;   
     color: #ffd207;
@@ -142,12 +142,12 @@
 
 
 @media (max-height: 567px) {
-    .lable {
+    .label {
         font-size: 11px;
         margin-top: 10px;
     }
 
-    .lable_warning {
+    .label_warning {
         font-size: 11px;
         margin-top: 10px;
     }

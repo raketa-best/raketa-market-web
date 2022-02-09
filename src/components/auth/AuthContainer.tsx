@@ -73,7 +73,7 @@ const AuthContainer: React.FC = () => {
         <Auth>
             <div className={classes.locationFormClasses}>
                 <div className={classes.inputPhoneNumber_block}>
-                    <label className={!warning ? classes.lable : classes.lable_warning}>
+                    <label className={!warning ? classes.label : classes.label_warning}>
                         {!warning ? '* Введите номер телефона' : warning} 
                     </label>
                     <input  

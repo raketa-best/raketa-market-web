@@ -1,8 +1,7 @@
 import classes from './StoriesLayout.module.css'
-import {ReactComponent as IconExit} from '../images/icon_exit.svg'
-import {ReactComponent as IconBack} from '../images/icon_back.svg'
 import { useContext } from 'react'
 import { StoriesContext } from './StoriesProvider'
+import { IconBackLink, IconExitLink } from '../components/commons/iconLink/IconLink'
 
 
 const StoriesLayout = ({children}: any) => {
@@ -13,9 +12,9 @@ const StoriesLayout = ({children}: any) => {
     
     return <div className={classes.storiesBox}>
         { arrayStories.length > 1 &&
-            <IconBack onClick={back} className={classes.iconBack} />
+            <IconBackLink onClick={back}/>
         }
-        <IconExit onClick={exit} className={classes.iconExit} />
+        <IconExitLink onClick={exit}/>
         {children}
     </div>
          

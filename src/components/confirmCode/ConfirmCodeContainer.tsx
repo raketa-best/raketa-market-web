@@ -3,6 +3,7 @@ import {useRef, useState } from "react"
 import { ButtonAqua } from '../commons/button/Button'
 import { ConfirmCode } from './ConfirmCode'
 import { useNavigate } from 'react-router-dom'
+import { IconBackLink } from '../commons/iconLink/IconLink'
 
 
 const ConfirmCodeContainer: React.FC = () => {
@@ -61,6 +62,7 @@ const ConfirmCodeContainer: React.FC = () => {
     }
 
     return <ConfirmCode>
+        <IconBackLink to={'/auth'} />
         <div className={classes.inputsConfirmCode_block}>
             { confirmCode.map((item: string, index: number) => 
                 <input value={item}

@@ -2,7 +2,7 @@ import classes from './ConfirmCode.module.css'
 
 export const ConfirmCode: React.FC = (props) => {
     
-    return <>
+    return <>    
         <div className={classes.confirmCode_block}>
             <div className={classes.text}>
                 Сейчас поступит звонок, на указанный вами номер телефона

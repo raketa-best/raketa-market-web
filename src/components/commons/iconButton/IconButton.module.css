@@ -1,0 +1,53 @@
+.iconExit {
+    position: fixed;
+    z-index: 10000000;
+    top: 0px;
+    right: 0px;
+    width: 20px;
+    height: 20px;
+    margin: 30px;
+    fill: white;
+    stroke: white;
+    cursor: pointer;
+}
+
+.iconExit:hover {
+    fill: aqua;
+    stroke: aqua;
+}
+
+.iconBack {
+    position: fixed;
+    z-index: 10000000;
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    margin: 30px;
+    fill: white;
+    stroke: white;
+    cursor: pointer;
+}
+
+.iconBack:hover {
+    fill: aqua;
+    stroke: aqua;
+}
+
+
+@media (max-width: 376px) {
+
+    .iconExit {  
+        width: 15px;
+        height: 15px;      
+        margin: 20px;
+        margin-right: 15px;
+    }
+
+    .iconBack {
+        width: 15px;
+        height: 15px; 
+        margin: 20px;
+        margin-left: 15px;
+    }
+}

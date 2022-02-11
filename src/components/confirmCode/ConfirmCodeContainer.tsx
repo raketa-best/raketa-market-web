@@ -3,7 +3,7 @@ import {useRef, useState } from "react"
 import { ButtonAqua } from '../commons/button/Button'
 import { ConfirmCode } from './ConfirmCode'
 import { useNavigate } from 'react-router-dom'
-import { IconBackLink } from '../commons/iconLink/IconLink'
+import { IconBackLink } from '../commons/iconButton/IconButton'
 
 
 const ConfirmCodeContainer: React.FC = () => {

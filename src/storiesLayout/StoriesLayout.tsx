@@ -1,7 +1,7 @@
 import classes from './StoriesLayout.module.css'
 import { useContext } from 'react'
 import { StoriesContext } from './StoriesProvider'
-import { IconBackLink, IconExitLink } from '../components/commons/iconLink/IconLink'
+import { IconBackLink, IconExitLink } from '../components/commons/iconButton/IconButton'
 
 
 const StoriesLayout = ({children}: any) => {

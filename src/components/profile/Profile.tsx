@@ -96,11 +96,10 @@ const Profile:React.FC = () => {
           
     return <div className={classes.profile_block}>
         <UserHeader {...userHeader} />
-        {/* { tinkoffToken !== ''
-            ? <ConnectTinkoffTokenAlert />
-            : <StockList stockList={stockList} />            
-        }   */}
-        <FinRecordList finRecordList={finRecordList} />      
+        { (tinkoffToken === '1' && <ConnectTinkoffTokenAlert />)
+            || (tinkoffToken === '2' && <StockList stockList={stockList} />)
+            || (tinkoffToken === '' && <FinRecordList finRecordList={finRecordList} />) 
+        }
     </div> 
 }
 

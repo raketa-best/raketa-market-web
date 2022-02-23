@@ -1,0 +1,172 @@
+.finRecord_block {
+    position: relative;
+    z-index: 100;
+    width: 326px;
+    display: grid;
+    grid-template-rows: 100px 45px;
+    grid-template-columns: 30% 35% 35%;
+    grid-template-areas: 
+    'image price price' 
+    'comment comment like';    
+    margin: 10px;
+    padding: 10px;
+    background: #2d2736;
+    background-size: contain;  
+    box-shadow: 0 0 8px 3px #15131b;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 18px;    
+}
+
+.image_block {
+    grid-area: image;
+}
+
+.imageUrl {
+    width: 80px;
+    border-radius: 5px;
+}
+
+.price_block {
+    grid-area: price;     
+    margin-left: 10px;
+}
+
+.profitNumber_block {
+    display: flex;
+    justify-content: center;
+}
+
+.name_block {
+    position: relative;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    width: 100%;
+}
+
+.name {    
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.profitPercent_block {
+    position: relative;
+    font-weight: bold;
+    z-index: 100000;      
+    width: 100%;
+}
+
+.profitPercent {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.profit_block {
+    position: relative;    
+    z-index: 100000;
+    margin-top: 10px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.profit {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.comment_block {
+    grid-area: comment;
+    display: flex;
+    align-items: flex-end;
+}
+
+.comment {
+    position: relative;
+    z-index: 10000;    
+    text-align: right;
+    font-weight: bold;
+    overflow: scroll; 
+}
+
+.comment::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.count::-webkit-scrollbar,
+.name::-webkit-scrollbar {
+    height: 0;
+}
+
+.like_block {
+    grid-area: like;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.like {
+    position: relative;
+    z-index: 10000; 
+    width: 15px;
+    height: 15px;
+    fill: #ffffff;;
+}
+
+
+@media (max-width: 339px) {
+
+    .finRecord_block {
+        width: 280px;        
+        grid-template-rows: 70px 35px;
+        grid-template-columns: 66px 120px 94px;
+        margin: 8px;
+        padding: 8px;
+        box-shadow: 0 0 5px 1px #15131b;
+        border-radius: 4px;
+        font-size: 11px;
+    }    
+       
+    .imageUrl {
+        width: 50px;
+        border-radius: 4px;
+    }
+    
+    .name { 
+        font-size: 15px;
+    }
+
+    .profitPercent {
+        font-size: 18px;
+    }
+    
+    .profit {
+        font-size: 15px;
+    } 
+    
+}
+
+@media (min-width: 340px) and (max-width: 370px) {
+    .finRecord_block {
+        width: 300px;
+        grid-template-columns: 77px 130px 93px;
+    }
+}
+
+
+@media (min-width: 410px) and (max-width: 510px) { 
+    .finRecord_block {
+        width: 360px;
+        grid-template-columns: 77px 163px 120px;
+    }
+}
+
+@media (min-width: 511px) { 
+    .finRecord_block {
+        width: 460px;
+        grid-template-columns: 77px 180px 203px;
+    }
+}
+

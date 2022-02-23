@@ -3,7 +3,7 @@ import { ReactComponent as IconTinkoffInvest } from '../images/icon_tinkoff_inve
 import { ReactComponent as IconKey } from '../images/icon_key.svg'
 import iconLock from '../images/icon_lock.png'
 import iconAI from '../images/icon_ai.png'
-import { ButtonGryMedium } from '../components/commons/button/Button'
+import { ButtonGryMedium } from '../components/button/Button'
 import { useContext } from 'react'
 import { StoriesContext } from './StoriesProvider'
 import TinkoffTokenStoriesSet from './TinkoffTokenStoriesSet'

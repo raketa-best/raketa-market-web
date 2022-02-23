@@ -1,5 +1,5 @@
 import classes from './TinkoffTokenStoriesSet.module.css'
-import { ButtonGryMedium } from '../components/commons/button/Button'
+import { ButtonGryMedium } from '../components/button/Button'
 import { useContext, useState } from 'react'
 import { StoriesContext } from './StoriesProvider'
 import guideGetApiToken from '../images/guide_get_api_token.gif'

@@ -1,6 +1,6 @@
 import classes from './TinkoffTokenStoriesFail.module.css'
 import { ReactComponent as IconFail } from '../images/icon_fail.svg'
-import { ButtonGryMedium } from '../components/commons/button/Button'
+import { ButtonGryMedium } from '../components/button/Button'
 import { useContext } from 'react'
 import { StoriesContext } from './StoriesProvider'
 

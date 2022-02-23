@@ -1,4 +1,4 @@
-import { ButtonPinkLarge } from '../commons/button/Button'
+import { ButtonPinkLarge } from '../button/Button'
 import classes from './ConnectTinkoffTokenAlert.module.css'
 import { ReactComponent as IconTinkoffInvest} from '../../images/icon_tinkoff_invest.svg'
 import { useContext } from 'react'

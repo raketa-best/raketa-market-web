@@ -3,6 +3,8 @@ import classes from './FormatProfitNumber.module.css'
 interface IFormatProfitNumberProps {
     profitNumber: number
     label: string
+    className?: string
+    classNameBlock?: string
 }
 
 export const formatProfitNumber = (profitNumber: number): string => {
@@ -27,11 +29,11 @@ export const profitNumberClassName = (profitNumber: number): string => {
 }
 
 const FormatProfitNumber: React.FC<IFormatProfitNumberProps> = (props: IFormatProfitNumberProps) => {
-    return <div className={classes.profitNumber_block}>
-            <div className={`${classes.profitNumber} ${profitNumberClassName(props.profitNumber)}` }>
+    return <div className={`${classes.profitNumber_block} ${props.classNameBlock}`}>
+            <div className={`${classes.profitNumber} ${profitNumberClassName(props.profitNumber)} ${props.className}` }>
                 { `${formatProfitNumber(props.profitNumber)}` }
             </div>
-            <div className={`${classes.label} ${profitNumberClassName(props.profitNumber)}` }>
+            <div className={`${classes.label} ${profitNumberClassName(props.profitNumber)} ${props.className}` }>
                 { props.label }
             </div>
         </div> 

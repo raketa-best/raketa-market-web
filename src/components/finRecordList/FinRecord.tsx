@@ -25,7 +25,7 @@ export const FinRecord: React.FC<IFinRecordProps> = (props: IFinRecordProps) => 
             </div> 
             <div className={classes.profitPercent_block}>
                 <FormatProfitNumber profitNumber={props.profitPercent} label={'%'} className={classes.profitPercent} classNameBlock={classes.profitNumber_block}/>
-            </div>   
+            </div> 
         </div>     
         <div className={classes.comment_block}>
             <div className={classes.comment}>{props.comment}</div>

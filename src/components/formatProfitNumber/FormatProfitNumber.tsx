@@ -7,12 +7,15 @@ interface IFormatProfitNumberProps {
     classNameBlock?: string
 }
 
-export const formatProfitNumber = (profitNumber: number): string => {
-    const formatNumber = (Math.floor(profitNumber * 100) / 100).toFixed(2)
+export const formatProfitNumber = (profitNumber: number, className?: string ): string => {
+    const formatNumber = 
+      !className 
+        ? `${(Math.floor(profitNumber * 100) / 100).toFixed(2)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')
+        : `${Math.floor(profitNumber)}`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')
     if (profitNumber > 0) {
         return `+ ${ formatNumber }`
     } else if (profitNumber < 0) {
-        return `- ${ formatNumber.toString().slice(1) }`
+        return `- ${ formatNumber.slice(1) }`
     } else {
         return `0`
     }    
@@ -31,7 +34,7 @@ export const profitNumberClassName = (profitNumber: number): string => {
 const FormatProfitNumber: React.FC<IFormatProfitNumberProps> = (props: IFormatProfitNumberProps) => {
     return <div className={`${classes.profitNumber_block} ${props.classNameBlock}`}>
             <div className={`${classes.profitNumber} ${profitNumberClassName(props.profitNumber)} ${props.className}` }>
-                { `${formatProfitNumber(props.profitNumber)}` }
+                { `${formatProfitNumber(props.profitNumber, props.className)}` }
             </div>
             <div className={`${classes.label} ${profitNumberClassName(props.profitNumber)} ${props.className}` }>
                 { props.label }

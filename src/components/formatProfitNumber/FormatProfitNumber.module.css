@@ -2,11 +2,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+         
+    width: 100%;         
 }
 
 .profitNumber {    
     overflow-x: scroll;
-    white-space: nowrap;       
+    white-space: nowrap;  
     margin-right: 5px;
     font-size: 14px;
 }

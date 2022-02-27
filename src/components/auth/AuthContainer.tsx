@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Auth from "./Auth"
 import classes from './Auth.module.css'
-import { ButtonPink } from "../commons/button/Button"
+import { ButtonPink } from "../button/Button"
 import { useNavigate } from "react-router-dom"
 
 

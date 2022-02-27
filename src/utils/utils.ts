@@ -9,4 +9,9 @@ export const numberShorter = (number: number): string => {
     }
 } 
 
+export const numberCategorize = (number: number): string => {
+    
+    return `${ Math.floor(number) }`.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ')
+} 
+
 

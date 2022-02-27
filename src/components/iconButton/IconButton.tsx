@@ -1,6 +1,6 @@
 import classes from './IconButton.module.css'
-import {ReactComponent as IconExit} from '../../../images/icon_exit.svg'
-import {ReactComponent as IconBack} from '../../../images/icon_back.svg'
+import {ReactComponent as IconExit} from '../../images/icon_exit.svg'
+import {ReactComponent as IconBack} from '../../images/icon_back.svg'
 import { Link } from 'react-router-dom'
 
 interface IIconButton {

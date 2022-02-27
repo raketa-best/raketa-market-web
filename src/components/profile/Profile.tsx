@@ -1,9 +1,11 @@
 import { useState } from "react"
-import { IStockProps } from "./Stock"
-import StockList from "./StockList"
+import StockList from "../stock/StockList"
 import UserHeader, { IUserHeaderProps } from "./UserHeader"
 import classes from './Profile.module.css'
 import ConnectTinkoffTokenAlert from "../connectTinkoffTokenAlert/ConnectTinkoffTokenAlert"
+import { IStockProps } from "../stock/Stock"
+import { IFinRecordProps } from "../finRecordList/FinRecord"
+import FinRecordList from "../finRecordList/FinRecordList"
 
 const Profile:React.FC = () => {
 
@@ -12,9 +14,9 @@ const Profile:React.FC = () => {
         avatarUrl: 'https://user-images.githubusercontent.com/13190019/149777356-c3952ae1-bb28-4d8a-990b-5833993b1c10.png',
         nick: 'НЕВЕРОЯТНЫЙ - RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR',
         statusMessage: 'Я есть тот, кто я есть, и это моя судьба yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy',
-        expProgressPercent: 70,
+        expProgressPercent: 1900,
         amountRub: 8234700000000000,
-        level: 77
+        level: 770
     }
 
     const fakeStateStocks = [
@@ -23,8 +25,8 @@ const Profile:React.FC = () => {
             name: 'APPLE-rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr',
             price: 700000000000000770000.5588888888888888888888888888,
             count: 1500000888800000000007770000,
-            profitPercent: -1.54,
-            profitAmountRub: -54367300400.7650054,
+            profitPercent: -144444444477777777777774444.54,
+            profitAmountRub: -54367300444444444444400.7650054,
             portfolioPercent: 70,
             amountRub: 12389910000000000007770000000000000,
             avgPrice: 75000088888888800000000007700.00,
@@ -35,8 +37,8 @@ const Profile:React.FC = () => {
             name: 'TESLA',
             price: 8000.55,
             count: 800,
-            profitPercent: 88,
-            profitAmountRub: 8800000,
+            profitPercent: -88,
+            profitAmountRub: -8800000,
             portfolioPercent: 100,
             amountRub: 105555555,
             avgPrice: 8008.22,
@@ -66,19 +68,38 @@ const Profile:React.FC = () => {
             avgPrice: 511.11,
             comment: 'хорошая сделка 😉'
         },
-    ]    
+    ]  
+    
+    const fakeStateFinRecords = [
+        {
+          stockImageUrl: "https://user-images.githubusercontent.com/13190019/155142180-55822f89-65ed-4813-992f-b078b60573fe.png",
+          name: 'NVIDIA',
+          bgImageUrl: "https://user-images.githubusercontent.com/13190019/155142437-c26d9d99-c9da-4ab8-a18f-33959f7d10c7.png",
+          profit: 5000000,
+          profitPercent: 155,
+          comment: "БЕЗУМИЕ!!!!"
+        },
+        {
+          stockImageUrl: "https://user-images.githubusercontent.com/13190019/155142477-155aa3cc-719d-4bc9-aa0c-29479cb11109.png",
+          name: 'APPLE-rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr',
+          bgImageUrl: "https://user-images.githubusercontent.com/13190019/155142523-763c5f59-73d7-421b-81a4-f74f915452dc.png",
+          profit: 150555555555555555555555555555555555555555555555555555550000,
+          profitPercent: 4444444444444444444444444444444444444444444444444444444444444444,
+          comment: "НЕПЛОХОooooooooooooooooooooooooooooooooooooooooooooooooo 🤔"
+        }
+    ]
 
     const [userHeader] = useState<IUserHeaderProps>(fakeStateUserHeader)
     const [tinkoffToken] = useState<string>('')
     const [stockList] = useState<IStockProps[]>(fakeStateStocks)
-
+    const [finRecordList] = useState<IFinRecordProps[]>(fakeStateFinRecords)
           
     return <div className={classes.profile_block}>
         <UserHeader {...userHeader} />
-        { tinkoffToken === ''
-            ? <ConnectTinkoffTokenAlert />
-            : <StockList stockList={stockList} />
-        }        
+        { (tinkoffToken === '1' && <ConnectTinkoffTokenAlert />)
+            || (tinkoffToken === '2' && <StockList stockList={stockList} />)
+            || (tinkoffToken === '' && <FinRecordList finRecordList={finRecordList} />) 
+        }
     </div> 
 }
 

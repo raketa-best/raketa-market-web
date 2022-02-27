@@ -1,4 +1,5 @@
-import ProgressPercent from './ProgressPercent'
+
+import ProgressPercent from '../progressPercent/ProgressPercent'
 import classes from './UserHeader.module.css'
 
 export interface IUserHeaderProps {

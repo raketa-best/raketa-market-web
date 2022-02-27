@@ -1,6 +1,6 @@
 import { numberShorter } from '../../utils/utils'
-import FormatProfitNumber from '../commons/formatProfitNumber/FormatProfitNumber'
-import ProgressPercent from './ProgressPercent'
+import FormatProfitNumber from '../formatProfitNumber/FormatProfitNumber'
+import ProgressPercent from '../progressPercent/ProgressPercent'
 import classes from './Stock.module.css'
 
 export interface IStockProps {

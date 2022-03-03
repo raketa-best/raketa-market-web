@@ -1,4 +1,3 @@
-import icon_ellipse from '../../images/icon_ellipse.svg'
 import classes from './MenuProfile.module.css'
 import { NavLink, useLocation } from 'react-router-dom'
 
@@ -20,9 +19,6 @@ export const MenuProfileElement: React.FC<IMenuProfileElementProps> = (props: IM
                 : <div>{props.label}</div>
             } 
         </NavLink>
-        {location.pathname===props.to && 
-            <img alt='' src={icon_ellipse} className={classes.icon_ellipse}/>
-        }
     </div>
 }
 

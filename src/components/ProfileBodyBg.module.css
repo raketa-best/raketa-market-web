@@ -8,7 +8,7 @@
     flex-direction: column;
     align-items: center; 
     background: #2d2736; 
-    padding-top: 7px;
+    padding-top: 17px;
     padding-bottom: 240px;
 }
 
@@ -36,7 +36,7 @@
     filter: blur(110px);
 }
 
-@media (max-width: 358px) {
+@media (max-width: 358px), (max-height: 738px) {
     .block {
         top: 274px;
     }

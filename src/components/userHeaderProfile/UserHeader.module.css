@@ -108,7 +108,7 @@
     height: 0;
 }
 
-@media (max-width: 358px) {
+@media (max-width: 358px), (max-height: 738px) {
 
     .userHeader_block {
         height: 220px;        
@@ -183,3 +183,4 @@
         margin: 0 30px 0 30px;
     }
 }
+

@@ -4,9 +4,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    top: 354px;
+    top: 364px;
     width: 100%;    
-    height: calc(100% - 300px - 58px - 54px);
+    height: calc(100% - 300px - 58px - 64px);
     background: #2d2736;
 }
 
@@ -31,7 +31,7 @@
     min-width: 224px;
     max-width: 400px;
     height: 75%;
-    min-height: 225px;
+    min-height: 170px;
     max-height: 350px;
     padding: 20px;
     padding-top: 10px;    
@@ -52,11 +52,11 @@
     padding-bottom: 5px;    
 }
 
-@media (max-width: 358px) {
+@media (max-width: 358px), (max-height: 738px) {
 
     .tokenAlert_block {
-        top: 274px;
-        height: calc(100% - 220px - 58px - 54px);
+        top: 284px;
+        height: calc(100% - 220px - 58px - 64px);
     }
 
     .tokenAlert_block::before {
@@ -98,19 +98,26 @@
 @media (max-height: 648px) {
 
     .tokenAlert_block {
-        height: 290px;
+        top: 284px;
+        height: calc(100% - 220px - 58px - 64px);
         padding-bottom: 58px;
     }  
     
     .tokenAlert {
         width: 260px;
-        height: 200px;
+        height: 170px;
         padding: 15px;
         padding-top: 10px;    
         box-shadow: 0 0 6px 1px rgb(247, 42, 213);
     } 
 
+    .icon {
+        width: 40px;
+        height: 40px;
+        padding-bottom: 5px;    
+    }
+
     .message {
-        font-size: 12px;
+        font-size: 11px;
     } 
 }

@@ -39,11 +39,17 @@
 @media (max-width: 358px), (max-height: 738px) {
     .block {
         top: 274px;
+        padding-top: 17px;
+    }
+}
+
+@media (max-height: 648px) {
+    .block {
+        padding-top: 7px;
     }
 }
 
 @media (min-width: 511px) { 
-
     .block::before {
         left: 10px;
         top: 150px;

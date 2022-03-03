@@ -52,17 +52,15 @@
     fill: #9a4df3;
 }
 
-@media (max-width: 339px) {
-
-    .menuProfile_block  {       
-        box-shadow: 0 0 7px 2px #23154e;
+@media (max-width: 358px), (max-height: 738px) {
+    .menuProfile_block {
+        top: 220px;
     }
 }
 
-@media (max-width: 358px), (max-height: 738px) {
-
+@media (max-height: 648px) {
     .menuProfile_block {
-        top: 220px;
+        margin-top: 0px;
     }
 }
 

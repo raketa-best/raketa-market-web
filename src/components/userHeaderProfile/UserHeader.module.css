@@ -111,8 +111,7 @@
 @media (max-width: 358px), (max-height: 738px) {
 
     .userHeader_block {
-        height: 220px;        
-        box-shadow: 0 0 5px 1px #23154e;
+        height: 220px; 
     }
 
     .userHeader_block::before {

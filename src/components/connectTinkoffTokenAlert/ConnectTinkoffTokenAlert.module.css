@@ -41,7 +41,6 @@
 
 .message {
     text-align: center;
-    text-justify: center;
     color: #ffffff;
     font-size: 14px;
 }
@@ -66,14 +65,18 @@
     }
     
     .tokenAlert {
-        width: 224px;
         height: 225px;
         padding: 15px;   
         box-shadow: 0 0 7px 2px rgb(247, 42, 213);
     }
+
+    .icon {
+        width: 45px;
+        height: 45px;   
+    }
     
     .message {
-        font-size: 13px;
+        font-size: 12px;
     } 
 }
 
@@ -98,13 +101,12 @@
 @media (max-height: 648px) {
 
     .tokenAlert_block {
-        top: 284px;
-        height: calc(100% - 220px - 58px - 64px);
+        top: 274px;
+        height: calc(100% - 220px - 58px - 54px);
         padding-bottom: 58px;
     }  
     
     .tokenAlert {
-        width: 260px;
         height: 170px;
         padding: 15px;
         padding-top: 10px;    
@@ -113,8 +115,7 @@
 
     .icon {
         width: 40px;
-        height: 40px;
-        padding-bottom: 5px;    
+        height: 40px;   
     }
 
     .message {

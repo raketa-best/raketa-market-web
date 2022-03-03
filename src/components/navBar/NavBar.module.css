@@ -48,11 +48,3 @@
     height: 19px;    
     fill: #9a4df3;
 }
-
-@media (max-width: 339px) {
-
-    .navBar_block  {       
-        box-shadow: 0 0 7px 2px #23154e;
-    }
-}
-

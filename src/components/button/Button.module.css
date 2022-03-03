@@ -57,9 +57,20 @@
 .buttonPinkLarge {
     width: 200px;
     height: 110px;
-    min-height: 110px;
     color: #ffffff;
     font-size: 14px
+}
+
+@media (max-height: 648px) {
+    .button  {
+        margin-top: 10px;
+    }  
+
+    .buttonPinkLarge {
+        width: 180px;
+        height: 90px;
+        font-size: 11px
+    }
 }
 
 .buttonPinkLarge:hover {
@@ -89,3 +100,6 @@
         font-size: 14px;
     }
 }
+
+
+

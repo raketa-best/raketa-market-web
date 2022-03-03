@@ -1,4 +1,3 @@
-
 import ProgressPercent from '../progressPercent/ProgressPercent'
 import classes from './UserHeader.module.css'
 

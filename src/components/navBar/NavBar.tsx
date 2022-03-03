@@ -1,7 +1,8 @@
 import { ReactComponent as ProfileIcon } from '../../images/icon_profile_active.svg'
 import icon_ellipse from '../../images/icon_ellipse.svg'
 import classes from './NavBar.module.css'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export interface INavBarElementProps {
     to: string
@@ -32,7 +33,7 @@ const NavBar: React.FC = () => {
     return <div className={classes.navBar_block}>
         <NavBarElement to={'/home'} label={'Домой'}/>
         <NavBarElement to={'/news'} label={'Новости'}/>
-        <NavBarElement to={'/portfolio'} label={'Портфель'}/>
+        <NavBarElement to={'/chat'} label={'Чат'}/>
         <NavBarElement to={'/profile'} icon={ProfileIcon} />
     </div>
 }

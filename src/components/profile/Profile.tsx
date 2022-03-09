@@ -1,5 +1,4 @@
 import { useState } from "react"
-import classes from './Profile.module.css'
 import UserHeader, { IUserHeaderProps } from "../userHeaderProfile/UserHeader"
 import MenuProfile from "../menuProfile/MenuProfile"
 
@@ -17,10 +16,10 @@ const Profile:React.FC = () => {
     
     const [userHeader] = useState<IUserHeaderProps>(fakeStateUserHeader)
           
-    return <div className={classes.profile_block}>
+    return <>
         <UserHeader {...userHeader} />                
         <MenuProfile />
-    </div> 
+    </> 
 }
 
 export default Profile

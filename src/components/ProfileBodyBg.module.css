@@ -3,13 +3,13 @@
     top: 354px;
     width: 100%;    
     min-width: 310px;
+    max-width: 700px;
     height: calc(100% + 240px);
     display: flex;
     flex-direction: column;
     align-items: center; 
     background: #2d2736; 
     padding-top: 17px;
-    padding-bottom: 240px;
 }
 
 .block::before {
@@ -36,10 +36,10 @@
     filter: blur(110px);
 }
 
-@media (max-width: 358px), (max-height: 738px) {
+@media (max-width: 358px), (max-height: 734px) {
     .block {
         top: 274px;
-        padding-top: 17px;
+        padding-top: 12px;
     }
 }
 
@@ -66,6 +66,3 @@
         filter: blur(200px);
     }
 }
-
-
-

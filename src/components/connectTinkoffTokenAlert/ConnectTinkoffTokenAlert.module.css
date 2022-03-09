@@ -5,8 +5,11 @@
     align-items: center;
     justify-content: center;
     top: 364px;
-    width: 100%;    
+    width: 100%;
+    max-width: 700px;
+    min-width: 310px;    
     height: calc(100% - 300px - 58px - 64px);
+    min-height: 236px;
     background: #2d2736;
 }
 
@@ -51,11 +54,11 @@
     padding-bottom: 5px;    
 }
 
-@media (max-width: 358px), (max-height: 738px) {
+@media (max-width: 358px), (max-height: 734px) {
 
     .tokenAlert_block {
-        top: 284px;
-        height: calc(100% - 220px - 58px - 64px);
+        top: 279px;
+        height: calc(100% - 220px - 58px - 59px);
     }
 
     .tokenAlert_block::before {

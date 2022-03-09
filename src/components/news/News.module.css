@@ -1,4 +1,4 @@
-.home_block {
+.news_block {
     position: absolute;
     top: 0px;
     justify-content: center; 
@@ -6,6 +6,6 @@
     padding-top: 0px;
 }
 
-.home_text {
+.news_text {
     color: aqua;
 }

@@ -1,9 +1,10 @@
 import classes from './ConfirmCode.module.css'
-import {useRef, useState } from "react"
+import { useRef, useState } from 'react'
 import { ButtonAqua } from '../button/Button'
 import { ConfirmCode } from './ConfirmCode'
 import { useNavigate } from 'react-router-dom'
 import { IconBackLink } from '../iconButton/IconButton'
+import React, { ClipboardEvent } from 'react'
 
 
 const ConfirmCodeContainer: React.FC = () => {
@@ -28,22 +29,23 @@ const ConfirmCodeContainer: React.FC = () => {
 
     const onFocusInput = () => {
         setWarning('')
-    }
-
-    const handleKeyDown = (index: number, event: any) => {
-        if (event.key === 'Backspace' && index!==0) {
-            setWarning('')
-            if (!confirmCode[index]) {            
-                inputElRefs[index-1].current!.focus()
-            }
+    }   
+    
+    const handleClipboardEvent = (event: ClipboardEvent<HTMLInputElement>) => {
+        const confirmCodeNew = event.clipboardData.getData('text').replace(/[^\d]/g, '').split('', 4)
+        event.preventDefault()
+        if (confirmCodeNew.length >= 4) {
+            setConfirmCode(confirmCodeNew)
+        } else {
+            setWarning('⚠️ Введите последние 4 цифры входящего номера')
         }
     }
-    
+      
     const onChangeInput = (index: number, event: any) => {        
         confirmCodeNew[index] = event.target.value.replace(/[^\d]/g, '')
         if ( index < 3 && event.target.value) {
             inputElRefs[index+1].current!.focus()
-        } 
+        }
         setConfirmCode(confirmCodeNew)
     }
 
@@ -61,6 +63,17 @@ const ConfirmCodeContainer: React.FC = () => {
         }
     }
 
+    const handleKeyDown = (index: number, event: any) => {
+        if (event.key === 'Backspace' && index!==0) {
+            setWarning('')
+            if (!confirmCode[index]) {            
+                inputElRefs[index-1].current!.focus()
+            }
+        } else if (event.key === 'Enter') {
+            onClickButton()
+        } 
+    }
+
     return <ConfirmCode>
         <IconBackLink to={'/auth'} />
         <div className={classes.inputsConfirmCode_block}>
@@ -71,7 +84,8 @@ const ConfirmCodeContainer: React.FC = () => {
                     type='text'
                     onChange={ event => onChangeInput(index, event)}
                     onKeyDown={ event => handleKeyDown(index, event)}
-                    onFocus={onFocusInput} 
+                    onFocus={onFocusInput}
+                    onPaste={handleClipboardEvent} 
                     autoFocus={index===0}
                     className={classes.fieldConfirmCode} 
                     inputMode='numeric' 

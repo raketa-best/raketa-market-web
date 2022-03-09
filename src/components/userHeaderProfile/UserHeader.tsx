@@ -1,3 +1,4 @@
+import { numberCategorize } from '../../utils/utils'
 import ProgressPercent from '../progressPercent/ProgressPercent'
 import classes from './UserHeader.module.css'
 
@@ -22,7 +23,7 @@ const UserHeader: React.FC<IUserHeaderProps> = (props: IUserHeaderProps) => {
             <div className={classes.amountRub_block}>
                 <div className={classes.text_portfolio}>Портфель</div>
                 <div className={classes.amountRub}>                    
-                    {`${props.amountRub.toLocaleString()}`}
+                    {numberCategorize(props.amountRub)}
                 </div> 
                 <div className={classes.text_amountRub}>₽</div>               
             </div>

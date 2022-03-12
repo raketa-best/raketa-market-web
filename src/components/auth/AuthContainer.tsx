@@ -20,16 +20,6 @@ const AuthContainer: React.FC = () => {
         setWarning('')
     }
 
-    const handleKeyDown = (event: any) => {
-        if (event.key === 'Backspace') {
-            if (phoneNumber?.length===4) {
-                setPhoneNumber('')
-            } else {
-                setPhoneNumber(phoneNumber?.substring(0, phoneNumber.length))
-            }
-        }
-    }
-
     const onChangeInputPhone = (event?: any) => {
         let formatPhoneNumber: string[] = []
         if (event.target.value.length === 1) {
@@ -67,6 +57,18 @@ const AuthContainer: React.FC = () => {
         } else if (phoneNumber && phoneNumber.length===18) {
             handleSubmitPhone(phoneNumber)
         } 
+    }
+
+    const handleKeyDown = (event: any) => {
+        if (event.key === 'Backspace') {
+            if (phoneNumber?.length===4) {
+                setPhoneNumber('')
+            } else {
+                setPhoneNumber(phoneNumber?.substring(0, phoneNumber.length))
+            }
+        } else if (event.key === 'Enter') {
+            onClickButton()
+        }
     }
 
     return <>        

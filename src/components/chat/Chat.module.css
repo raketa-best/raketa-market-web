@@ -1,0 +1,11 @@
+.chat_block {
+    position: absolute;
+    top: 0px;
+    justify-content: center; 
+    height: calc(100vh - 58px);
+    padding-top: 0px;
+}
+
+.chat_text {
+    color: aqua;
+}

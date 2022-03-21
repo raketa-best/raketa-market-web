@@ -4,6 +4,7 @@ import AuthContainer from './components/auth/AuthContainer'
 import Chat from './components/chat/Chat'
 import ConfirmCodeContainer from './components/confirmCode/ConfirmCodeContainer'
 import ConnectTinkoffTokenAlert from './components/connectTinkoffTokenAlert/ConnectTinkoffTokenAlert'
+import DonationsList from './components/donations/DonationsList'
 import FinRecordList from './components/finRecordList/FinRecordList'
 import Home from './components/home/Home'
 import Layout from './components/layout/Layout'
@@ -26,10 +27,15 @@ const App: React.FC = () => {
                                                                   <Profile/> 
                                                                   <StockList /> 
                                                                   </> }/> }/>
+          <Route path='/donations' element={ <Layout component={<>
+                                                                  <Profile/> 
+                                                                  <DonationsList/> 
+                                                                  </> }/> }/>
           <Route path='/profile' element={ <Layout component={ <>
                                                                 <Profile/> 
                                                                 <StockList /> 
-                                                              </> }/> }/> 
+                                                              </> }/> }/>
+                                                               
           <Route path='/pecords' element={ <Layout component={ <>
                                                                   <Profile/> 
                                                                   <FinRecordList />

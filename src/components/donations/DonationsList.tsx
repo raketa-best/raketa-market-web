@@ -3,6 +3,7 @@ import style from '../ProfileBodyBg.module.css'
 import classes from './Donations.module.css'
 import { useState } from "react"
 import AskDonations, { IAskDonationsProps } from "./AskDonations"
+import HandleScroll from "../handleScroll/HandleScroll"
 
 const fakeStateDonations = [
     {
@@ -92,7 +93,7 @@ const fakeStateDonations = [
 
 export interface IDonationsProps {
     ask: IAskDonationsProps,
-    answer?: IAnswerDonationsProps
+    answer?: IAnswerDonationsProps    
 } 
    
 const DonationsList: React.FC = () => {
@@ -100,13 +101,17 @@ const DonationsList: React.FC = () => {
     const [donationsList] = useState<IDonationsProps[]>(fakeStateDonations)    
       
     return <div className={style.block}>
-        {donationsList && donationsList.map((item, index) =>
-            <div className={classes.donations_block}>
-                {<AskDonations {...item.ask} key={index} />}
-                {item.answer && <AnswerDonations {...item.answer} key={index} />}
-            </div>
-            
-        )}
+        <HandleScroll className={`${style.block} ${style.block_scroll}`}> 
+            <>
+                {donationsList && donationsList.map((item, index) =>
+                    <div className={classes.donations_block}>
+                        {<AskDonations {...item.ask} key={index} />}
+                        {item.answer && <AnswerDonations {...item.answer} key={index} />}
+                    </div>
+                )}
+            </>            
+        </HandleScroll>
+               
     </div>
 }
 

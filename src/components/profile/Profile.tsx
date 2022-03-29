@@ -1,8 +1,15 @@
 import { useState } from "react"
 import UserHeader, { IUserHeaderProps } from "../userHeaderProfile/UserHeader"
 import MenuProfile from "../menuProfile/MenuProfile"
+import style from './Profile.module.css'
+import HandleScroll from "../handleScroll/HandleScroll"
 
-const Profile:React.FC = () => {
+export interface IProfileProps { 
+    component: React.ReactElement<any>
+    scroll?: string
+}
+
+const Profile:React.FC<IProfileProps> = (props: IProfileProps) => {
 
     const fakeStateUserHeader = {   
         bgImageUrl: 'https://user-images.githubusercontent.com/13190019/149777282-217df2ba-9355-496f-9339-67cbde15e509.png',
@@ -16,10 +23,11 @@ const Profile:React.FC = () => {
     
     const [userHeader] = useState<IUserHeaderProps>(fakeStateUserHeader)
           
-    return <>
+    return <div className={style.profile}>
         <UserHeader {...userHeader} />                
         <MenuProfile />
-    </> 
+        {props.component}
+    </div>
 }
 
 export default Profile

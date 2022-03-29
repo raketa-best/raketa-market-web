@@ -1,0 +1,16 @@
+.profile {
+    width: 100%;
+    height: calc(100% + 220px + 58px);
+    display: flex;
+    flex-direction: column;
+    background: #2d2736;
+    align-items: center;
+}
+
+@media (min-width: 1000px) {     
+    .profile {
+        width: 700px;
+        border-right: 0.8px solid #9a4df3;
+    }
+}
+

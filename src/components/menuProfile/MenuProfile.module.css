@@ -1,6 +1,4 @@
-.menuProfile_block {
-    position: absolute;
-    top: 300px;
+.menuProfile_block {    
     display: flex;
     z-index: 1000;
     flex-direction: row;
@@ -52,17 +50,3 @@
     height: 19px;    
     fill: #9a4df3;
 }
-
-@media (max-width: 358px), (max-height: 734px) {
-    .menuProfile_block {
-        top: 220px;
-        margin-top: 5px;
-    }
-}
-
-@media (max-height: 648px) {
-    .menuProfile_block {
-        margin-top: 0px;
-    }
-}
-

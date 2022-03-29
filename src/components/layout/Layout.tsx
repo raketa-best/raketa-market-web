@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import HandleScroll from '../handleScroll/HandleScroll'
 import NavBar from '../navBar/NavBar'
 import classes from './Layout.module.css'
 
@@ -8,38 +8,16 @@ export interface ILayoutProps {
 
 const Layout: React.FC<ILayoutProps> = (props: ILayoutProps) => {
 
-    const [styleFixed, setStyleFixed] = useState<string>('')
-    console.log('styleFixed', styleFixed)
-
-    useEffect(() => {
-        setStyleFixed('')
-        window.scroll(0, 0)
-    }, [])
-    
-    const layoutFixedPos = () => {
-        let scrollTop = window.scrollY
-        console.log('scrollTop', scrollTop)
-        if (scrollTop >= 300) {
-            setStyleFixed(classes.layout_fixed_pos)
-        } else {
-            setStyleFixed('')
-        }
-    }
-
-    window.addEventListener('scroll', () => {
-        layoutFixedPos()
-    }) 
-
     return <div className={classes.layout_block}>
-        <div className={`${classes.layout} ${styleFixed}`}>
-            <div className={classes.component}>
+        <div className={classes.layout}>
+            <HandleScroll className={`${classes.layout} ${classes.layout_fixed_pos}`}>
                 {props.component}
-            </div>
-            <div className={classes.nav_bar}>
+            </HandleScroll>
+            <div className={classes.nav_bar}>                    
                 <NavBar />
-            </div>
+            </div> 
         </div>
-    </div>        
+    </div> 
 }
 
 export default Layout

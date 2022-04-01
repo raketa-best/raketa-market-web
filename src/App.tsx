@@ -23,11 +23,11 @@ const App: React.FC = () => {
           <Route path='/home' element={ <Layout component={ <Home/> }/> }/>        
           <Route path='/news' element={ <Layout component={ <News/> }/> }/>
           <Route path='/chat' element={ <Layout component={ <Chat />  }/> }/>
-          <Route path='/portfolio' element={ <Layout component={ <Profile component={ <StockList /> }/> }/> }/>
-          <Route path='/donations' element={ <Layout component={ <Profile component={ <DonationsList/> }/> }/> }/>                                                                   
-          <Route path='/profile' element={ <Layout component={ <Profile component={ <StockList /> }/> }/> }/>                                                               
-          <Route path='/pecords' element={ <Layout component={ <Profile component={ <FinRecordList /> }/> }/> }/>
-          <Route path='/token' element={ <Layout component={  <Profile component={ <ConnectTinkoffTokenAlert /> }/> }/> }/>
+          <Route path='/portfolio' element={ <Layout component={ <Profile component={ StockList }/> }/> }/>
+          <Route path='/donations' element={ <Layout component={ <Profile component={ DonationsList }/> }/> }/>                                                                   
+          <Route path='/profile' element={ <Layout component={ <Profile component={ StockList }/> }/> }/>                                                               
+          <Route path='/pecords' element={ <Layout component={ <Profile component={ FinRecordList }/> }/> }/>
+          <Route path='/token' element={ <Layout component={  <Profile component={ ConnectTinkoffTokenAlert }/> }/> }/>
         </Routes>
     </BrowserRouter>  
   </StoriesProvider>  

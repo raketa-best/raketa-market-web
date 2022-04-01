@@ -1,7 +1,5 @@
 import Stock, { IStockProps } from "./Stock"
-import style from '../ProfileBodyBg.module.css'
 import { useState } from "react"
-import HandleScroll from "../handleScroll/HandleScroll"
 
 const fakeStateStocks = [
     {  
@@ -106,17 +104,13 @@ const StockList: React.FC = () => {
 
     const [stockList] = useState<IStockProps[]>(fakeStateStocks)
     
-    return <div className={style.block}>
-        <HandleScroll className={`${style.block} ${style.block_scroll}`}> 
-            <>
-            {
-                stockList.map((item: IStockProps, index: number) =>         
-                    <Stock {...item} key={index} />
-                )
-            }
-            </>
-        </HandleScroll>        
-    </div>
+    return <>
+        {
+            stockList.map((item: IStockProps, index: number) =>         
+                <Stock {...item} key={index} />
+            )
+        }
+    </>
 }
 
 export default StockList

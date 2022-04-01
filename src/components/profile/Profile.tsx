@@ -1,12 +1,13 @@
-import { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import UserHeader, { IUserHeaderProps } from "../userHeaderProfile/UserHeader"
 import MenuProfile from "../menuProfile/MenuProfile"
 import style from './Profile.module.css'
+import classes from '../ProfileBodyBg.module.css'
 import HandleScroll from "../handleScroll/HandleScroll"
+import ConnectTinkoffTokenAlert from "../connectTinkoffTokenAlert/ConnectTinkoffTokenAlert"
 
 export interface IProfileProps { 
-    component: React.ReactElement<any>
-    scroll?: string
+    component: React.FC
 }
 
 const Profile:React.FC<IProfileProps> = (props: IProfileProps) => {
@@ -22,11 +23,30 @@ const Profile:React.FC<IProfileProps> = (props: IProfileProps) => {
     }    
     
     const [userHeader] = useState<IUserHeaderProps>(fakeStateUserHeader)
-          
+    const [userHeaderHeight, setUserHeaderHeight] = useState<number>(0)
+
+    const userHeaderRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        userHeaderRef.current && setUserHeaderHeight(userHeaderRef.current.clientHeight)
+    }, [userHeaderHeight]) 
+
+                
     return <div className={style.profile}>
-        <UserHeader {...userHeader} />                
-        <MenuProfile />
-        {props.component}
+        <HandleScroll classNameFixedPos={style.profile} userHeaderHeight={userHeaderHeight}>
+            <>
+                <UserHeader {...userHeader} userHeaderRef={userHeaderRef}/>                
+                <MenuProfile />
+                {props.component !== ConnectTinkoffTokenAlert
+                    ? <div className={classes.block}>
+                        <HandleScroll classNameScroll={`${classes.block} ${classes.block_scroll}`} userHeaderHeight={userHeaderHeight}>
+                            <props.component /> 
+                        </HandleScroll>
+                    </div>
+                    : <props.component />
+                }
+            </>
+        </HandleScroll>
     </div>
 }
 

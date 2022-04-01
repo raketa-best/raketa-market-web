@@ -1,9 +1,8 @@
 import AnswerDonations, { IAnswerDonationsProps } from "./AnswerDonations"
-import style from '../ProfileBodyBg.module.css'
 import classes from './Donations.module.css'
 import { useState } from "react"
 import AskDonations, { IAskDonationsProps } from "./AskDonations"
-import HandleScroll from "../handleScroll/HandleScroll"
+
 
 const fakeStateDonations = [
     {
@@ -65,7 +64,7 @@ const fakeStateDonations = [
         answer: undefined
     },
     {   ask: {
-            id: 10001, 
+            id: 50001, 
             userName: 'Никита блондин Михалков',
             avaUrl: 'https://user-images.githubusercontent.com/13190019/157927932-91e5ff0d-142e-4bf9-bdc6-91dd17b8da43.png',
             dateTime: '2022-03-04T21:02:45.678+03:00',
@@ -98,21 +97,16 @@ export interface IDonationsProps {
    
 const DonationsList: React.FC = () => {
 
-    const [donationsList] = useState<IDonationsProps[]>(fakeStateDonations)    
-      
-    return <div className={style.block}>
-        <HandleScroll className={`${style.block} ${style.block_scroll}`}> 
-            <>
-                {donationsList && donationsList.map((item, index) =>
-                    <div className={classes.donations_block}>
-                        {<AskDonations {...item.ask} key={index} />}
-                        {item.answer && <AnswerDonations {...item.answer} key={index} />}
-                    </div>
-                )}
-            </>            
-        </HandleScroll>
-               
-    </div>
+    const [donationsList] = useState<IDonationsProps[]>(fakeStateDonations) 
+          
+    return <>
+        {donationsList && donationsList.map((item) =>
+            <div className={classes.donations_block}>
+                {<AskDonations {...item.ask} key={item.ask.id} />}
+                {item.answer && <AnswerDonations {...item.answer} key={item.answer.id} />}
+            </div>
+        )}
+    </> 
 }
 
 export default DonationsList

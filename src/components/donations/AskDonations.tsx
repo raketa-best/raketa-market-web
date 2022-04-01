@@ -2,6 +2,7 @@ import FormatProfitNumber from '../formatProfitNumber/FormatProfitNumber'
 import classes from './AskDonations.module.css'
 import style from './Emotions.module.css'
 import Emotions from './Emotions'
+import { dateTimeLocale } from '../../utils/utilsDate'
 
 export interface IAskDonationsProps {    
     id: number
@@ -38,7 +39,7 @@ export const AskDonations: React.FC<IAskDonationsProps> = (props: IAskDonationsP
                 <Emotions emotions={props.emotions} id={props.id}/>
             </div>
             <div className={classes.dateTime_block}>
-                <div className={classes.dateTime}>{props.dateTime}</div>
+                <div className={classes.dateTime}>{dateTimeLocale(props.dateTime)}</div>
             </div>
         </div> 
     </div>        

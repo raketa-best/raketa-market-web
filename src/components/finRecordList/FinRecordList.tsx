@@ -1,7 +1,5 @@
 import { FinRecord, IFinRecordProps } from "./FinRecord"
-import style from '../ProfileBodyBg.module.css'
 import { useState } from "react"
-import HandleScroll from "../handleScroll/HandleScroll"
 
 const fakeStateFinRecords = [
     {
@@ -74,17 +72,13 @@ const FinRecordList: React.FC = () => {
 
     const [finRecordList] = useState<IFinRecordProps[]>(fakeStateFinRecords)
     
-    return <div className={style.block}>
-        <HandleScroll className={`${style.block} ${style.block_scroll}`}> 
-            <>
-                { finRecordList &&
-                finRecordList.map((item: IFinRecordProps, index: number) =>         
-                    <FinRecord {...item} key={index} />
-                )
-            }
-            </>
-        </HandleScroll>
-    </div>
+    return <>
+            { finRecordList &&
+            finRecordList.map((item: IFinRecordProps, index: number) =>         
+                <FinRecord {...item} key={index} />
+            )
+        }
+    </>
 }
 
 export default FinRecordList

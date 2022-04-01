@@ -1,3 +1,4 @@
+import { Ref } from 'react'
 import { numberCategorize } from '../../utils/utils'
 import ProgressPercent from '../progressPercent/ProgressPercent'
 import classes from './UserHeader.module.css'
@@ -9,11 +10,15 @@ export interface IUserHeaderProps {
     statusMessage: string
     expProgressPercent: number
     amountRub: number
-    level: number
+    level: number    
 }
 
-const UserHeader: React.FC<IUserHeaderProps> = (props: IUserHeaderProps) => {
-    return <div className={classes.userHeader_block}>
+interface IuserHeaderRefProps {
+    userHeaderRef: Ref<any>
+}
+
+const UserHeader: React.FC<IUserHeaderProps & IuserHeaderRefProps> = (props: IUserHeaderProps & IuserHeaderRefProps) => {
+    return <div ref={props.userHeaderRef} className={classes.userHeader_block}>
         <div style={ {backgroundImage: `url(${props.bgImageUrl})`} } 
             className={classes.bgImageUrl}>     
         </div>

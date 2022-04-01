@@ -10,7 +10,6 @@
     min-width: 310px;    
     height: calc(100% - 300px - 58px - 64px);
     min-height: 236px;
-    background: #2d2736;
 }
 
 .tokenAlert_block::before {

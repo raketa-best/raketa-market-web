@@ -4,3 +4,19 @@
     flex-direction: column;
     align-items: center;
 }
+
+.fixed_pos_300 {
+    position: fixed;
+    top: -300px;
+}
+
+.fixed_pos_220 {
+    position: fixed;
+    top: -220px;
+}
+
+@media (min-width: 1000px) {     
+    .handleScroll {
+        width: 700px;
+    }
+}

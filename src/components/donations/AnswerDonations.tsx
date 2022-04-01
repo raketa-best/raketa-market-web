@@ -1,6 +1,7 @@
 import classes from './AnswerDonations.module.css'
 import style from './Emotions.module.css'
 import Emotions from './Emotions'
+import { dateTimeLocale } from '../../utils/utilsDate'
 
 export interface IAnswerDonationsProps {
     id: number
@@ -29,7 +30,7 @@ export const AnswerDonations: React.FC<IAnswerDonationsProps> = (props: IAnswerD
                 <Emotions emotions={props.emotions} id={props.id}/>
             </div>
             <div className={classes.dateTime_block}>
-                <div className={classes.dateTime}>{props.dateTime}</div>
+                <div className={classes.dateTime}>{dateTimeLocale(props.dateTime)}</div>
             </div>
         </div> 
     </div>      

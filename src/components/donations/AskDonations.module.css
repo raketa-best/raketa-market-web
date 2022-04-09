@@ -101,8 +101,6 @@
 }
 
 .message {
-    position: relative;
-    z-index: 10000;
     width: 306px;
     text-align: justify;
     overflow: scroll;

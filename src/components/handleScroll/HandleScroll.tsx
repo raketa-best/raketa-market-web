@@ -1,61 +1,52 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import classes from './HandleScroll.module.css'
 
 export interface IHandleScrollProps { 
     children: React.ReactElement<any>
-    classNameFixedPos?: string
-    classNameScroll?: string
+    classNameScroll: string
     userHeaderHeight: number | null
 }
 
 const HandleScroll: React.FC<IHandleScrollProps> = (props: IHandleScrollProps) => {
 
     const [classNameChildren, setClassNameChildren] = useState<string>('')
-    const [styleFixedPos, setStyleFixedPos] = useState<string>('') 
-    const [classNameChildrenScroll, setClassNameChildrenScroll] = useState<string>('')    
+    const [styleScroll, setStyleScroll] = useState<string>('')  
+    const [componentScrollTop, setComponentScrollTop] = useState<number>(0)  
     
-    console.log('classNameChildren', classNameChildren)
-    console.log('styleFixedPos', styleFixedPos)
-    console.log('classNameChildrenScroll', classNameChildrenScroll)
+    const componentRef = useRef<HTMLDivElement>(null)
 
     const location = useLocation();
     const pathname = location.pathname
 
     useEffect(() => {        
-        if (window.scrollY) {
-            window.scroll(0, 0)
-            setClassNameChildren('')
-            setStyleFixedPos('')
-            setClassNameChildrenScroll('')
+        if (componentScrollTop > 0 && componentRef.current) {
+            componentRef.current.scrollTop = 0 
         }
     }, [pathname])
         
     const handleScroll = () => {        
         let scrollTop = window.scrollY
-        console.log('scrollTop', scrollTop)
         if (props.userHeaderHeight && scrollTop >= props.userHeaderHeight) {
-            if (props.classNameFixedPos && props.userHeaderHeight === 300) {
-                setClassNameChildren(props.classNameFixedPos)
-                setStyleFixedPos(classes.fixed_pos_300)
-            } else if (props.classNameFixedPos && props.userHeaderHeight === 220) {
-                setClassNameChildren(props.classNameFixedPos)
-                setStyleFixedPos(classes.fixed_pos_220)
-            } else if (props.classNameScroll) {
-                setClassNameChildrenScroll(props.classNameScroll)
-            } 
+            setClassNameChildren(props.classNameScroll)
+            setStyleScroll(classes.scroll)
         } else {
             setClassNameChildren('')
-            setStyleFixedPos('')
+            setStyleScroll('')
         }
     }
     
     window.addEventListener('scroll', () => {        
         handleScroll()
-    })
+    })    
 
-    return<div className={`${classes.handleScroll} ${classNameChildren} ${styleFixedPos} ${classNameChildrenScroll}`}>
-        {props.children}
+    const handleComponentScroll = (event: any) => {
+        setComponentScrollTop(event.target.scrollTop)
+    }
+
+    return <div onScroll={handleComponentScroll} ref={componentRef} 
+        className={`${classes.handleScroll} ${classNameChildren} ${styleScroll}`}>
+            {props.children}
     </div>
 }
 

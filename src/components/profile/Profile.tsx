@@ -5,6 +5,8 @@ import style from './Profile.module.css'
 import classes from '../ProfileBodyBg.module.css'
 import HandleScroll from "../handleScroll/HandleScroll"
 import ConnectTinkoffTokenAlert from "../connectTinkoffTokenAlert/ConnectTinkoffTokenAlert"
+import HandleFixedPos from "../handleFixedPos/HandleFixedPos"
+import useResizeObserver from '@react-hook/resize-observer'
 
 export interface IProfileProps { 
     component: React.FC
@@ -24,30 +26,41 @@ const Profile:React.FC<IProfileProps> = (props: IProfileProps) => {
     
     const [userHeader] = useState<IUserHeaderProps>(fakeStateUserHeader)
     const [userHeaderHeight, setUserHeaderHeight] = useState<number>(0)
+    
 
     const userHeaderRef = useRef<HTMLDivElement>(null)
-
+    
     useEffect(() => {
-        userHeaderRef.current && setUserHeaderHeight(userHeaderRef.current.clientHeight)
-    }, [userHeaderHeight]) 
+        if (userHeaderRef.current) {
+            setUserHeaderHeight(userHeaderRef.current.clientHeight)
+        }  
+    }, [userHeaderRef])
+    
 
-                
+    useResizeObserver(userHeaderRef, (entry) => {
+        setUserHeaderHeight(entry.contentRect.height)
+    })
+
+                      
     return <div className={style.profile}>
-        <HandleScroll classNameFixedPos={style.profile} userHeaderHeight={userHeaderHeight}>
+        <HandleFixedPos classNameFixedPos={style.profile} userHeaderHeight={userHeaderHeight}>
             <>
                 <UserHeader {...userHeader} userHeaderRef={userHeaderRef}/>                
                 <MenuProfile />
-                {props.component !== ConnectTinkoffTokenAlert
+                {props.component !== ConnectTinkoffTokenAlert 
                     ? <div className={classes.block}>
-                        <HandleScroll classNameScroll={`${classes.block} ${classes.block_scroll}`} userHeaderHeight={userHeaderHeight}>
+                        <HandleScroll classNameScroll={classes.block} userHeaderHeight={userHeaderHeight}>
                             <props.component /> 
                         </HandleScroll>
                     </div>
                     : <props.component />
                 }
             </>
-        </HandleScroll>
+        </HandleFixedPos>
     </div>
 }
 
 export default Profile
+
+
+

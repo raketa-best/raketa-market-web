@@ -101,7 +101,7 @@ const DonationsList: React.FC = () => {
           
     return <>
         {donationsList && donationsList.map((item) =>
-            <div className={classes.donations_block}>
+            <div className={classes.donations_block} >
                 {<AskDonations {...item.ask} key={item.ask.id} />}
                 {item.answer && <AnswerDonations {...item.answer} key={item.answer.id} />}
             </div>

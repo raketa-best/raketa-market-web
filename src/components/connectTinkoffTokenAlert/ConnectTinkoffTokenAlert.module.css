@@ -1,29 +1,3 @@
-.tokenAlert_block {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    top: 364px;
-    width: 100%;
-    max-width: 700px;
-    min-width: 310px;    
-    height: calc(100% - 300px - 58px - 64px);
-    min-height: 236px;
-}
-
-.tokenAlert_block::before {
-    content: '';
-    position: fixed;
-    right: 5px;
-    top: 60vh;
-    width: 200px;
-    height: 150px;
-    background: linear-gradient(210deg, #034eda 10%, #b403b4 80%);
-    border-radius: 50%;
-    filter: blur(125px);
-}
-
 .tokenAlert {
     display: flex;
     flex-direction: column;
@@ -39,6 +13,20 @@
     padding-top: 10px;    
     box-shadow: 0 0 8px 3px rgb(247, 42, 213);
     border-radius: 5px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+.tokenAlert::before {
+    content: '';
+    position: fixed;
+    right: 5px;
+    top: 60vh;
+    width: 200px;
+    height: 150px;
+    background: linear-gradient(210deg, #034eda 10%, #b403b4 80%);
+    border-radius: 50%;
+    filter: blur(125px);
 }
 
 .message {
@@ -55,12 +43,7 @@
 
 @media (max-width: 358px), (max-height: 734px) {
 
-    .tokenAlert_block {
-        top: 279px;
-        height: calc(100% - 220px - 58px - 59px);
-    }
-
-    .tokenAlert_block::before {
+    .tokenAlert::before {
         width: 150px;
         height: 100px;
         filter: blur(85px);
@@ -82,9 +65,10 @@
     } 
 }
 
+
 @media (min-width: 511px) { 
 
-    .tokenAlert_block::before {
+    .tokenAlert::before {
         width: 300px;
         height: 250px;
         filter: blur(120px);
@@ -101,13 +85,7 @@
 }
 
 @media (max-height: 648px) {
-
-    .tokenAlert_block {
-        top: 274px;
-        height: calc(100% - 220px - 58px - 54px);
-        padding-bottom: 58px;
-    }  
-    
+       
     .tokenAlert {
         height: 170px;
         padding: 15px;

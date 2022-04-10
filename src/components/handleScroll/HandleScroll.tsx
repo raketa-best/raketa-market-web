@@ -11,42 +11,40 @@ export interface IHandleScrollProps {
 const HandleScroll: React.FC<IHandleScrollProps> = (props: IHandleScrollProps) => {
 
     const [classNameChildren, setClassNameChildren] = useState<string>('')
-    const [styleScroll, setStyleScroll] = useState<string>('')  
-    const [componentScrollTop, setComponentScrollTop] = useState<number>(0)  
+    const [styleScroll, setStyleScroll] = useState<string>('')
+    const [prevPathname, setPrevPathname] = useState<string>('')
     
     const componentRef = useRef<HTMLDivElement>(null)
 
     const location = useLocation();
     const pathname = location.pathname
-
-    useEffect(() => {        
-        if (componentScrollTop > 0 && componentRef.current) {
-            componentRef.current.scrollTop = 0 
-        }
-    }, [pathname])
-        
+               
     const handleScroll = () => {        
-        let scrollTop = window.scrollY
-        if (props.userHeaderHeight && scrollTop >= props.userHeaderHeight) {
+        let scrolling = window.scrollY
+        if (props.userHeaderHeight && scrolling >= props.userHeaderHeight) {
             setClassNameChildren(props.classNameScroll)
-            setStyleScroll(classes.scroll)
+            setStyleScroll(classes.scroll)                
         } else {
             setClassNameChildren('')
             setStyleScroll('')
         }
     }
-    
-    window.addEventListener('scroll', () => {        
-        handleScroll()
-    })    
 
-    const handleComponentScroll = (event: any) => {
-        setComponentScrollTop(event.target.scrollTop)
+    useEffect(() => {    
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    })   
+    
+    if (prevPathname !== pathname) {
+        if (componentRef.current) {
+            componentRef.current.scrollTop = 0 
+        }        
+        setPrevPathname(pathname)
+        handleScroll()
     }
 
-    return <div onScroll={handleComponentScroll} ref={componentRef} 
-        className={`${classes.handleScroll} ${classNameChildren} ${styleScroll}`}>
-            {props.children}
+    return <div ref={componentRef} className={`${classes.handleScroll} ${classNameChildren} ${styleScroll}`}>
+        {props.children}
     </div>
 }
 

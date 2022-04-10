@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import classes from './HandleFixedPos.module.css'
 
 export interface IHandleFixedPosProps { 
@@ -12,7 +12,8 @@ const HandleFixedPos: React.FC<IHandleFixedPosProps> = (props: IHandleFixedPosPr
 
     const [classNameChildren, setClassNameChildren] = useState<string>('')
     const [styleFixedPos, setStyleFixedPos] = useState<string>('') 
-
+    const [prevUserHeaderHeight, setPrevUserHeaderHeight] = useState<number | null>(null) 
+    
     const handleFixedPos = () => {        
         let scrollTop = window.scrollY
         if (props.userHeaderHeight && scrollTop >= props.userHeaderHeight) {
@@ -27,11 +28,12 @@ const HandleFixedPos: React.FC<IHandleFixedPosProps> = (props: IHandleFixedPosPr
             setClassNameChildren('')
             setStyleFixedPos('')
         }
-    }    
-
-    useEffect(() => {
+    }  
+    
+    if (prevUserHeaderHeight !== props.userHeaderHeight) {
         handleFixedPos()
-    }, [props.userHeaderHeight])
+        setPrevUserHeaderHeight(props.userHeaderHeight)
+    }
 
     window.addEventListener('scroll', () => {        
         handleFixedPos()

@@ -4,7 +4,6 @@ import MenuProfile from "../menuProfile/MenuProfile"
 import style from './Profile.module.css'
 import classes from '../ProfileBodyBg.module.css'
 import HandleScroll from "../handleScroll/HandleScroll"
-import ConnectTinkoffTokenAlert from "../connectTinkoffTokenAlert/ConnectTinkoffTokenAlert"
 import HandleFixedPos from "../handleFixedPos/HandleFixedPos"
 import useResizeObserver from '@react-hook/resize-observer'
 
@@ -40,21 +39,17 @@ const Profile:React.FC<IProfileProps> = (props: IProfileProps) => {
     useResizeObserver(userHeaderRef, (entry) => {
         setUserHeaderHeight(entry.contentRect.height)
     })
-
                       
     return <div className={style.profile}>
         <HandleFixedPos classNameFixedPos={style.profile} userHeaderHeight={userHeaderHeight}>
             <>
                 <UserHeader {...userHeader} userHeaderRef={userHeaderRef}/>                
-                <MenuProfile />
-                {props.component !== ConnectTinkoffTokenAlert 
-                    ? <div className={classes.block}>
-                        <HandleScroll classNameScroll={classes.block} userHeaderHeight={userHeaderHeight}>
-                            <props.component /> 
-                        </HandleScroll>
-                    </div>
-                    : <props.component />
-                }
+                <MenuProfile /> 
+                <div className={classes.block}>
+                    <HandleScroll classNameScroll={classes.block} userHeaderHeight={userHeaderHeight}>
+                        <props.component /> 
+                    </HandleScroll>
+                </div>
             </>
         </HandleFixedPos>
     </div>

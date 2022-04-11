@@ -1,0 +1,15 @@
+.donations_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 20px);
+    max-width: 580px;
+    min-width: 290px;
+    margin-top: 20px;
+    background: #3e2b5c;
+    border-radius: 25px;
+    border-top: 1px solid #9a4df3;
+    border-bottom: 1px solid #9a4df3;
+    box-shadow: 0 0 10px 4px #1c1922; 
+}

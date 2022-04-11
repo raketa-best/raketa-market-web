@@ -4,6 +4,7 @@ import AuthContainer from './components/auth/AuthContainer'
 import Chat from './components/chat/Chat'
 import ConfirmCodeContainer from './components/confirmCode/ConfirmCodeContainer'
 import ConnectTinkoffTokenAlert from './components/connectTinkoffTokenAlert/ConnectTinkoffTokenAlert'
+import DonationsList from './components/donations/DonationsList'
 import FinRecordList from './components/finRecordList/FinRecordList'
 import Home from './components/home/Home'
 import Layout from './components/layout/Layout'
@@ -22,22 +23,11 @@ const App: React.FC = () => {
           <Route path='/home' element={ <Layout component={ <Home/> }/> }/>        
           <Route path='/news' element={ <Layout component={ <News/> }/> }/>
           <Route path='/chat' element={ <Layout component={ <Chat />  }/> }/>
-          <Route path='/portfolio' element={ <Layout component={<>
-                                                                  <Profile/> 
-                                                                  <StockList /> 
-                                                                  </> }/> }/>
-          <Route path='/profile' element={ <Layout component={ <>
-                                                                <Profile/> 
-                                                                <StockList /> 
-                                                              </> }/> }/> 
-          <Route path='/pecords' element={ <Layout component={ <>
-                                                                  <Profile/> 
-                                                                  <FinRecordList />
-                                                                </> }/> }/>
-          <Route path='/token' element={ <Layout component={  <>
-                                                                <Profile/> 
-                                                                <ConnectTinkoffTokenAlert />
-                                                              </> }/> }/>             
+          <Route path='/portfolio' element={ <Layout component={ <Profile component={ StockList }/> }/> }/>
+          <Route path='/donations' element={ <Layout component={ <Profile component={ DonationsList }/> }/> }/>                                                                   
+          <Route path='/profile' element={ <Layout component={ <Profile component={ StockList }/> }/> }/>                                                               
+          <Route path='/pecords' element={ <Layout component={ <Profile component={ FinRecordList }/> }/> }/>
+          <Route path='/token' element={ <Layout component={  <Profile component={ ConnectTinkoffTokenAlert }/> }/> }/>
         </Routes>
     </BrowserRouter>  
   </StoriesProvider>  

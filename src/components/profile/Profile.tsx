@@ -1,8 +1,17 @@
-import { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import UserHeader, { IUserHeaderProps } from "../userHeaderProfile/UserHeader"
 import MenuProfile from "../menuProfile/MenuProfile"
+import style from './Profile.module.css'
+import classes from '../ProfileBodyBg.module.css'
+import HandleScroll from "../handleScroll/HandleScroll"
+import HandleFixedPos from "../handleFixedPos/HandleFixedPos"
+import useResizeObserver from '@react-hook/resize-observer'
 
-const Profile:React.FC = () => {
+export interface IProfileProps { 
+    component: React.FC
+}
+
+const Profile:React.FC<IProfileProps> = (props: IProfileProps) => {
 
     const fakeStateUserHeader = {   
         bgImageUrl: 'https://user-images.githubusercontent.com/13190019/149777282-217df2ba-9355-496f-9339-67cbde15e509.png',
@@ -15,11 +24,38 @@ const Profile:React.FC = () => {
     }    
     
     const [userHeader] = useState<IUserHeaderProps>(fakeStateUserHeader)
-          
-    return <>
-        <UserHeader {...userHeader} />                
-        <MenuProfile />
-    </> 
+    const [userHeaderHeight, setUserHeaderHeight] = useState<number>(0)
+    
+
+    const userHeaderRef = useRef<HTMLDivElement>(null)
+    
+    useEffect(() => {
+        if (userHeaderRef.current) {
+            setUserHeaderHeight(userHeaderRef.current.clientHeight)
+        }  
+    }, [userHeaderRef])
+    
+
+    useResizeObserver(userHeaderRef, (entry) => {
+        setUserHeaderHeight(entry.contentRect.height)
+    })
+                      
+    return <div className={style.profile}>
+        <HandleFixedPos classNameFixedPos={style.profile} userHeaderHeight={userHeaderHeight}>
+            <>
+                <UserHeader {...userHeader} userHeaderRef={userHeaderRef}/>                
+                <MenuProfile /> 
+                <div className={classes.block}>
+                    <HandleScroll classNameScroll={classes.block} userHeaderHeight={userHeaderHeight}>
+                        <props.component /> 
+                    </HandleScroll>
+                </div>
+            </>
+        </HandleFixedPos>
+    </div>
 }
 
 export default Profile
+
+
+

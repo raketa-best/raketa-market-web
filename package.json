@@ -7,6 +7,7 @@
     "@emotion/styled": "^11.6.0",
     "@mui/material": "^5.2.4",
     "@mui/styled-engine-sc": "^5.1.0",
+    "@react-hook/resize-observer": "^1.2.5",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -49,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.4.0"
   }
 }

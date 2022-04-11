@@ -25,6 +25,7 @@ export const MenuProfileElement: React.FC<IMenuProfileElementProps> = (props: IM
 const MenuProfile: React.FC = () => {
 
     return <div className={classes.menuProfile_block}>
+        <MenuProfileElement to={'/donations'} label={'Донаты'}/>
         <MenuProfileElement to={'/portfolio'} label={'Портфель'}/>
         <MenuProfileElement to={'/pecords'} label={'Рекорды'}/>
         <MenuProfileElement to={'/token'} label={'Токен'}/>

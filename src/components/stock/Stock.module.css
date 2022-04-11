@@ -9,7 +9,7 @@
     'image price avgPrice' 
     'image price comment' 
     'progressP progressP comment';    
-    margin: 10px;
+    margin: 20px 10px 0px 10px;    
     padding: 10px;
     background: #2d2736;
     box-shadow: 0 0 8px 3px #15131b;

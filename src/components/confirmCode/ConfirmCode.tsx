@@ -1,14 +1,17 @@
+import { I18n } from '../../i18n/i18n'
 import classes from './ConfirmCode.module.css'
 
-export const ConfirmCode: React.FC = (props) => {
+export const ConfirmCode: React.FC<{i18n: I18n}> = (props) => {
+
+    const t = props.i18n
     
     return <>    
         <div className={classes.confirmCode_block}>
             <div className={classes.text}>
-                Сейчас поступит звонок, на указанный вами номер телефона
+                {t['Сейчас поступит звонок, на указанный вами номер телефона']}
             </div>
             <div className={classes.text}>
-                Для аутентификации введите последние 4 цифры входящего номера
+                {t['Для аутентификации введите последние 4 цифры входящего номера']}
             </div>
             <div>
                 {props.children}

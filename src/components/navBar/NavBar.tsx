@@ -3,6 +3,7 @@ import icon_ellipse from '../../images/icon_ellipse.svg'
 import classes from './NavBar.module.css'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { I18n } from '../../i18n/i18n'
 
 export interface INavBarElementProps {
     to: string
@@ -28,12 +29,14 @@ export const NavBarElement: React.FC<INavBarElementProps> = (props: INavBarEleme
     </div>
 }
 
-const NavBar: React.FC = () => {
+const NavBar: React.FC<{i18n: I18n}> = (props) => {
+
+    const t = props.i18n
 
     return <div className={classes.navBar_block}>
-        <NavBarElement to={'/home'} label={'Домой'}/>
-        <NavBarElement to={'/news'} label={'Новости'}/>
-        <NavBarElement to={'/chat'} label={'Чат'}/>
+        <NavBarElement to={'/home'} label={t['Домой']}/>
+        <NavBarElement to={'/news'} label={t['Новости']}/>
+        <NavBarElement to={'/chat'} label={t['Чат']}/>
         <NavBarElement to={'/profile'} icon={ProfileIcon} />
     </div>
 }

@@ -1,17 +1,15 @@
+import { I18n } from '../../i18n/i18n'
 import NavBar from '../navBar/NavBar'
 import classes from './Layout.module.css'
 
-export interface ILayoutProps { 
-    component: React.ReactElement<any>
-}
 
-const Layout: React.FC<ILayoutProps> = (props: ILayoutProps) => {
+const Layout: React.FC<{i18n: I18n}> = (props) => {
 
     return <div className={classes.layout_block}>
         <div className={classes.layout}>            
-            {props.component}
+            {props.children}
             <div className={classes.nav_bar}>                    
-                <NavBar />
+                <NavBar i18n={props.i18n} />
             </div> 
         </div>
     </div> 

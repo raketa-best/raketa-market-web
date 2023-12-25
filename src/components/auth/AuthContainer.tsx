@@ -3,10 +3,13 @@ import Auth from "./Auth"
 import classes from './Auth.module.css'
 import { ButtonPink } from "../button/Button"
 import { useNavigate } from "react-router-dom"
+import { I18n } from "../../i18n/i18n"
 
 
-const AuthContainer: React.FC = () => {
+const AuthContainer: React.FC<{i18n: I18n}> = (props) => {
 
+    const t = props.i18n
+    
     const [phoneNumber, setPhoneNumber] = useState<string | undefined>('')
     const [warning, setWarning] = useState<string>('')
     
@@ -51,9 +54,9 @@ const AuthContainer: React.FC = () => {
 
     const onClickButton = () => {    
         if (phoneNumber==='') {
-            setWarning('⚠️ Обязательное поле')
+            setWarning(t['⚠️ Обязательное поле'])
         } else if (phoneNumber && phoneNumber.length!==18) {
-            setWarning('⚠️ Введите номер телефона') 
+            setWarning(t['⚠️ Введите номер телефона']) 
         } else if (phoneNumber && phoneNumber.length===18) {
             handleSubmitPhone(phoneNumber)
         } 
@@ -71,32 +74,30 @@ const AuthContainer: React.FC = () => {
         }
     }
 
-    return <>        
-        <Auth>
-            <div className={classes.locationFormClasses}>
-                <div className={classes.inputPhoneNumber_block}>
-                    <label className={!warning ? classes.label : classes.label_warning}>
-                        {!warning ? '* Введите номер телефона' : warning} 
-                    </label>
-                    <input  
-                        type='text' 
-                        inputMode='numeric'
-                        value={phoneNumber}  
-                        autoFocus={true}
-                        onFocus={onFocusInput} 
-                        onChange={onChangeInputPhone}
-                        onKeyDown={handleKeyDown}
-                        className={classes.fieldPhone} 
-                    />
-                </div>
+    return <Auth i18n={props.i18n}>
+        <div className={classes.locationFormClasses}>
+            <div className={classes.inputPhoneNumber_block}>
+                <label className={!warning ? classes.label : classes.label_warning}>
+                    {!warning ? t['* Введите номер телефона'] : warning} 
+                </label>
+                <input  
+                    type='text' 
+                    inputMode='numeric'
+                    value={phoneNumber}  
+                    autoFocus={true}
+                    onFocus={onFocusInput} 
+                    onChange={onChangeInputPhone}
+                    onKeyDown={handleKeyDown}
+                    className={classes.fieldPhone} 
+                />
             </div>
-            <div className={classes.locationButtonClasses}>
-                <ButtonPink onClick={onClickButton} >
-                    {'Получить код доступа'}
-                </ButtonPink>
-            </div>
-        </Auth>
-    </>
+        </div>
+        <div className={classes.locationButtonClasses}>
+            <ButtonPink onClick={onClickButton} >
+                {t['Получить код доступа']}
+            </ButtonPink>
+        </div>
+    </Auth>
 }
 
 export default AuthContainer  

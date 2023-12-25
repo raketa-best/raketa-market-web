@@ -2,6 +2,7 @@ import { Ref } from 'react'
 import { numberCategorize } from '../../utils/utils'
 import ProgressPercent from '../progressPercent/ProgressPercent'
 import classes from './UserHeader.module.css'
+import { I18n } from '../../i18n/i18n'
 
 export interface IUserHeaderProps {
     bgImageUrl: string
@@ -10,14 +11,16 @@ export interface IUserHeaderProps {
     statusMessage: string
     expProgressPercent: number
     amountRub: number
-    level: number    
+    level: number      
 }
 
 interface IuserHeaderRefProps {
     userHeaderRef: Ref<any>
 }
 
-const UserHeader: React.FC<IUserHeaderProps & IuserHeaderRefProps> = (props: IUserHeaderProps & IuserHeaderRefProps) => {
+const UserHeader: React.FC<IUserHeaderProps & IuserHeaderRefProps & {i18n: I18n}> = (props) => {
+
+    const t = props.i18n 
     return <div ref={props.userHeaderRef} className={classes.userHeader_block}>
         <div style={ {backgroundImage: `url(${props.bgImageUrl})`} } 
             className={classes.bgImageUrl}>     
@@ -27,11 +30,11 @@ const UserHeader: React.FC<IUserHeaderProps & IuserHeaderRefProps> = (props: IUs
             <div className={classes.progress_block}>
                 <ProgressPercent progressPercent={props.expProgressPercent} label={`LEVEL ${props.level}`}/>          
                 <div className={classes.amountRub_block}>
-                    <div className={classes.text_portfolio}>Портфель</div>
+                    <div className={classes.text_portfolio}>{t['Портфель']}</div>
                     <div className={classes.amountRub}>                    
                         {numberCategorize(props.amountRub)}
                     </div> 
-                    <div className={classes.text_amountRub}>₽</div>               
+                    <div className={classes.text_amountRub}>$</div>               
                 </div>
             </div> 
         </div> 

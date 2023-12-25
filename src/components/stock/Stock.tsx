@@ -1,3 +1,4 @@
+import { I18n } from '../../i18n/i18n'
 import { numberShorter } from '../../utils/utils'
 import FormatProfitNumber from '../formatProfitNumber/FormatProfitNumber'
 import ProgressPercent from '../progressPercent/ProgressPercent'
@@ -13,10 +14,12 @@ export interface IStockProps {
     portfolioPercent: number
     amountRub: number
     avgPrice: number
-    comment: string    
+    comment: string
 }
 
-export const Stock: React.FC<IStockProps> = (props: IStockProps) => {
+export const Stock: React.FC<IStockProps & {i18n: I18n}> = (props) => {
+    const t = props.i18n
+
     return <div className={classes.stock_block}>
         <div className={classes.image_block}>
             <div>
@@ -24,7 +27,7 @@ export const Stock: React.FC<IStockProps> = (props: IStockProps) => {
             </div> 
             <div className={classes.count_block}>
                 <div className={classes.count}>{ `${ (props.count).toFixed(1) }` }</div>
-                <div>шт</div>
+                <div>{t['шт']}</div>
             </div>
         </div>
         <div className={classes.price_block}>
@@ -34,14 +37,14 @@ export const Stock: React.FC<IStockProps> = (props: IStockProps) => {
                 <FormatProfitNumber profitNumber={props.profitPercent} label={'%'} />
             </div> 
             <div className={classes.profitAmountRub_block}>
-                <FormatProfitNumber profitNumber={props.profitAmountRub} label={'₽'} />
+                <FormatProfitNumber profitNumber={props.profitAmountRub} label={'$'} />
             </div>   
         </div>
         <div className={classes.progress_block}>            
-            <ProgressPercent progressPercent={props.portfolioPercent} label={`₽ ${numberShorter(props.amountRub)}`}/>
+            <ProgressPercent progressPercent={props.portfolioPercent} label={`$ ${numberShorter(props.amountRub)}`}/>
         </div>
         <div className={classes.avgPrice_block}>
-            <div className={classes.avgPrice}>средняя цена</div>
+            <div className={classes.avgPrice}>{t['средняя цена']}</div>
             <div className={classes.avgPrice}>{ `$ ${(props.avgPrice).toFixed(2)}` }</div>
         </div>
         <div className={classes.comment_block}>

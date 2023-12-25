@@ -7,40 +7,44 @@ import { ButtonGryMedium } from '../components/button/Button'
 import { useContext } from 'react'
 import { StoriesContext } from './StoriesProvider'
 import TinkoffTokenStoriesSet from './TinkoffTokenStoriesSet'
+import { I18n } from '../i18n/i18n'
 
 
-export const TinkoffTokenStoriesPresentation = () => {
+const TinkoffTokenStoriesPresentation: React.FC<{i18n: I18n}> = (props) => {
+
+    const t = props.i18n 
 
     const {show} = useContext(StoriesContext)
 
     const onClickButton = () => {
-        show(<TinkoffTokenStoriesSet />)
+        show(<TinkoffTokenStoriesSet i18n={props.i18n}/>)
     }
 
     return <div className={classes.tinkoffTokenStories_Presentation_block}>
         <div className={classes.tinkoffInvest_block}>
             <IconTinkoffInvest className={classes.icon_TinkoffInvest} />
             <div className={classes.tinkoffTokenStories_Presentation_text}>
-                Токен<br />Тинькофф.Инвестиции <IconKey className={classes.icon_key}/>
+                {t['Токен']}<br />{t['Тинькофф.Инвестиции']} <IconKey className={classes.icon_key}/>
             </div>
         </div>
         <div className={classes.ai_block}>
             <img src={iconAI} className={classes.icon_ai} alt={''} />
             <div className={classes.tinkoffTokenStories_Presentation_text}>
-                Токен позволяет<br />искусственному интеллекту<br />сканировать ваши сделки 💡
+                {t['Токен позволяет']}<br />{t['искусственному интеллекту']}<br />{t['сканировать ваши сделки 💡']}
             </div>
         </div>
         <div className={classes.lock_block}>
             <img src={iconLock} className={classes.icon_lock} alt={''} />
             <div className={classes.tinkoffTokenStories_Presentation_text}>
-                Безопасно!<br /><br />Есть два вида токена:<br />'для чтения' и 'полный доступ'<br />Вам нужен токен:<br />только 'для чтения' ✅
+                {t['Безопасно!']}<br /><br />{t['Есть два вида токена:']}<br />{t['"для чтения" и "полный доступ"']}<br />{t['Вам нужен токен:']}<br />{t['только "для чтения" ✅']}
             </div>
         </div>
         <ButtonGryMedium onClick={onClickButton} >
             <div className={classes.button_block}>
                 <IconTinkoffInvest className={classes.icon_button} />            
-                <div>Получить токен<br />Тинькофф.Инвестиции</div>
+                <div>{t['Получить токен']}<br />{t['Тинькофф.Инвестиции']}</div>
             </div>
         </ButtonGryMedium>
     </div>
 }
+export default TinkoffTokenStoriesPresentation

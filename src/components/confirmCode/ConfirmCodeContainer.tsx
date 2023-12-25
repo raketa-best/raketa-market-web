@@ -5,9 +5,12 @@ import { ConfirmCode } from './ConfirmCode'
 import { useNavigate } from 'react-router-dom'
 import { IconBackLink } from '../iconButton/IconButton'
 import React, { ClipboardEvent } from 'react'
+import { I18n } from '../../i18n/i18n'
 
 
-const ConfirmCodeContainer: React.FC = () => {
+const ConfirmCodeContainer: React.FC<{i18n: I18n}> = (props) => {
+
+    const t = props.i18n
 
     const [confirmCode, setConfirmCode] = useState<string[]>( new Array(4).fill('') )
     const [warning, setWarning] = useState<string>('')
@@ -37,7 +40,7 @@ const ConfirmCodeContainer: React.FC = () => {
         if (confirmCodeNew.length >= 4) {
             setConfirmCode(confirmCodeNew)
         } else {
-            setWarning('⚠️ Введите последние 4 цифры входящего номера')
+            setWarning(t['⚠️ Введите последние 4 цифры входящего номера'])
         }
     }
       
@@ -53,13 +56,13 @@ const ConfirmCodeContainer: React.FC = () => {
         if (confirmCodeNew[3]) {
             if (confirmCodeNew.join('')!=='1234') {
                 inputElRefs[3].current!.focus()
-                setWarning('⚠️ Введите верно, последние 4 цифры входящего номера')
+                setWarning(t['⚠️ Введите верно, последние 4 цифры входящего номера'])
             } else if (confirmCodeNew.join('')==='1234') {
                 setWarning('')
                 handleSubmitConfirmCode?.(confirmCodeNew.join(''))
             } 
         } else {
-            setWarning('⚠️ Введите последние 4 цифры входящего номера')
+            setWarning(t['⚠️ Введите последние 4 цифры входящего номера'])
         }
     }
 
@@ -74,7 +77,7 @@ const ConfirmCodeContainer: React.FC = () => {
         } 
     }
 
-    return <ConfirmCode>
+    return <ConfirmCode i18n={props.i18n}>
         <IconBackLink to={'/auth'} />
         <div className={classes.inputsConfirmCode_block}>
             { confirmCode.map((item: string, index: number) => 
@@ -96,7 +99,7 @@ const ConfirmCodeContainer: React.FC = () => {
         </div> 
         <div className={classes.warning}> {warning!=='' && warning} </div>
         <div className={classes.button_block}>
-            <ButtonAqua onClick={onClickButton}> {'Войти'} </ButtonAqua>
+            <ButtonAqua onClick={onClickButton}> {t['Войти']} </ButtonAqua>
         </div>
     </ConfirmCode>
 }

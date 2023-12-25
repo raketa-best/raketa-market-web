@@ -1,3 +1,4 @@
+import { I18n } from '../../i18n/i18n'
 import classes from './MenuProfile.module.css'
 import { NavLink, useLocation } from 'react-router-dom'
 
@@ -22,13 +23,15 @@ export const MenuProfileElement: React.FC<IMenuProfileElementProps> = (props: IM
     </div>
 }
 
-const MenuProfile: React.FC = () => {
+const MenuProfile: React.FC<{i18n: I18n}> = (props) => {
+
+    const t = props.i18n
 
     return <div className={classes.menuProfile_block}>
-        <MenuProfileElement to={'/donations'} label={'Донаты'}/>
-        <MenuProfileElement to={'/portfolio'} label={'Портфель'}/>
-        <MenuProfileElement to={'/pecords'} label={'Рекорды'}/>
-        <MenuProfileElement to={'/token'} label={'Токен'}/>
+        <MenuProfileElement to={'/donations'} label={t['Донаты']}/>
+        <MenuProfileElement to={'/portfolio'} label={t['Портфель']}/>
+        <MenuProfileElement to={'/pecords'} label={t['Рекорды']}/>
+        <MenuProfileElement to={'/token'} label={t['Токен']}/>
     </div>
 }
 

@@ -15,7 +15,7 @@ export interface IAnswerDonationsProps {
 }
 
 
-export const AnswerDonations: React.FC<IAnswerDonationsProps> = (props: IAnswerDonationsProps) => {
+const AnswerDonations: React.FC<IAnswerDonationsProps> = (props: IAnswerDonationsProps) => {
     return <div className={classes.answer_block}> 
         <div className={classes.avaUrl_message_answer}>
             <div className={classes.avaUrl_answer_block}>

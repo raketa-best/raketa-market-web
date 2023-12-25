@@ -12,25 +12,73 @@ import News from './components/news/News'
 import Profile from './components/profile/Profile'
 import StockList from './components/stock/StockList'
 import StoriesProvider from './storiesLayout/StoriesProvider'
+import WithI18n from './i18n/WithI18n'
+import DropdownI18n from './i18n/dropdownI18n/DropdownI18n'
 
 const App: React.FC = () => {
-  return <StoriesProvider>
-  <BrowserRouter>
-        <Routes>
-          <Route path='/' element={ <AuthContainer/> }/> 
-          <Route path='/auth' element={ <AuthContainer/> }/>  
-          <Route path='/confirmCode' element={ <ConfirmCodeContainer/> }/>
-          <Route path='/home' element={ <Layout component={ <Home/> }/> }/>        
-          <Route path='/news' element={ <Layout component={ <News/> }/> }/>
-          <Route path='/chat' element={ <Layout component={ <Chat />  }/> }/>
-          <Route path='/portfolio' element={ <Layout component={ <Profile component={ StockList }/> }/> }/>
-          <Route path='/donations' element={ <Layout component={ <Profile component={ DonationsList }/> }/> }/>                                                                   
-          <Route path='/profile' element={ <Layout component={ <Profile component={ StockList }/> }/> }/>                                                               
-          <Route path='/pecords' element={ <Layout component={ <Profile component={ FinRecordList }/> }/> }/>
-          <Route path='/token' element={ <Layout component={  <Profile component={ ConnectTinkoffTokenAlert }/> }/> }/>
+  return <WithI18n>{(i18n, setLanguage) =>
+    <StoriesProvider>
+      <DropdownI18n i18n={i18n} setLanguage={setLanguage}/>
+      <BrowserRouter>
+          <Routes>            
+            <Route path='/' element={<AuthContainer i18n={i18n} />} />
+            <Route path='/auth' element={<AuthContainer i18n={i18n} />} /> 
+            <Route path='/confirmCode' element={
+              <ConfirmCodeContainer i18n={i18n} />} 
+            />
+            <Route path='/home' element={
+              <Layout i18n={i18n} >
+                <Home i18n={i18n} />
+              </Layout>   
+            } />      
+            <Route path='/news' element={
+              <Layout i18n={i18n} >
+                <News i18n={i18n} />
+              </Layout>
+            } /> 
+            <Route path='/chat' element={
+              <Layout i18n={i18n} >
+                <Chat i18n={i18n} />
+              </Layout> 
+            } /> 
+            <Route path='/portfolio' element={              
+                <Layout i18n={i18n} > 
+                  <Profile i18n={i18n} >
+                    <StockList i18n={i18n} />
+                  </Profile> 
+                </Layout>              
+            } />
+            <Route path='/donations' element={
+              <Layout i18n={i18n} >
+                <Profile i18n={i18n} >
+                  <DonationsList/>
+                </Profile> 
+              </Layout>
+            } />                                                                   
+            <Route path='/profile' element={
+              <Layout i18n={i18n} >
+                <Profile  i18n={i18n} >
+                  <StockList i18n={i18n} />
+                </Profile>
+              </Layout>
+            } />                                                               
+            <Route path='/pecords' element={
+              <Layout i18n={i18n} >
+                <Profile  i18n={i18n} >
+                  <FinRecordList />
+                </Profile>
+              </Layout>
+            } /> 
+            <Route path='/token' element={
+              <Layout i18n={i18n} >
+                <Profile  i18n={i18n} >
+                  <ConnectTinkoffTokenAlert i18n={i18n} />
+                </Profile>
+              </Layout>
+            } /> 
         </Routes>
-    </BrowserRouter>  
-  </StoriesProvider>  
+      </BrowserRouter>  
+    </StoriesProvider> 
+  }</WithI18n> 
 }
-
 export default App

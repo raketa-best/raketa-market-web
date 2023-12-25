@@ -28,7 +28,7 @@ export const AskDonations: React.FC<IAskDonationsProps> = (props: IAskDonationsP
                 <div className={classes.userName}>{props.userName}</div>    
             </div>
             <div className={classes.profit_block}>
-                <FormatProfitNumber profitNumber={props.donationRub} label={'₽'} className={classes.profit} classNameBlock={classes.donationRub_block}/>
+                <FormatProfitNumber profitNumber={props.donationRub} label={'$'} className={classes.profit} classNameBlock={classes.donationRub_block}/>
             </div> 
         </div>
         <div className={classes.message_block}>

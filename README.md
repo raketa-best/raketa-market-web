@@ -1,4 +1,45 @@
-# Getting Started with Create React App
+# RAKETA MARKET (PWA)
+
+to site is published at [https://github.com/raketa-best/raketa-market-web/](https://github.com/raketa-best/raketa-market-web/)
+
+![alt text](screenshots/preview.png "preview")
+
+## Description
+
+RAKETA MARKET 🚀 is an innovative investment service that revolutionizes the world of finance with its proprietary artificial intelligence, sparing you unnecessary indicators (thousands of them) and doing all the calculations for you, providing an efficient, clear snapshot of the current market situation 🧠.
+
+This platform translates complex financial data into easily digestible infographics 📊, making the investment process more intuitive and accessible for investors of all levels.
+
+Unique Artificial Intelligence Features:
+
+Personalized AI Analysis: RAKETA MARKET's artificial intelligence deeply analyzes your investment portfolio, studying transaction history and your behavior in market conditions, as well as the behavior of others. It summarizes all of this information and provides personalized recommendations that take into account your preferences and comfortable risks 📊.
+
+Advanced Behavioral Analysis: 🕵️‍♂️ AI thoroughly studies your behavior in critical situations, helping to determine your reaction to market fluctuations and providing strategies that best suit your investment style.
+
+Intelligent Strategies for Any Market Conditions: 🌐 AI takes into account current market trends and analyzes data from thousands of other portfolios, providing strategies that optimize profitability considering your risk level.
+
+#### Login page and internationalization interface (i18n):
+![alt text](screenshots/login_i18n.png "login_i18n")
+
+#### Portfolio, Donations, Records pages:
+![alt text](screenshots/portfolio_donations_records.png "portfolio_donations_records")
+
+#### Token pages:
+![alt text](screenshots/token.png "token")
+
+## Technology stack
+
+This is a simple Progressive Web Application (PWA) is a technology that allows installing a website on a smartphone as an application. 
+
+The application prototype is developed in Figma.
+The code is written in TypeScript, CSS, HTML.
+The website layout is responsive, utilizing Grid and Flex.
+
+Implemented internationalization interface (i18n).
+
+The project is written in React using the create-react-app packages. Separately used by babel to compile less files.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -6,6 +47,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -14,33 +56,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `npm run deploy`

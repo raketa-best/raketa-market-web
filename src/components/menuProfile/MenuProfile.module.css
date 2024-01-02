@@ -7,7 +7,7 @@
     max-width: 680px;
     min-width: 290px;
     height: 30px;
-    margin-top: 20px;
+    margin-top: 6vh;
     padding: 11px 0px 11px 0px;
     font-size: 16px;  
     background: #3e2b5c;
@@ -49,4 +49,10 @@
     width: 17px;
     height: 19px;    
     fill: #9a4df3;
+}
+
+@media (min-width: 1050px) {
+    .menuProfile_block {    
+        margin-top: 20px;
+    }
 }

@@ -6,6 +6,7 @@
     width: 100vw;
     min-height: 568px;
     min-width: 320px;
+    padding-top: 4vh; 
     grid-template-areas:
     'logo' 
     'context'
@@ -22,9 +23,7 @@
     content: '';
     position: absolute;
     z-index: 10;
-    left: 10px;
-    top: 5px;
-    width: 350px;
+    width: 320px;
     height: 350px;
     background: linear-gradient(210deg, #025db3 10%, #9e049e 80%);
     border-radius: 50%;
@@ -184,7 +183,7 @@
 
     .imageLogo_block {
         margin: 25px;
-        margin-left: 40px;
+        margin-left: 40px;        
     }  
     
     .context_block {

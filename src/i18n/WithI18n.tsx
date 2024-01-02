@@ -12,19 +12,13 @@ const WithI18n  = (props: {
     const langLocalStorage = localStorage.getItem('languageApp') as 'Rus' | 'Eng' | 'Tur' | null
     const langApp = langLocalStorage || 'Eng'
 
-    console.log('1W_langApp', langApp)
-
     const [i18n, setI18n] = useState<I18n>(I18nApp.getI18n(langApp))
-
-    console.log('2W_i18n', i18n)
 
     const setLanguage = (language: 'Rus' | 'Eng' | 'Tur' ) => {
         setI18n(I18nApp.getI18n(language))
         localStorage.setItem('languageApp', language)
         console.log('3W_language', language)
     }
-
-    console.log('2W_i18n', i18n)
 
     return <div>
         {props.children(i18n, 

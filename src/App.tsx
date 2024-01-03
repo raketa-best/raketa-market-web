@@ -15,13 +15,11 @@ import StoriesProvider from './storiesLayout/StoriesProvider'
 import WithI18n from './i18n/WithI18n'
 import DropdownI18n from './i18n/dropdownI18n/DropdownI18n'
 
-const basename = process.env.NODE_ENV === 'production'
-  ? '/raketa-market-web' : ''
 const App: React.FC = () => {
   return <WithI18n>{(i18n, setLanguage) =>
     <StoriesProvider>
       <DropdownI18n i18n={i18n} setLanguage={setLanguage}/>
-      <BrowserRouter basename={basename}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Routes>            
             <Route path='/' element={<AuthContainer i18n={i18n} />} />
             <Route path='/auth' element={<AuthContainer i18n={i18n} />} /> 

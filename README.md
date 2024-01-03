@@ -3,7 +3,7 @@
 to site is published at [https://raketa-best.github.io/raketa-market-web](https://raketa-best.github.io/raketa-market-web)
 
 To access the demo version of the application, enter the 
-- login: 10 consecutive digits 
+- login: 10 random digits 
 - password: 1234
 
 ![alt text](screenshots/preview.png "preview")

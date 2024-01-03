@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/raketa-market-web/static/css/main.42ad67df.chunk.css",
-    "main.js": "/raketa-market-web/static/js/main.f8238664.chunk.js",
-    "main.js.map": "/raketa-market-web/static/js/main.f8238664.chunk.js.map",
+    "main.js": "/raketa-market-web/static/js/main.52165e1e.chunk.js",
+    "main.js.map": "/raketa-market-web/static/js/main.52165e1e.chunk.js.map",
     "runtime-main.js": "/raketa-market-web/static/js/runtime-main.03690ce4.js",
     "runtime-main.js.map": "/raketa-market-web/static/js/runtime-main.03690ce4.js.map",
     "static/js/2.1b4f6cd8.chunk.js": "/raketa-market-web/static/js/2.1b4f6cd8.chunk.js",
@@ -33,6 +33,6 @@
     "static/js/runtime-main.03690ce4.js",
     "static/js/2.1b4f6cd8.chunk.js",
     "static/css/main.42ad67df.chunk.css",
-    "static/js/main.f8238664.chunk.js"
+    "static/js/main.52165e1e.chunk.js"
   ]
 }

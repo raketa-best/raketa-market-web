@@ -1,6 +1,6 @@
 # RAKETA MARKET (PWA)
 
-to site is published at [https://github.com/raketa-best/raketa-market-web/](https://github.com/raketa-best/raketa-market-web/)
+to site is published at [https://raketa-best.github.io/raketa-market-web](https://raketa-best.github.io/raketa-market-web)
 
 ![alt text](screenshots/preview.png "preview")
 
@@ -18,6 +18,8 @@ Advanced Behavioral Analysis: 🕵️‍♂️ AI thoroughly studies your behavi
 
 Intelligent Strategies for Any Market Conditions: 🌐 AI takes into account current market trends and analyzes data from thousands of other portfolios, providing strategies that optimize profitability considering your risk level.
 
+## Functionality of the application implemented at the moment
+
 #### Login page and internationalization interface (i18n):
 ![alt text](screenshots/login_i18n.png "login_i18n")
 
@@ -29,15 +31,15 @@ Intelligent Strategies for Any Market Conditions: 🌐 AI takes into account cur
 
 ## Technology stack
 
-This is a simple Progressive Web Application (PWA) is a technology that allows installing a website on a smartphone as an application. 
+- This is a simple Progressive Web Application (PWA) is a technology that allows installing a website on a smartphone as an application 
 
-The application prototype is developed in Figma.
-The code is written in TypeScript, CSS, HTML.
-The website layout is responsive, utilizing Grid and Flex.
+- The application prototype is developed in Figma
+- The code is written in TypeScript, CSS, HTML
+- The website layout is responsive, utilizing Grid and Flex
 
-Implemented internationalization interface (i18n).
+- Implemented internationalization interface (i18n)
 
-The project is written in React using the create-react-app packages. Separately used by babel to compile less files.
+- The project is written in React using the create-react-app packages. Separately used by babel to compile less files
 
 ## Getting Started with Create React App
 

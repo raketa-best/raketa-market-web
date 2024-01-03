@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.42ad67df.chunk.css",
+    "main.js": "/static/js/main.9a5f712a.chunk.js",
+    "main.js.map": "/static/js/main.9a5f712a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ec756dac.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ec756dac.js.map",
+    "static/js/2.1b4f6cd8.chunk.js": "/static/js/2.1b4f6cd8.chunk.js",
+    "static/js/2.1b4f6cd8.chunk.js.map": "/static/js/2.1b4f6cd8.chunk.js.map",
+    "static/js/3.0acd73dd.chunk.js": "/static/js/3.0acd73dd.chunk.js",
+    "static/js/3.0acd73dd.chunk.js.map": "/static/js/3.0acd73dd.chunk.js.map",
+    "index.html": "/index.html",
+    "service-worker.js": "/service-worker.js",
+    "service-worker.js.map": "/service-worker.js.map",
+    "static/css/main.42ad67df.chunk.css.map": "/static/css/main.42ad67df.chunk.css.map",
+    "static/js/2.1b4f6cd8.chunk.js.LICENSE.txt": "/static/js/2.1b4f6cd8.chunk.js.LICENSE.txt",
+    "static/media/guide_get_api_token.e2d31585.gif": "/static/media/guide_get_api_token.e2d31585.gif",
+    "static/media/icon_ai.dc3aadbd.png": "/static/media/icon_ai.dc3aadbd.png",
+    "static/media/icon_back.02e8bacd.svg": "/static/media/icon_back.02e8bacd.svg",
+    "static/media/icon_ellipse.5306dc93.svg": "/static/media/icon_ellipse.5306dc93.svg",
+    "static/media/icon_exit.af10a95e.svg": "/static/media/icon_exit.af10a95e.svg",
+    "static/media/icon_fail.2947f1d5.svg": "/static/media/icon_fail.2947f1d5.svg",
+    "static/media/icon_heart_fill.0c2a074c.svg": "/static/media/icon_heart_fill.0c2a074c.svg",
+    "static/media/icon_i18n.48f33c65.svg": "/static/media/icon_i18n.48f33c65.svg",
+    "static/media/icon_key.40e0617e.svg": "/static/media/icon_key.40e0617e.svg",
+    "static/media/icon_lock.0bf3ad96.png": "/static/media/icon_lock.0bf3ad96.png",
+    "static/media/icon_profile_active.a14d1f7e.svg": "/static/media/icon_profile_active.a14d1f7e.svg",
+    "static/media/icon_raketa.a750100b.png": "/static/media/icon_raketa.a750100b.png",
+    "static/media/icon_success.f55c051d.svg": "/static/media/icon_success.f55c051d.svg",
+    "static/media/icon_tinkoff_invest.4e26b968.svg": "/static/media/icon_tinkoff_invest.4e26b968.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ec756dac.js",
+    "static/js/2.1b4f6cd8.chunk.js",
+    "static/css/main.42ad67df.chunk.css",
+    "static/js/main.9a5f712a.chunk.js"
+  ]
+}
